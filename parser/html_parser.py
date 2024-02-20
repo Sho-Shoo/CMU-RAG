@@ -1,18 +1,31 @@
-from bs4 import BeautifulSoup
-import requests
+import unstructured.documents.html
 from .base_parser import BaseParser
+from unstructured.partition.html import partition_html
+
+
+def _merge_elements(elements: list) -> list[str]:
+    groups = []
+    curr_content_group = ""
+    for elem in elements:
+        if type(elem) == unstructured.documents.html.HTMLTitle:
+            if curr_content_group: groups.append(curr_content_group)
+            curr_content_group += (elem.text + " ")
+        else:
+            curr_content_group += (elem.text + " ")
+
+    return groups
 
 
 class HTMLParser(BaseParser):
 
-    def parse(self, url: str) -> None:
-        response = requests.get(url)
-        htmlContent = response.text
-        soup = BeautifulSoup(htmlContent, 'lxml')
-        text = soup.get_text()
-        documents = text.split('\n\n')
-        for doc in documents:
-            self._save_doc(doc)
+    def parse(self) -> None:
+        elems = partition_html(url=self.url)
+        content_groups = _merge_elements(elems)
+        for group in content_groups:
+            self._write_doc(group)
+        self._save_file()
 
-parser = HTMLParser()
-parser.parse("https://lti.cs.cmu.edu/learn")
+
+if __name__ == "__main__":
+    parser = HTMLParser("https://lti.cs.cmu.edu/learn")
+    parser.parse()
