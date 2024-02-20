@@ -1,5 +1,5 @@
 import unstructured.documents.html
-from .base_parser import BaseParser
+from parser.base_parser import BaseParser
 from unstructured.partition.html import partition_html
 
 
@@ -27,5 +27,5 @@ class HTMLParser(BaseParser):
 
 
 if __name__ == "__main__":
-    parser = HTMLParser("https://lti.cs.cmu.edu/learn")
+    parser = HTMLParser('https://lti.cs.cmu.edu/directory/all/154/2729')
     parser.parse()
