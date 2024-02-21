@@ -23,7 +23,7 @@ def _merge_elements(elements: list) -> list[str]:
 class HTMLParser(BaseParser):
 
     def parse(self) -> None:
-        elems = partition_html(url=self.url)
+        elems = partition_html(filename=self.url)
         content_groups = _merge_elements(elems)
         for group in content_groups:
             self._write_doc(group)
@@ -31,5 +31,5 @@ class HTMLParser(BaseParser):
 
 
 if __name__ == "__main__":
-    parser = HTMLParser('https://enr-apps.as.cmu.edu/assets/SOC/sched_layout_fall.htm')
+    parser = HTMLParser('/Users/shoutianze/Desktop/Schedule - Spring Carnival 2024.html')
     parser.parse()
