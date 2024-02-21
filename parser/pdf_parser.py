@@ -2,6 +2,15 @@ import requests
 import pdfplumber
 import os
 
+from io import StringIO
+
+from pdfminer.pdfparser import PDFParser
+from pdfminer.pdfdocument import PDFDocument
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+
 def download_pdf(url, save_path):
     # Download the PDF from the URL
     try:
@@ -25,8 +34,8 @@ def split_doc(text, doc_max_len = 100):
     docs.append(" ".join(words) + "<sep>")
     return "".join(docs)
 
-
-def extract_text_from_pdf(pdf_path, pages_to_skip = 0):
+# Using pdfplumber to extract text from PDF
+def extract_text_from_pdf(pdf_path, pages_to_skip = 0, jump_footer = True):
     text = ""
 
     with pdfplumber.open(pdf_path) as pdf:
@@ -38,10 +47,12 @@ def extract_text_from_pdf(pdf_path, pages_to_skip = 0):
             # Extract the text from PDF
             current_page = page.extract_text()
 
-            # Remove the page footer
-            footer_idx = current_page.rfind("\n")
-            if footer_idx != -1:  
-                current_page = current_page[:footer_idx] 
+            if jump_footer:
+                # Remove the page footer
+                footer_idx = current_page.rfind("\n")
+
+                if footer_idx != -1:  
+                    current_page = current_page[:footer_idx] 
             
 
             # Split this page into small doc
@@ -54,9 +65,29 @@ def extract_text_from_pdf(pdf_path, pages_to_skip = 0):
     
     return text
 
+# Using pdfminer to extract text from PDF
+# Source: https://stackoverflow.com/questions/70170544/pdfplumber-extract-text-from-dynamic-column-layouts
+def convert_pdf_to_string(file_path):
+    output_string = StringIO()
+    with open(file_path, 'rb') as in_file:
+        parser = PDFParser(in_file)
+        doc = PDFDocument(parser)
+        rsrcmgr = PDFResourceManager()
+        device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+
+        # Process each page in the PDF
+        for page in PDFPage.create_pages(doc):
+            interpreter.process_page(page)
+
+    return(output_string.getvalue())
 
 
 if __name__ == "__main__":
+    """
+    Parse handbook PDF
+    """
+
     handbook_urls = ["https://lti.cs.cmu.edu/sites/default/files/PhD_Student_Handbook_2023-2024.pdf",
                      "https://lti.cs.cmu.edu/sites/default/files/MLT%20Student%20Handbook%202023%20-%202024.pdf",
                      "https://lti.cs.cmu.edu/sites/default/files/MIIS%20Handbook_2023%20-%202024.pdf",
@@ -83,3 +114,37 @@ if __name__ == "__main__":
             file.write(text)
             print(f"Text has been successfully saved to {file_path}")
 
+    """
+    Parse CMU Fact sheet PDF
+    """
+            
+    fact_sheet_url = "https://www.cmu.edu/about/cmu_fact_sheet_02.pdf"
+
+    save_path = "raw_data/raw_pdf/" + fact_sheet_url.split("/")[-1]
+
+    # Download the PDF
+    if not os.path.exists(save_path):
+        download_pdf(fact_sheet_url, save_path)
+    else:
+        print(f"{save_path} already exists.")
+
+    ### Method 1: Using pdfplumber
+    # text = extract_text_from_pdf(save_path, jump_footer=False)
+
+    # file_path = "knowledge_source/" + fact_sheet_url.replace(".pdf", ".txt").replace("/", "|")
+
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(text)
+    #     print(f"Text has been successfully saved to {file_path}")
+            
+    ### Method 2: Using pdfminer
+    file_path = 'raw_data/raw_pdf/cmu_fact_sheet_02.pdf' 
+
+    # Using pdfminer to extract text from PDF and then manually clean it
+    text = convert_pdf_to_string(file_path)
+
+    file_path = "knowledge_source/" + fact_sheet_url.replace(".pdf", ".txt").replace("/", "|")
+
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(text)
+        print(f"Text has been successfully saved to {file_path}")
