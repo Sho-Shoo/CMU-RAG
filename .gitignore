@@ -161,3 +161,7 @@ cython_debug/
 
 # MacOS
 .DS_Store/
+.DS_Store
+
+# Raw pdf files
+raw_pdf/
