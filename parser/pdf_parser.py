@@ -15,25 +15,45 @@ def download_pdf(url, save_path):
         print(f"An error occurred while downloading the PDF: {e}")
 
 
+# Split the doc into maxmimum length of 100 words
+def split_doc(text, doc_max_len = 100):
+    words = text.split()
+    docs = []
+    while len(words) > doc_max_len:
+        docs.append(" ".join(words[:doc_max_len]) + "<sep>")
+        words = words[doc_max_len:]
+    docs.append(" ".join(words) + "<sep>")
+    return "".join(docs)
+
+
 def extract_text_from_pdf(pdf_path, pages_to_skip = 0):
     text = ""
 
     with pdfplumber.open(pdf_path) as pdf:
         for i, page in enumerate(pdf.pages):
-            if i < pages_to_skip:  # Skip pages that are likely part of the TOC
+            # Skip the table of contents
+            if i < pages_to_skip: 
                 continue
+            
             # Extract the text from PDF
-            text += page.extract_text()
+            current_page = page.extract_text()
 
             # Remove the page footer
-            footer_idx = text.rfind("\n")
+            footer_idx = current_page.rfind("\n")
             if footer_idx != -1:  
-                text = text[:footer_idx] 
+                current_page = current_page[:footer_idx] 
             
-            # Add a separator between pages
-            text += "<sep>"
+
+            # Split this page into small doc
+            current_page_split = split_doc(current_page)
+            
+            text += current_page_split
+
+            # # Add a separator between pages
+            # text += "<sep>"
     
     return text
+
 
 
 if __name__ == "__main__":
@@ -43,11 +63,13 @@ if __name__ == "__main__":
                      "https://lti.cs.cmu.edu/sites/default/files/MCDS%20Handbook%2023-24%20AY.pdf",
                      "https://msaii.cs.cmu.edu/sites/default/files/Handbook-MSAII-2022-2023.pdf"
                      ]
+    
     num_content_pages = [8, 5, 5, 6, 5]
     
     for i, url in enumerate(handbook_urls):
-        save_path = "raw_pdf/" + url.split("/")[-1]
+        save_path = "raw_data/raw_pdf/" + url.split("/")[-1]
 
+        # Download the PDF
         if not os.path.exists(save_path):
             download_pdf(url, save_path)
         else:
