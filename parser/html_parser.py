@@ -8,10 +8,14 @@ def _merge_elements(elements: list) -> list[str]:
     curr_content_group = ""
     for elem in elements:
         if type(elem) == unstructured.documents.html.HTMLTitle:
-            if curr_content_group: groups.append(curr_content_group)
+            if curr_content_group:
+                groups.append(curr_content_group)
+                curr_content_group = ""
             curr_content_group += (elem.text + " ")
         else:
             curr_content_group += (elem.text + " ")
+
+    if curr_content_group: groups.append(curr_content_group)  # add last group
 
     return groups
 
@@ -27,5 +31,5 @@ class HTMLParser(BaseParser):
 
 
 if __name__ == "__main__":
-    parser = HTMLParser('https://lti.cs.cmu.edu/directory/all/154/2729')
+    parser = HTMLParser('https://enr-apps.as.cmu.edu/assets/SOC/sched_layout_fall.htm')
     parser.parse()
