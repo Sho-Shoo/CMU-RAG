@@ -34,6 +34,6 @@ version 2
 └── retriever - embeddings
 
 version 3
-├──pretrained model - llamma2 (google)
+├──pretrained model - llamma2
 └── finetuning - lora
 ```
