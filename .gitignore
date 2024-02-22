@@ -163,5 +163,5 @@ cython_debug/
 .DS_Store/
 .DS_Store
 
-# Raw pdf files
-raw_pdf/
+# Raw data files
+raw_data/

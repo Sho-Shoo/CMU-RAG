@@ -1,0 +1,100 @@
+2024-08-18 2024-08-19 2024-08-20 2024-08-21 2024-08-22 2024-08-23 : First-Year Orientation<sep>
+2024-08-22: Convocation<sep>
+2024-08-26: Semester & Mini-1 Classes Begin<sep>
+2024-08-30: Mini-1 add, audit & tuition adjustment drop deadline  (1)<sep>
+2024-09-02: Labor Day; No Classes & University Closed<sep>
+2024-09-09: Semester add, audit & tuition adjustment drop deadline (1)<sep>
+2024-09-18: Mini-1 drop deadline; withdrawal grade assigned after this date (2)<sep>
+2024-09-30: Mini-1 Pass/no pass & withdrawal deadline (3)<sep>
+2024-09-30: Mini-1 Faculty Course Evaluations open<sep>
+2024-10-07: Semester drop deadline; withdrawal grade assigned after this date (2)<sep>
+2024-10-11: Mini-1 Last Day of Classes<sep>
+2024-10-11: Mini-1 voucher election deadline (4)<sep>
+2024-10-12: Mini-1 Exams<sep>
+2024-10-12: Mini-1 Faculty Course Evaluations close<sep>
+2024-10-14 2024-10-15 2024-10-16 2024-10-17 2024-10-18 : Fall Break; No Classes<sep>
+2024-10-21: Mini-2 Classes Begin <sep>
+2024-10-23: Mid-Semester & Mini-1 grades due by 4 pm<sep>
+2024-10-25: Mini-2 add, audit & tuition adjustment drop deadline (1)<sep>
+2024-11-05: Democracy Day; No Classes, except Evening classes after 5 pm will still meet<sep>
+2024-11-11: Semester pass/no pass & withdrawal deadline (3)<sep>
+2024-11-13: Mini-2 drop deadline; withdrawal grade assigned after this date (2)<sep>
+2024-11-18 2024-11-19 2024-11-20 2024-11-21 2024-11-22 : Spring 2025 Registration Week<sep>
+2024-11-25: Mini-2 pass/no pass & withdrawal deadline (3)<sep>
+2024-11-25: Semester & Mini-2 Faculty Course Evaluations open<sep>
+2024-11-27 2024-11-28 2024-11-29 : Thanksgiving Break; No Classes<sep>
+2024-12-06: Semester & Mini-2 Last Day of Classes <sep>
+2024-12-06: Semester & Mini-2 voucher deadline (4)<sep>
+2024-12-09 2024-12-10 : Final Exams <sep>
+2024-12-11: Reading Day <sep>
+2024-12-12 2024-12-13 : Final Exams <sep>
+2024-12-14: Reading Day <sep>
+2024-12-15: Final Exams <sep>
+2024-12-15: Semester & Mini-2 Faculty Course Evaluations close<sep>
+2024-12-16: Make-Up Final Exams<sep>
+2024-12-18: Final Grades Due by 4 pm <sep>
+2024-12-24 2024-12-25 : University Closed<sep>
+2024-12-31 2025-01-01 : University Closed<sep>
+2025-01-06: Fall Deans' Lists Posted<sep>
+2025-01-14: First Day of Classes<sep>
+2025-01-17: Mini-3 add, audit & tuition adjustment drop deadline (1)<sep>
+2025-01-20: Martin Luther King Day; No Classes & University Closed<sep>
+2025-01-27: Semester add, audit & tuition adjustment drop deadline (1)<sep>
+2025-02-05: Mini-3 course drop deadline; withdrawal grade assigned after this date (2)<sep>
+2025-02-17: Mini-3 pass/no pass & withdrawal deadline (3)<sep>
+2025-02-17: Mini-3 Faculty Course Evaluations open<sep>
+2025-02-24: Semester course drop deadline; withdrawal grade assigned after this date (2)<sep>
+2025-02-28: Mini-3 Last Day of Classes <sep>
+2025-02-28: Mini-3 voucher deadline (4)<sep>
+2025-03-01: Mini-3 Exams<sep>
+2025-03-01: Mini-3 Faculty Course Evaluations close<sep>
+2025-03-03 2025-03-04 2025-03-05 2025-03-06 2025-03-07 : Spring Break; No Classes<sep>
+2025-03-10: First day of Mini-4 Classes<sep>
+2025-03-11: Summer 2025 Registration Opens<sep>
+2025-03-12: Mid-Semester & Mini-3 grades due by 4 pm<sep>
+2025-03-14: Mini-4 add, audit & tuition adjustment drop deadline (1)<sep>
+2025-03-31: Semester pass/no pass & withdrawal deadline<sep>
+2025-04-02: Mini-4 course drop deadline; withdrawal grade assigned after this date (2)<sep>
+2025-04-03 2025-04-04 2025-04-05 : Spring Carnival; No Classes<sep>
+2025-04-07 2025-04-08 2025-04-09 2025-04-10 2025-04-11 : Fall 2025 Registration Week<sep>
+2025-04-14: Mini-4 pass/no pass & withdrawal deadline (3)<sep>
+2025-04-14: Semester & Mini-4 Faculty Course Evaluations open <sep>
+2025-04-25: Last Day of Classes<sep>
+2025-04-25: Semester & Mini-4 voucher deadline (4)<sep>
+2025-04-28 2025-04-29 : Final Examinations <sep>
+2025-04-30: Reading Day<sep>
+2025-05-01 2025-05-02 : Final Examinations <sep>
+2025-05-03 2025-05-04 : Reading Days<sep>
+2025-05-05: Final Examinations<sep>
+2025-05-05: Semester & Mini-4 Faculty Course Evaluations close <sep>
+2025-05-06: Make-Up Final Examinations<sep>
+2025-05-08: Graduating Students' Final Grades Due by 4 pm<sep>
+2025-05-11: Commencement<sep>
+2025-05-13: Final Grades Due by 4 pm<sep>
+2025-05-20: Spring Deans' Lists Posted<sep>
+2025-05-12: Summer Session All, One & Mini-5 Classes Begin<sep>
+2025-05-16: Summer One & Mini-5 add, audit, & tuition adjustment drop deadline (1)<sep>
+2025-05-23: Summer All add, audit, & tuition adjustment drop deadline (1)<sep>
+2025-05-26: Memorial Day; University Closed & No Classes<sep>
+2025-05-27: Summer One & Mini-5 course drop deadline; withdrawal grade assigned after this date (2)<sep>
+2025-06-09: Summer One & Mini-5 pass/no pass & withdrawal deadline (3)<sep>
+2025-06-13: Summer One & Mini-5 Faculty Course Evaluations open<sep>
+2025-06-17: Summer All course drop deadline; withdrawal grade assigned after this date (2)<sep>
+2025-06-18: Summer One & Mini-5 Last Day of Classes<sep>
+2025-06-18: Summer One & Mini-5 voucher deadline<sep>
+2022-06-19: Juneteenth; University Closed & No Classes<sep>
+2025-06-20: Summer One & Mini-5 Final Exams<sep>
+2025-06-20: Summer One & Mini-5 Faculty Course Evaluations close <sep>
+2025-06-23: Summer Two & Mini-6 First Day of Classes<sep>
+2025-06-24: Summer One & Mini-5 Final Grades Due by 4 pm<sep>
+2025-06-27: Summer Two & Mini-6 add, audit, & tuition adjustment drop deadline (1)<sep>
+2025-07-03: Summer All pass/no pass & withdrawal grade deadline (3)<sep>
+2025-07-04: Independence Day; University Closed & No Classes<sep>
+2025-07-07: Summer Two & Mini-6 drop deadline; withdrawal grade assigned after this date (2)<sep>
+2025-07-21: Summer Two & Mini-6 pass/no pass & withdrawal deadline (3)<sep>
+2025-07-28: Summer All, Two & Mini-6 Faculty Course Evalutations open <sep>
+2025-07-31: Summer All, Two & Mini-6 Last Day of Classes<sep>
+2025-07-31: Summer All, Two & Mini-6 voucher deadline<sep>
+2025-08-01: Summer All, Two & Mini-6 Final Exams<sep>
+2025-08-01: Summer All, Two & Mini-6 Faculty Course Evaluations close<sep>
+2025-08-05: Summer All, Two & Mini-6 Final Grades Due by 4 pm<sep>
