@@ -31,5 +31,5 @@ class HTMLParser(BaseParser):
 
 
 if __name__ == "__main__":
-    parser = HTMLParser('/Users/shoutianze/Desktop/Schedule - Spring Carnival 2024.html')
+    parser = HTMLParser('/Users/shoutianze/Desktop/Tartan Facts - Carnegie Mellon University Athletics.html')
     parser.parse()
