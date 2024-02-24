@@ -44,7 +44,7 @@ def _process_corpus(corpus: list[str]) -> tuple[list[str], list[list[str]]]:
 
 if __name__ == "__main__":
     r = BM25Retriever()
-    docs = r.retrieve("What is Professor Yonatan Bisk's research interests")
+    docs = r.retrieve("Who is teaching 11711 in Spring 2024?")
     for doc in docs:
         print(doc)
         print()
