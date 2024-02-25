@@ -1,9 +1,10 @@
 import os
 from collections import deque
 from rank_bm25 import BM25Okapi
+from retriever.base_retriever import BaseRetriever
 
 
-class BM25Retriever:
+class BM25Retriever(BaseRetriever):
 
     def __init__(self, knowledge_source_path: str = "knowledge_source"):
         self.corpus = []
