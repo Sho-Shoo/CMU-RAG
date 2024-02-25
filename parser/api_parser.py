@@ -41,8 +41,9 @@ class LTIResearchPapersParser(BaseParser):
             papers = self.fetch_papers_for_faculty(name)
             sep = '; '
             doc = "\n".join([
+                # f"Authors: {', '.join([author['name'] for author in paper['authors']])}{sep}"
+                f"Authors: {name}{sep}"
                 f"Title: {paper['title']}{sep}"
-                f"Authors: {', '.join([author['name'] for author in paper['authors']])}{sep}"
                 f"Abstract: {paper.get('abstract', 'No abstract available')}{sep}"
                 f"Year: {paper['year']}{sep}"
                 f"Venue: {paper.get('venue', 'No venue information')}{sep}"
