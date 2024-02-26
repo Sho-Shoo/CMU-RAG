@@ -1,7 +1,7 @@
 import os
 from collections import deque
 from rank_bm25 import BM25Okapi
-from retriever.base_retriever import BaseRetriever
+from base_retriever import BaseRetriever
 
 
 class BM25Retriever(BaseRetriever):
@@ -19,7 +19,7 @@ class BM25Retriever(BaseRetriever):
 
     def retrieve(self, question: str, top_n: int = 5):
         tokenized_question = question.lower().split()
-        return self.bm25.get_top_n(tokenized_question, self.corpus)
+        return self.bm25.get_top_n(tokenized_question, self.corpus, n=top_n)
 
 
 def _process_corpus(corpus: list[str]) -> tuple[list[str], list[list[str]]]:
