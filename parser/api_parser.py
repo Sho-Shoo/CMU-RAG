@@ -3,7 +3,6 @@ from base_parser import BaseParser
 import requests
 import time
 
-
 class LTIResearchPapersParser(BaseParser):
     def __init__(self, urls, year=2023):
         super().__init__(url='https://api.semanticscholar.org/graph/v1/paper/search')
@@ -93,8 +92,6 @@ class LTIResearchPapersParser(BaseParser):
                 self._save_file()
             else:
                 print(f"No author ID found for {name}.")
-
-
 
 if __name__ == '__main__':
     # Fetch faculty's name in LTI
