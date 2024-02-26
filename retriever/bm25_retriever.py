@@ -1,7 +1,7 @@
 import os
 from collections import deque
 from rank_bm25 import BM25Okapi
-from base_retriever import BaseRetriever
+from retriever.base_retriever import BaseRetriever
 
 
 class BM25Retriever(BaseRetriever):
