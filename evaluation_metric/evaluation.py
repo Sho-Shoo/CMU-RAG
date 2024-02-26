@@ -9,7 +9,7 @@ from typing import Callable
 
 import regex
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 # Normalization and score functions from SQuAD evaluation script https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/
 def normalize_answer(s: str) -> str:
