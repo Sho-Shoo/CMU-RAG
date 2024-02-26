@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 from base_parser import BaseParser
 import requests
-import os
+import time
+
 
 class LTIResearchPapersParser(BaseParser):
     def __init__(self, urls, year=2023):
@@ -9,7 +10,7 @@ class LTIResearchPapersParser(BaseParser):
         self.urls_faulty = urls
         self.year = year
         self.S2_API_KEY = 'scv8zP7sDUao0gvaUt1aN7iUttJdx4hwfjP0UtK0'
-        self.result_limit = 100
+        self.result_limit = 300
 
     def scrape_faculty_names(self):
         all_faculty_names = []
@@ -20,39 +21,80 @@ class LTIResearchPapersParser(BaseParser):
             all_faculty_names.extend(faculty_names)
         return all_faculty_names
 
-    def fetch_papers_for_faculty(self, faculty_name):
-        print(f"Searching for papers by: {faculty_name}")
-        rsp = requests.get('https://api.semanticscholar.org/graph/v1/paper/search',
-                           headers={'X-API-KEY': self.S2_API_KEY},
-                           params={'query': faculty_name, 'year': self.year,
-                                   'limit': self.result_limit,
-                                   'fields': 'title,abstract,authors,venue,year,tldr'})
-        rsp.raise_for_status()
-        results = rsp.json()
-        if results["total"] == 0:
-            print(f"No papers found for {faculty_name}.")
-            return []
-        print(f"Found {results['total']} papers for {faculty_name}.")
-        return results['data']
+    def find_author_id_by_name(self, name):
+        search_url = 'https://api.semanticscholar.org/graph/v1/author/search'
+        params = {'query': name, 'limit': 1, 'fields': 'authorId'}
+        headers = {'x-api-key': self.S2_API_KEY}
+
+        response = requests.get(search_url, headers=headers, params=params)
+        response.raise_for_status()
+        data = response.json()
+        authors = data.get('data', [])
+
+        if authors:
+            return authors[0].get('authorId')
+        return None
+
+    def fetch_papers_for_author(self, author_id):
+        if author_id:
+            papers_url = f'https://api.semanticscholar.org/graph/v1/author/{author_id}/papers'
+            params = {'limit': self.result_limit, 'fields': ''}
+            headers = {'x-api-key': self.S2_API_KEY}
+
+            response = requests.get(papers_url, headers=headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+
+            return data.get('data', [])
+        return []
+
+    def fetch_paper_details_with_tldr(self, paper_ids):
+        # Make the POST request to fetch details
+        response = requests.post(
+            'https://api.semanticscholar.org/graph/v1/paper/batch',
+            headers={'x-api-key': self.S2_API_KEY},
+            params={'fields': 'title,abstract,authors,citationCount,venue,year,tldr'},
+            json={"ids": paper_ids}
+
+        )
+        response.raise_for_status()
+
+        try:
+            response.raise_for_status()
+            paper_details = response.json()
+        except Exception:
+            print('Could not fetch tldr')
+            return 'The paper did have tldr'
+        return paper_details
 
     def parse(self):
         faculty_names = self.scrape_faculty_names()
         for name in faculty_names:
-            papers = self.fetch_papers_for_faculty(name)
-            sep = '; '
-            doc = "\n".join([
-                # f"Authors: {', '.join([author['name'] for author in paper['authors']])}{sep}"
-                f"Authors: {name}{sep}"
-                f"Title: {paper['title']}{sep}"
-                f"Abstract: {paper.get('abstract', 'No abstract available')}{sep}"
-                f"Year: {paper['year']}{sep}"
-                f"Venue: {paper.get('venue', 'No venue information')}{sep}"
-                f"Citations: {paper.get('citationCount', 0)}{sep}"
-                f"TLDR: {(lambda x: x.get('text', 'No TLDR available') if isinstance(x, dict) else 'No TLDR available')(paper.get('tldr'))}"
-                for paper in papers
-            ])
-            self._write_doc(doc)
-            self._save_file()
+            print(f"Searching for: {name}")
+            author_id = self.find_author_id_by_name(name)
+            if author_id:
+                print(f"Found author ID {author_id} for {name}. Fetching papers...")
+                papers = self.fetch_papers_for_author(author_id)
+                outputs = self.fetch_paper_details_with_tldr([paper['paperId'] for paper in papers])
+                time.sleep(2)
+                sep = '; '
+                doc = "\n".join([
+                    f"Author (LTI's Professor): {name}{sep}"
+                    f"Title: {output['title']}{sep}"
+                    f"Authors: {', '.join([author['name'] for author in output['authors']])}{sep}"
+                    f"Abstract: {output['abstract']}{sep}"
+                    f"Year: {output['year']}{sep}"
+                    f"Venue: {output['venue']}{sep}"
+                    f"Citations: {output['citationCount']}{sep}"
+                    f"TLDR: {output['tldr']}"
+                    for output in outputs
+                ])
+                self._write_doc(doc)
+                self._save_file()
+            else:
+                print(f"No author ID found for {name}.")
+
+
 
 if __name__ == '__main__':
     # Fetch faculty's name in LTI
@@ -60,4 +102,3 @@ if __name__ == '__main__':
                 'https://lti.cs.cmu.edu/directory/all/154/1?page=1']
     parser = LTIResearchPapersParser(urls=lti_urls, year=2023)
     parser.parse()
-
