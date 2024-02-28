@@ -23,7 +23,7 @@ def _merge_elements(elements: list) -> list[str]:
 class HTMLParser(BaseParser):
 
     def parse(self) -> None:
-        elems = partition_html(filename=self.url)
+        elems = partition_html(url=self.url)
         content_groups = _merge_elements(elems)
         for group in content_groups:
             self._write_doc(group)
