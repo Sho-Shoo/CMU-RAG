@@ -66,7 +66,7 @@ def exact_match_score(prediction, ground_truths, normalize_fn: Callable[[str], s
 if __name__ == "__main__":
     pred_1 = "Professor Teruko Mitamura's research area is Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, and Natural Language Processing and Computational Linguistics."
     pred_2 = "The text does not specify Professor Teruko Mitamura's research area, therefore I cannot answer this question."
-    ground_truths = ["Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, Natural Language Processing and Computational Linguistic."]
+    ground_truths = ["Professor Teruko Mitamura's research area focuses on Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, Natural Language Processing and Computational Linguistic."]
 
     print(f"The F1 score for pred 1 is {f1_score(pred_1, ground_truths, normalize_fn=normalize_answer)}")
     print(f"The F1 score for pred 2 is {f1_score(pred_2, ground_truths, normalize_fn=normalize_answer)}")
