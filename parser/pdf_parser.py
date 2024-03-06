@@ -66,7 +66,7 @@ def extract_text_from_pdf(pdf_path, pages_to_skip = 0, jump_footer = True):
     return text
 
 # Using pdfminer to extract text from PDF
-# Source: https://stackoverflow.com/questions/70170544/pdfplumber-extract-text-from-dynamic-column-layouts
+# Source: https://pdfminersix.readthedocs.io/en/latest/tutorial/composable.html
 def convert_pdf_to_string(file_path):
     output_string = StringIO()
     with open(file_path, 'rb') as in_file:
