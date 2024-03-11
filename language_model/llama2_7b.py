@@ -136,7 +136,7 @@ class SageMakerLlama27B:
 
 
 if __name__ == "__main__":
-    RESULT_FILE_NAME = "llama2_bm25_few.txt"
+    RESULT_FILE_NAME = "llama2_bm25_zero.txt"
 
     questions, answers, reference_answers = [], [], []
     f1_scores, recall_scores, exact_match_scores = [], [], []
@@ -160,7 +160,7 @@ if __name__ == "__main__":
         print(f"{i} / {len(questions)}")
         print(f"Q: {q}")
         ref_a = reference_answers[i]
-        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=10, print_prompt=False, few_shot=True)
+        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=10, print_prompt=False, few_shot=False)
         answers.append(a)
         print(f"A: {a}")
         print("============================")
@@ -176,4 +176,4 @@ if __name__ == "__main__":
     print(test_summary)
     write_test_result("data/test/" + RESULT_FILE_NAME, answers, f1, recall, em)
 
-    # SageMakerLlama27B.shut_down()
+    SageMakerLlama27B.shut_down()
