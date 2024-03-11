@@ -2,6 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import sys
 # REPLACE WITH YOUR PATH
 GOOGLE_DRIVE_PATH = 'todo'
+GOOGLE_DRIVE_PATH = "/content/drive/MyDrive/ANLP/ANLP_hw2/"
 sys.path.append(GOOGLE_DRIVE_PATH)
 from retriever.bm25_retriever import BM25Retriever
 from retriever.base_retriever import BaseRetriever
@@ -86,6 +87,8 @@ if __name__ == "__main__":
     recall_scores = []
     em_scores = []
 
+    outputs = []
+
     for i, question in enumerate(questions):
         print(f"Question: {question}")
         print(f"Ground truth: {ground_truths[i]}")
@@ -98,6 +101,9 @@ if __name__ == "__main__":
         print(f"Exact match score for the answer: {exact_match_score(answer, ground_truths[i])}")  
         print(f"F1 score for the answer: {f1_score(answer, ground_truths[i])}")
         print(f"Recall score for the answer: {recall_score(answer, ground_truths[i])}")
+        
+        # Store the answer
+        outputs.append(answer)
 
         f1_scores.append(f1_score(answer, ground_truths[i]))
         recall_scores.append(recall_score(answer, ground_truths[i]))
@@ -108,4 +114,9 @@ if __name__ == "__main__":
     print(f"Average exact match score: {sum(em_scores)/len(em_scores)}")
     print(f"Average F1 score: {sum(f1_scores)/len(f1_scores)}")
     print(f"Average recall score: {sum(recall_scores)/len(recall_scores)}")
+
+    # Write the outputs to a txt file
+    with open(GOOGLE_DRIVE_PATH + "data/test/system_outputs.txt", "w") as f:
+        for output in outputs:
+            f.write(output + "\n")
     
