@@ -1,9 +1,6 @@
-import sys
-path = "/Users/a119491/Library/Mobile Documents/com~apple~CloudDocs/11711/ASSGN/ASSGN2/ANLP-HW2/"
-sys.path.append(path)
 from retriever.bm25_retriever import BM25Retriever
 from retriever.base_retriever import BaseRetriever
-from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score
+from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score, write_test_result
 import boto3
 import sagemaker
 from sagemaker.jumpstart.model import JumpStartModel
@@ -74,8 +71,8 @@ class SageMakerGemma7Bit:
     @classmethod
     def generate(cls, retriever: BaseRetriever, question: str, top_n: int = 10,
                 max_new_tokens: int = 1024,  top_k: float = 50, top_p: float = 0.9, 
-                temperature: float = 0.6, do_sample: bool = True,
-                print_prompt=False, few_shot=False):
+                temperature: float = 0.7, do_sample: bool = True,
+                print_prompt=False, few_shot=True):
         
         # Retrieve the documents
         documents = retriever.retrieve(question, top_n=top_n)
@@ -96,6 +93,7 @@ class SageMakerGemma7Bit:
                             "do_sample": do_sample,
                            "return_full_text": False}
         }
+        
         runtime = boto3.client("runtime.sagemaker")
         payload = json.dumps(payload, indent=4).encode('utf-8')
         response = runtime.invoke_endpoint(EndpointName=AWSConfig.SAGEMAKER_ENDPOINT_NAME,
@@ -106,6 +104,7 @@ class SageMakerGemma7Bit:
     
 
 if __name__ == "__main__":
+    RESULT_FILE_NAME = "gemma_bm25_few.txt"
     retriever = BM25Retriever()
     gemma = SageMakerGemma7Bit()
     # gemma.set_up()
@@ -134,7 +133,7 @@ if __name__ == "__main__":
         print(f"Ground truth: {ground_truths[i]}")
         print("==========================================")
         print("Generating answer...")
-        answer = gemma.generate(retriever, question, print_prompt=True)
+        answer = gemma.generate(retriever, question, print_prompt=True, few_shot=True)
         print(f"Q: {question}")
         print(f"A: {answer}")
         print(f"Ref A: {ground_truths[i]}")
@@ -150,14 +149,16 @@ if __name__ == "__main__":
         em_scores.append(exact_match_score(answer, ground_truths[i]))
 
         print("==========================================\n")
+    
+    avg_em = sum(em_scores) / len(em_scores)
+    avg_f1 = sum(f1_scores) / len(f1_scores)
+    avg_recall = sum(recall_scores) / len(recall_scores)
 
-    print(f"Average exact match score: {sum(em_scores)/len(em_scores)}")
-    print(f"Average F1 score: {sum(f1_scores)/len(f1_scores)}")
-    print(f"Average recall score: {sum(recall_scores)/len(recall_scores)}")
+    print(f"Average exact match score: {avg_em}")
+    print(f"Average F1 score: {avg_f1}")
+    print(f"Average recall score: {avg_recall}")
 
     # Write the outputs to a txt file
-    with open("data/test/system_outputs.txt", "w") as f:
-        for output in outputs:
-            f.write(output.replace("\n", " ") + "\n")
+    write_test_result("data/test/" + RESULT_FILE_NAME, outputs, avg_f1, avg_recall, avg_em)
 
     # gemma.shut_down()

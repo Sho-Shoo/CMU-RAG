@@ -1,0 +1,65 @@
+Professor Teruko Mitamura's research area is in Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, Natural Language Processing and Computational Linguistics.
+The text does not contain information about Professor Graham Neubig's office location, therefore I cannot answer this question.
+The text does not contain information about the author of the paper "Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation," therefore I don't know.
+The text does not mention who is teaching Multimodal Machine Learning in Spring 2024, therefore I don't know.
+The text does not specify the instructor for 11711 in Fall 2023, therefore I cannot answer this question.
+The text does not contain information about CMU Spring Break in 2024, therefore I can't answer this question.
+The text does not contain information about the semester drop deadline for Fall 2024, therefore I cannot answer this question.
+The Master of Language Technologies program requires at least 72 units of "LTI" courses and 24 units of "SCS" courses.
+The text does not contain information about the application fee for the MSAII program, therefore I cannot answer this question.
+The core courses for MCDS students are 10-601 - Machine Learning, 05-839 - Interactive Data Science, 15-619 - Cloud Computing, and 11-631 - Data Science Seminar.
+The text does not specify the date of the Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival, therefore I can not answer this question.
+The text states that the CMU commencement ceremony is on May 12, 2024.
+The text does not mention who created the emoticon Smiley Lore :-) therefore I cannot answer this question.
+The text does not specify the answer to this question, therefore I cannot provide an answer to this question.
+The text does not specify the creator of the CMU Robotics Institute, therefore I cannot answer this question.
+The text does not provide information about the ranking of CMU's School of Computer Science, therefore I cannot answer this question.
+The text does not contain information about the number of students at CMU, therefore I cannot answer this question.
+The text does not specify who invented Duolingo, therefore I cannot answer this question.
+Mao Yisheng was the recipient of the first doctorate awarded at CMU in 1919.
+The official mascot of CMU is the Scottish terrier, also known as Scotty.
+The text does not specify the date of CMU's official decision on its first mascot, therefore I cannot answer this question.
+The official mascot debuted at the Nov. 10, 2007 home football game.
+The text does not describe the rehearsal location for the Kiltie Band, therefore I cannot answer this question.
+The text does not mention anything about Professor Yonatan Bisk's recent papers, therefore I cannot answer this question.
+The text does not mention any information about Professor Graham Neubig's recent papers, therefore I cannot answer this question.
+The text does not contain any information about Professor Graham Neubig's paper on "WebArena", therefore I don't know.
+The abstract of Professor Eric P. Xing's paper on "StyleRF: Zero-Shot 3D Style Transfer of Neural Radiance Fields" describes a novel technique for 3D style transfer that resolves the three-way dilemma between accurate geometry reconstruction, high-quality stylization, and generalizability to arbitrary new styles. StyleRF achieves superior 3D stylization quality with precise geometry reconstruction and can generalize to various new styles in a zero-shot manner.
+I don't know. The text does not contain Professor Lei Li's phone number, therefore I cannot answer this question.
+The text does not contain information about Professor Alexander Rudnicky's research interests, therefore I cannot answer this question.
+Year 1900. The text states that Carnegie Technical Schools was founded in 1900 and became known as Carnegie Mellon University in 1967.
+The text does not specify the president of CMU in this text, therefore I cannot answer this question.
+The text does not mention Graham Neubig's research interests, therefore I don't know.
+The text does not mention any courses offered by Graham Neubig at CMU, therefore I cannot answer this question.
+The text does not specify who teaches 11711 in Spring 2024, therefore I cannot answer this question.
+James Gosling (CS’83) developed Java as a CMU grad student.
+The text does not contain information about 2024 Spring Carnival, therefore I don't know.
+The text does not contain information about the instructor of 11711 Advanced Natural Language Processing in Fall 2023, therefore I cannot answer this question.
+The text does not contain information about the instructor for 11742 in Fall 2024, therefore I don't know.
+The Language Technologies Institute offers four Master programs: MCDS, MLT, MIIS, and MSAII.
+In 1956 and 1957, the first freshman-level computer science course was launched in CMU.
+The text does not specify the date of the Robotics Institute start, therefore I cannot answer this question.
+The text does not contain information about the authors of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation', therefore I cannot answer this question.
+The text does not specify the instructor for Multimodal Machine Learning in Spring 2024, therefore I cannot answer this question.
+The Master of Language Technologies program requires at least 72 units of "LTI" courses and 24 units of "SCS" courses.
+The text does not contain information about the first Interfraternity Sweepstakes race, therefore I cannot answer this question.
+The text does not contain information about "Buggy," therefore I don't know.
+The text does not describe Chute, therefore I don't know.
+The text does not mention Chute Flagger, therefore I don't know.
+The text does not specify the driver in Buggy Races, therefore I cannot answer this question.
+The text does not describe the pushbar in Buggy Races therefore I cannot answer the question.
+The text does not mention the pusher in Buggy Races, therefore I don't know.
+The text does not describe the shell in Buggy Races, therefore I cannot answer this question.
+The text does not describe the transition in Buggy Races, therefore I don't know.
+The text does not contain information about the location of the Buggy Showcase in 2019, therefore I cannot answer this question.
+The text does not provide information about the academic calendar for the Ph.D. program, therefore I cannot answer this question.
+The Language Technologies Institute is located primarily on the 5th and 6th floors of the Gates Hillman Complex (GHC) on Carnegie Mellon’s Pittsburgh campus.
+Brianna Eriksen and Teruko Mitamura are responsible for administering the MIIS degree.
+Students can request to transfer into the MIIS program at CMU after completing their first semester and before the add/drop deadline of the spring semester.
+The materials needed for transferring to the MIIS program are the syllabus of the external course, CMU transcripts, and application materials such as an explanation of why a transfer is desired, a proposed plan of study, and a proposed advisor.
+The text does not contain information about the duration of the MSDS program, therefore I cannot answer this question.
+The text states that the director of the MSAII program is Michael I. Shamos.
+
+F1 score: 0.25046857671013384
+Recall score: 0.3045732094790948
+EM score: 0.0
