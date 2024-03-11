@@ -1,84 +1,124 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM
 import sys
-# REPLACE WITH YOUR PATH
-GOOGLE_DRIVE_PATH = 'todo'
-GOOGLE_DRIVE_PATH = "/content/drive/MyDrive/ANLP/ANLP_hw2/"
-sys.path.append(GOOGLE_DRIVE_PATH)
+path = "/Users/a119491/Library/Mobile Documents/com~apple~CloudDocs/11711/ASSGN/ASSGN2/ANLP-HW2/"
+sys.path.append(path)
 from retriever.bm25_retriever import BM25Retriever
 from retriever.base_retriever import BaseRetriever
 from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score
+import boto3
+import sagemaker
+from sagemaker.jumpstart.model import JumpStartModel
+import json
+from aws_config import AWSConfig
 
-class Gemma7Bit:
-    def __init__(self, retriever: BaseRetriever, top_n: int = 5):
-        print("=================Loading Gemma 7B-it model...=================")
-        self.model = AutoModelForCausalLM.from_pretrained("google/gemma-7b-it")
-        self.tokenizer =  AutoTokenizer.from_pretrained("google/gemma-7b-it", device_map="auto")
-        self.retriever = retriever
-        self.top_n = top_n
+# Few-shot template
+FEW_TEMPLATE = \
+"""
+<start_of_turn>user
+You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:
 
-    def build_prompt(self, context: str, question: str, few_shot: bool = True):
-        if few_shot:
-            prompt_template = "You are a question-answering assistant who provides a short answer to a QUESTION "\
-            "based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). "\
-            "If the CONTEXT does not contain necessary information, please answer \"I don't know\". Please keep the answer short and simple. "\
-            "Here are a few examples:\n\n"\
-            "Question: When is 2024 Spring Carnival?\n"\
-            "Answer: April 11 to April 14.\n\n"\
-            "Question: When was Carnegie Mellon University founded?\n"\
-            "Answer: Year 1900.\n\n"\
-            "CONTEXT:{context}\n\n"\
-            "QUESTION:{question}"
+Question: When is 2024 Spring Carnival?
+Answer: April 11 to April 14.
+
+Question: When was Carnegie Mellon University founded?
+Answer: Year 1900.
+
+CONTEXT:
+{context}
+
+QUESTION: {question}<end_of_turn>
+<start_of_turn>model
+ANSWER:<end_of_turn>
+"""
+
+# Zero-shot template
+ZERO_TEMPLATE = \
+"""
+<start_of_turn>user
+You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. 
+
+CONTEXT:
+{context}
+
+QUESTION: {question}<end_of_turn>
+<start_of_turn>model
+ANSWER:<end_of_turn>
+"""
+
+# Helper function to build the prompt
+def _build_gemma_prompt(context: str, question: str, few_shot: bool = True) -> str:
+    if few_shot:
+        prompt = FEW_TEMPLATE.replace("{context}", context).replace("{question}", question)
+    else:
+        prompt = ZERO_TEMPLATE.replace("{context}", context).replace("{question}", question)
+
+    return prompt
 
 
-        else:
-            prompt_template = "You are a question-answering assistant who provides a short answer to a QUESTION "\
-            "based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). "\
-            "If the CONTEXT does not contain necessary information, please answer \"I don't know\". Please keep the answer short and simple.\n\n"\
-            "CONTEXT:{context}\n\n"\
-            "QUESTION:{question}"
-            
+class SageMakerGemma7Bit:
+    @classmethod
+    def set_up(cls):
+        role = AWSConfig.SAGEMAKER_ARN_ROLE
+        gemma_model = JumpStartModel(model_id="huggingface-llm-gemma-7b-instruct", role=role)
+        print("Deploying Gemma 7b-it to SageMaker...")
+        gemma_model.deploy(initial_instance_count=1,
+                           endpoint_name=AWSConfig.SAGEMAKER_ENDPOINT_NAME,
+                           accept_eula=True)
 
-        input = prompt_template.replace("{context}", context).replace("{question}", question)
+    @classmethod
+    def shut_down(cls):
+        print(f"Shutting down Sagemaker endpoint {AWSConfig.SAGEMAKER_ENDPOINT_NAME}...")
+        sagemaker_session = sagemaker.Session()
+        sagemaker_session.delete_endpoint(AWSConfig.SAGEMAKER_ENDPOINT_NAME)
+        sagemaker_session.delete_endpoint_config(AWSConfig.SAGEMAKER_ENDPOINT_NAME)
 
-        chat = [{"role": "user", "content": input},
-                {"role": "model", "content": "ANSWER:"}]
+    @classmethod
+    def generate(cls, retriever: BaseRetriever, question: str, top_n: int = 10,
+                max_new_tokens: int = 1024,  top_k: float = 50, top_p: float = 0.9, 
+                temperature: float = 0.6, do_sample: bool = True,
+                print_prompt=False, few_shot=False):
         
-        input_with_prompt = self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False)
-
-        return input_with_prompt
-    
-    def answer(self, question: str, max_new_tokens: int = 512, top_k: float = 50, top_p: float = 0.9, temperature: float = 0.6, do_sample: bool = True, print_prompt=False):
-        documents = self.retriever.retrieve(question, top_n=self.top_n)
+        # Retrieve the documents
+        documents = retriever.retrieve(question, top_n=top_n)
         context = "\n".join(documents)
-        input_with_prompt = self.build_prompt(context, question)
 
+        # Build the prompt
+        prompt = _build_gemma_prompt(context, question, few_shot=few_shot)
         if print_prompt: 
-            print("****************Prompt****************")
-            print(input_with_prompt)
-            print("**************************************")
+            print(prompt)
 
-        inputs = self.tokenizer.encode(input_with_prompt, add_special_tokens=False, return_tensors="pt")
-        outputs = self.model.generate(inputs, max_new_tokens=max_new_tokens, top_p=top_p,top_k=top_k, temperature=temperature, do_sample=do_sample)
-        # outputs = self.model.generate(inputs, max_new_tokens=max_new_tokens)
-        response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+        # Send the input to the model
+        payload = {
+            "inputs": prompt,
+            "parameters": {"max_new_tokens": max_new_tokens,
+                           "top_k": top_k,
+                           "top_p": top_p,
+                           "temperature": temperature,
+                            "do_sample": do_sample,
+                           "return_full_text": False}
+        }
+        runtime = boto3.client("runtime.sagemaker")
+        payload = json.dumps(payload, indent=4).encode('utf-8')
+        response = runtime.invoke_endpoint(EndpointName=AWSConfig.SAGEMAKER_ENDPOINT_NAME,
+                                           ContentType="application/json",
+                                           Body=payload)
         
-        answer = response.split("ANSWER:")[1].strip()
-        return answer
+        return json.loads(response["Body"].read())[0]["generated_text"]
     
 
 if __name__ == "__main__":
     retriever = BM25Retriever()
-    gemma = Gemma7Bit(retriever, top_n=10)
+    gemma = SageMakerGemma7Bit()
+    # gemma.set_up()
 
+    # Read the data
     questions = []
     ground_truths = []
 
-    # Read the data
-    with open(GOOGLE_DRIVE_PATH + "data/test/questions.txt", "r") as f:
+    with open("data/test/questions.txt", "r") as f:
         for q in f:
             questions.append(q.strip())
 
-    with open(GOOGLE_DRIVE_PATH + "data/test/reference_answers.txt", "r") as f:
+    with open("data/test/reference_answers.txt", "r") as f:
         for a in f:
             ground_truths.append([a.strip()])
     
@@ -94,7 +134,7 @@ if __name__ == "__main__":
         print(f"Ground truth: {ground_truths[i]}")
         print("==========================================")
         print("Generating answer...")
-        answer = gemma.answer(question, print_prompt=True)
+        answer = gemma.generate(retriever, question, print_prompt=True)
         print(f"Q: {question}")
         print(f"A: {answer}")
         print(f"Ref A: {ground_truths[i]}")
@@ -116,7 +156,8 @@ if __name__ == "__main__":
     print(f"Average recall score: {sum(recall_scores)/len(recall_scores)}")
 
     # Write the outputs to a txt file
-    with open(GOOGLE_DRIVE_PATH + "data/test/system_outputs.txt", "w") as f:
+    with open("data/test/system_outputs.txt", "w") as f:
         for output in outputs:
-            f.write(output + "\n")
-    
+            f.write(output.replace("\n", " ") + "\n")
+
+    # gemma.shut_down()
