@@ -5,21 +5,50 @@ import json
 from retriever.bm25_retriever import BM25Retriever
 from aws_config import AWSConfig
 from retriever.base_retriever import BaseRetriever
+from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score, normalize_answer, write_test_result
+
+FEW_TEMPLATE = \
+"""
+[INST]<<SYS>>
+You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:
+
+Question: When is 2024 Spring Carnival?
+Answer: April 11 to April 14.
+
+Question: When was Carnegie Mellon University founded?
+Answer: Year 1900.
+
+CONTEXT:
+{context}
+<</SYS>>[/INST]
+
+[INST]
+QUESTION: {question}
+[\INST]
+
+ANSWER:
+"""
+
+ZERO_TEMPLATE = \
+"""
+[INST]<<SYS>>
+You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple.
+
+CONTEXT:
+{context}
+<</SYS>>[/INST]
+
+[INST]
+QUESTION: {question}
+[\INST]
+
+ANSWER:
+"""
 
 
 def _build_llama2_prompt(context: str, question: str, few_shot: bool = True) -> str:
-    zero_templ = "[INST]<<SYS>>\nYou are a question-answering assistant that provides a short ANSWER to a QUESTION " \
-               "based on the given CONTEXT about Carnegie Mellon University. If you do not know the answer and the " \
-               "CONTEXT doesn't contain the answer truthfully say \"I don't know\". Please keep the answer short and " \
-               "straight-forward. \n\nCONTEXT:\n{context}\n<</SYS>>[/INST]\n\n[INST]QUESTION: {question}[\INST]\n\nANSWER:"
-
-    few_templ = "[INST]<<SYS>>\nYou are a question-answering assistant that provides a short ANSWER to a QUESTION " \
-               "based on the given CONTEXT about Carnegie Mellon University. For example:\nWhere is CMU located?\n" \
-               "Pittsburgh.\nWhen does 2024 Spring Carnival begin?\nApril 11th.\n\nIf you do not know the answer and the " \
-               "CONTEXT doesn't contain the answer truthfully say \"I don't know\". Please keep the answer short and " \
-               "straight-forward. \n\nCONTEXT:\n{context}\n<</SYS>>[/INST]\n\n[INST]QUESTION: {question}[\INST]\n\nANSWER:"
-    if few_shot: template = few_templ
-    else: template = zero_templ
+    if few_shot: template = FEW_TEMPLATE
+    else: template = ZERO_TEMPLATE
 
     prompt = template.replace("{context}", context).replace("{question}", question)
     return prompt
@@ -107,39 +136,44 @@ class SageMakerLlama27B:
 
 
 if __name__ == "__main__":
-    questions = [
-        "When was Carnegie Mellon University founded?",
-        "Who is the president of CMU?",
-        "What are the research interests of Graham Neubig?",
-        "What is the mascot of CMU?",
-        "What courses are offered by Graham Neubig at CMU?",
-        "Who teaches 11711 in Spring 2024?",
-        "Which CMU grad student developed Java?",
-        "When is 2024 Spring Carnival?",
-        "How many students does CMU have?",
-        "Who taught 11711 Advanced Natural Language Processing in Fall 2023?",
-        "Who will teach 11742 in Fall 2024?",
-        "What are the Master programs in LTI?",
-        "When was the first freshman-level computer science course launched in CMU?",
-        "When was the Robotics Institute started?",
-        "What is Professor Teruko Mitamura's research area?",
-        "Where is Professor Graham Neubig's office?",
-        "Who are the authors of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation'?",
-        "Who is teaching Multimodal Machine Learning in Spring 2024?",
-        "Who is teaching 11711 in Fall 2023?",
-        "When is CMU Spring Break in 2024?",
-        "When is the semester drop deadline for Fall 2024?",
-        "How many course units are required for the Master of Language Technologies program?",
-        "What is the application fee for the MSAII program?",
-        "What are the core courses for MCDS students?",
-        "When is the Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival?",
-        "When is the CMU commencement ceremony?"
-    ]
+    RESULT_FILE_NAME = "llama2_bm25_few.txt"
+
+    questions, answers, reference_answers = [], [], []
+    f1_scores, recall_scores, exact_match_scores = [], [], []
+
+    with open("data/test/questions.txt", "r") as f:
+        while True:
+            line = f.readline()
+            if not line: break
+            questions.append(line)
+
+    with open("data/test/reference_answers.txt", "r") as f:
+        while True:
+            line = f.readline()
+            if not line: break
+            reference_answers.append(line)
+
     retriever = BM25Retriever()
     # SageMakerLlama27B.set_up()
 
-    for q in questions:
-        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=10, print_prompt=False, few_shot=True)
+    for i, q in enumerate(questions):
+        print(f"{i} / {len(questions)}")
         print(f"Q: {q}")
+        ref_a = reference_answers[i]
+        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=10, print_prompt=False, few_shot=True)
+        answers.append(a)
         print(f"A: {a}")
         print("============================")
+
+        f1_scores.append(f1_score(a, [ref_a], normalize_fn=normalize_answer))
+        recall_scores.append(recall_score(a, [ref_a], normalize_fn=normalize_answer))
+        exact_match_scores.append(exact_match_score(a, [ref_a], normalize_fn=normalize_answer))
+
+    f1, recall, em = sum(f1_scores) / len(f1_scores), sum(recall_scores) / len(recall_scores), sum(exact_match_scores) / len(exact_match_scores)
+    test_summary = f"F1 score: {f1}\n" + \
+                   f"Recall score: {recall}\n" + \
+                   f"EM score: {em}"
+    print(test_summary)
+    write_test_result("data/test/" + RESULT_FILE_NAME, answers, f1, recall, em)
+
+    # SageMakerLlama27B.shut_down()

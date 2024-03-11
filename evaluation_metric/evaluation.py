@@ -64,6 +64,17 @@ def recall_score(prediction: str, ground_truths: list, normalize_fn: Callable[[s
 def exact_match_score(prediction: str, ground_truths: list, normalize_fn: Callable[[str], str] = lambda x: x):
     return max([em(prediction, gt, normalize_fn) for gt in ground_truths])
 
+def write_test_result(filepath: str, answers: list[str], f1_score: float, recall_score: float, em_score: float):
+    with open(filepath, "w") as f:
+        for ans in answers:
+            ans = ans.replace("\n", " ")
+            f.write(ans.strip() + "\n")
+
+        f.write("\n")
+        f.write(f"F1 score: {f1_score}\n")
+        f.write(f"Recall score: {recall_score}\n")
+        f.write(f"EM score: {em_score}\n")
+
 
 if __name__ == "__main__":
     pred_1 = "Professor Teruko Mitamura's research area includes Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, and Natural Language Processing and Computational Linguistics."
