@@ -51,7 +51,7 @@ class LTIResearchPapersParser(BaseParser):
         response = requests.post(
             'https://api.semanticscholar.org/graph/v1/paper/batch',
             headers={'x-api-key': self.S2_API_KEY},
-            params={'fields': 'title,abstract,authors,citationCount,venue,year,tldr'},
+            params={'limit': self.result_limit, 'fields': 'title,abstract,authors,citationCount,venue,year,tldr'},
             json={"ids": paper_ids}
         )
 
@@ -60,7 +60,7 @@ class LTIResearchPapersParser(BaseParser):
             paper_details = response.json()
         except Exception:
             print('Could not fetch tldr')
-            return 'The paper did have tldr'
+            return 'The paper did not have tldr'
         return paper_details
 
     def parse(self):
@@ -71,30 +71,30 @@ class LTIResearchPapersParser(BaseParser):
             if author_id:
                 print(f"Found author ID {author_id} for {name}. Fetching papers...")
                 papers = self.fetch_papers_for_author(author_id)
-                outputs = self.fetch_paper_details_with_tldr([paper['paperId'] for paper in papers])
-                if outputs == 'The paper did have tldr':
-                    continue
-                time.sleep(3)
-                sep = '; '
-                doc = "\n".join([
-                    f"Author (LTI's Professor): {name}{sep}"
-                    f"Title: {output['title']}{sep}"
-                    f"Authors: {', '.join([author['name'] for author in output['authors']])}{sep}"
-                    f"Abstract: {output['abstract']}{sep}"
-                    f"Year: {output['year']}{sep}"
-                    f"Venue: {output['venue']}{sep}"
-                    f"Citations: {output['citationCount']}{sep}"
-                    f"TLDR: {output['tldr']}"
-                    for output in outputs
-                ])
-                self._write_doc(doc)
-                self._save_file()
+                paper_chunks = [papers[i:i + 300] for i in range(0, len(papers), 300)]
+                for chunk in paper_chunks:
+                    outputs = self.fetch_paper_details_with_tldr([paper['paperId'] for paper in chunk])
+                    if outputs == 'The paper did not have tldr':
+                        print(outputs)
+                        continue
+                    time.sleep(1)
+                    sep = '; '
+                    doc = "\n".join([
+                        f"Author (LTI's Professor): {name}{sep}"
+                        f"Title: {output['title']}{sep}"
+                        f"Authors: {', '.join([author['name'] for author in output['authors']])}{sep}"
+                        f"Abstract: {output['abstract']}{sep}"
+                        f"Year: {output['year']}{sep}"
+                        f"Venue: {output['venue']}{sep}"
+                        f"Citations: {output['citationCount']}{sep}"
+                        f"TLDR: {output['tldr']}"
+                        for output in outputs if output is not None  # Assuming None is returned for papers without TLDR
+                    ])
+                    self._write_doc(doc)
+                    self._save_file()
             else:
                 print(f"No author ID found for {name}.")
 
 if __name__ == '__main__':
-    # Fetch faculty's name in LTI
-    lti_urls = ['https://lti.cs.cmu.edu/directory/all/154/1',
-                'https://lti.cs.cmu.edu/directory/all/154/1?page=1']
     parser = LTIResearchPapersParser(year=2023)
     parser.parse()
