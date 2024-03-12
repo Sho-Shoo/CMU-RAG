@@ -1,8 +1,9 @@
+import pandas as pd
 from bs4 import BeautifulSoup
 from base_parser import BaseParser
 import requests
 import time
-
+import os
 
 def scrape_faculty_names():
     response = requests.get('https://lti.cs.cmu.edu/people/faculty/index.html')
@@ -64,55 +65,42 @@ class LTIResearchPapersParser(BaseParser):
         return paper_details
 
     def parse(self):
-        faculty_names = scrape_faculty_names()
-        for name in faculty_names:
+        # faculty_names = scrape_faculty_names()
+        name = pd.read_csv(os.path.join('faculty_info.csv'))
+        name = name.set_index('author_name').to_dict('index')
+
+        for name, id_to_num in name.items():
             print(f"Searching for: {name}")
-            author_id = self.find_author_id_by_name(name)
-            if author_id:
-                if author_id == '2256564956':
-                    author_id = '1783635'
-                if author_id == '17038253':
-                    author_id = '144987107'
-                if author_id == '2107366678':
-                    author_id = '1746678'
-                if author_id == '2109454364':
-                    author_id = '153915824'
-                if author_id == '2082457533':
-                    author_id = '3407646'
-                if author_id == '11908065':
-                    author_id = '49933077'
-                if author_id == '9273426':
-                    author_id = '35729970'
-                if author_id == '2064429921':
-                    author_id = '1724972'
-                print(f"Found author ID {author_id} for {name}. Fetching papers...")
-                papers = self.fetch_papers_for_author(author_id)
-                papers = [item['paperId'] for item in papers if item['year'] == 2023] # fetch only 2023
-                if len(papers) == 0:
+            # author_id = self.find_author_id_by_name(name)
+            author_id = id_to_num['author_id']
+            # print(f"Found author ID {author_id} for {name}. Fetching papers...")
+            papers = self.fetch_papers_for_author(author_id)
+            papers = [item['paperId'] for item in papers if item['year'] == 2023] # fetch only 2023
+            if len(papers) == 0:
+                continue
+            paper_chunks = [papers[i:i + 300] for i in range(0, len(papers), 300)]
+            for chunk in paper_chunks:
+                outputs = self.fetch_paper_details_with_tldr(chunk)
+                if outputs == 'The paper did not have tldr':
+                    print(outputs)
                     continue
-                paper_chunks = [papers[i:i + 300] for i in range(0, len(papers), 300)]
-                for chunk in paper_chunks:
-                    outputs = self.fetch_paper_details_with_tldr(chunk)
-                    if outputs == 'The paper did not have tldr':
-                        print(outputs)
-                        continue
-                    time.sleep(1)
-                    sep = '; '
-                    doc = "\n".join([
-                        f"Author (LTI's Professor): {name}{sep}"
-                        f"Title: {output['title']}{sep}"
-                        f"Authors: {', '.join([author['name'] for author in output['authors']])}{sep}"
-                        f"Abstract: {output['abstract']}{sep}"
-                        f"Year: {output['year']}{sep}"
-                        f"Venue: {output['venue']}{sep}"
-                        f"Citations: {output['citationCount']}{sep}"
-                        f"TLDR: {output['tldr']}"
-                        for output in outputs if output is not None  # Assuming None is returned for papers without TLDR
-                    ])
-                    self._write_doc(doc)
-                    self._save_file()
-            else:
-                print(f"No author ID found for {name}.")
+                time.sleep(1)
+                sep = '; '
+                doc = "\n".join([
+                    f"Author (LTI's Professor): {name}{sep}"
+                    f"Title: {output['title']}{sep}"
+                    f"Authors: {', '.join([author['name'] for author in output['authors']])}{sep}"
+                    f"Abstract: {output['abstract']}{sep}"
+                    f"Year: {output['year']}{sep}"
+                    f"Venue: {output['venue']}{sep}"
+                    f"Citations: {output['citationCount']}{sep}"
+                    f"TLDR: {output['tldr']}"
+                    for output in outputs if output is not None  # Assuming None is returned for papers without TLDR
+                ])
+                self._write_doc(doc)
+                self._save_file()
+            # else:
+            #     print(f"No author ID found for {name}.")
 
 if __name__ == '__main__':
     parser = LTIResearchPapersParser(year=2023)
