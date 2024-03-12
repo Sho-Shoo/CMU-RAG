@@ -1,0 +1,89 @@
+schedule_title,course_number,title,units,section,day,begin,end,room,location,instructor
+Summer Two 2024,Course,Title,Units,Lec/Sec,Days,Begin,End,Bldg/Room,Location,Instructor(s)
+Summer Two 2024,48731,Sustainable Design Synthesis Prep,1-18,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,60590,Internship,1-9,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,03124,Modern Biology Laboratory,9.0,U,MW,12:00PM,02:50PM,MI SOCIAL,"Pittsburgh, Pennsylvania",Doonan
+Summer Two 2024,03132,Basic Science to Modern Medicine,9.0,U,MTWRF,02:00PM,03:20PM,WEH 5202,"Pittsburgh, Pennsylvania",Mccartney
+Summer Two 2024,03133,Neurobiology of Disease,9.0,U,MTWRF,11:00AM,12:20PM,DH 1211,"Pittsburgh, Pennsylvania",Brasier
+Summer Two 2024,03210,Independent Study,1-12,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Willard
+Summer Two 2024,03232,Biochemistry I,9.0,U,MTWRF,12:30PM,01:50PM,WEH 4709,"Pittsburgh, Pennsylvania",Rule
+Summer Two 2024,03445,Undergraduate Research,1-18,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Willard
+Summer Two 2024,47995,Graduate Reading & Research,"12,36",U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Rapp
+Summer Two 2024,47998,Tepper PhD Internship,3-36,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,TBA,,U,MTWRF,09:30AM,10:50AM,TEP 2612,"Pittsburgh, Pennsylvania",Wang
+Summer Two 2024,09050,Study Abroad,0.0,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Stump
+Summer Two 2024,09105,Introduction to Modern Chemistry I,10.0,U,MTWRF,11:00AM,12:20PM,DH 2302,"Pittsburgh, Pennsylvania",Sherwood
+Summer Two 2024,09218,Organic Chemistry II,9.0,U,MTWRF,11:00AM,12:20PM,DH 1112,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,09435,Independent Study Chemistry,1.0 - 12.0,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Stump
+Summer Two 2024,09445,Undergraduate Research,3-18,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Stump
+Summer Two 2024,09861,Chemical Research,0-99,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Noonan
+Summer Two 2024,09871,Doctoral Dissertation,5.0,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Noonan
+Summer Two 2024,,TBA,,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Noonan
+Summer Two 2024,,,,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,15112,Fundamentals of Programming and Computer Science,12.0,U,MTWRF,11:00AM,12:20PM,SH 105,"Pittsburgh, Pennsylvania",Sands
+Summer Two 2024,15122,Principles of Imperative Computation,12.0,U,MTWRF,09:30AM,10:50AM,TEP 1403,"Pittsburgh, Pennsylvania",Kohlbrenner
+Summer Two 2024,,,,V,MTWRF,09:30AM,10:50AM,TEP 1403,"Pittsburgh, Pennsylvania",Kohlbrenner
+Summer Two 2024,54495,Internship,9-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,18990,Reading and Research,0-48,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Bain
+Summer Two 2024,19798,Reading and Research: Thesis Research,"5,18,36",U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Matthews, Muller"
+Summer Two 2024,,At Home,,U,MTWRF,09:30AM,10:50AM,PH A18A,"Pittsburgh, Pennsylvania",Dieterich
+Summer Two 2024,76221,Books You Should Have Read By Now,9.0,U,MTWRF,09:30AM,10:50AM,PH 126A,"Pittsburgh, Pennsylvania",Jo
+Summer Two 2024,76245,Shakespeare: Tragedies & Histories,9.0,U,MTWRF,03:30PM,04:50PM,CMU REMOTE,"Pittsburgh, Pennsylvania",Wittek
+Summer Two 2024,76270,Writing for the Professions,9.0,U,MTWRF,12:30PM,01:50PM,CMU REMOTE,"Pittsburgh, Pennsylvania",George
+Summer Two 2024,76706,Editing and Publishing,9-12,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,76707,Independent Study in Professional Writing,3-18,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,79150,"Medieval Science, Magic, and Wonders of Nature",9.0,U,MTWRF,09:30AM,10:50AM,CMU REMOTE,"Pittsburgh, Pennsylvania",Garnhart-bushakra
+Summer Two 2024,79155,Introduction to African American Studies,9.0,U,MTWRF,12:30PM,01:50PM,CMU REMOTE,"Pittsburgh, Pennsylvania",Hingorani
+Summer Two 2024,79172,"Race, Caste, Class, and Difference in the United States and India",9.0,U,MTWRF,03:30PM,04:50PM,CMU REMOTE,"Pittsburgh, Pennsylvania",Hingorani
+Summer Two 2024,79491,Independent Study,3-18,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,05684,METALS Capstone II Part II,24.0,U,W,03:30PM,05:20PM,CMU REMOTE,"Pittsburgh, Pennsylvania","McLaren, Koedinger"
+Summer Two 2024,11936,PhD Internship,VAR,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,21127,Concepts of Mathematics,12.0,U,MTWRF,11:00AM,12:20PM,DH 1212,"Pittsburgh, Pennsylvania",Resende
+Summer Two 2024,21241,Matrices and Linear Transformations,12.0,U,MTWRF,12:30PM,01:50PM,WEH 7500,"Pittsburgh, Pennsylvania",Koganemaru
+Summer Two 2024,21599,Undergraduate Reading and Research,0-99,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,,,V,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,24392,Mechancial Engineering Project,3-18,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Hertz
+Summer Two 2024,24491,Department Research Honors,3-24,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Hertz
+Summer Two 2024,24492,Department Research Honors,3-24,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Hertz
+Summer Two 2024,24796,Graduate Reading and Research,0-99,R,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Hertz
+Summer Two 2024,82114,Arabic for Global Exchange Online,6.0,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Al Masaeed
+Summer Two 2024,82133,Elementary Chinese Online I,12.0,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Wu
+Summer Two 2024,82134,Elementary Chinese Online II,12.0,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Wu
+Summer Two 2024,82139,"Chinese Language, Culture and Society",9.0,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Wu
+Summer Two 2024,82143,Elementary Spanish I Online,12.0,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Tardio
+Summer Two 2024,82144,Elementary Spanish II Online,12.0,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Tardio
+Summer Two 2024,82171,Elementary Japanese I,12.0,U,MTWRF,09:30AM,10:50AM,PH A19A,"Pittsburgh, Pennsylvania",Yasuhara
+Summer Two 2024,82183,"AI for Humanities: The Multi-dimensions of World Languages, Arts, and Cultures",9.0,U,MTWRF,09:30AM,10:50AM,PH 225B,"Pittsburgh, Pennsylvania","Su, Zhao"
+Summer Two 2024,82269,"Immersive Digital Storytelling:Using VR/AR to Explore, Language Culture Identity",9.0,U,MTWRF,11:00AM,12:20PM,TEP 1024,"Pittsburgh, Pennsylvania","DeYoung, Liu, Caspar"
+Summer Two 2024,82278,Japanese Film and Literature: The Art of Storytelling,9.0,U,MTWRF,11:00AM,12:20PM,PH A21,"Pittsburgh, Pennsylvania",Yasuhara
+Summer Two 2024,82279,Anime - Visual Interplay between Japan and the World,9.0,U,MTWRF,12:30PM,01:50PM,PH A21,"Pittsburgh, Pennsylvania",Yasuhara
+Summer Two 2024,82789,Guided Research,3-36,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,,,,MW,06:30PM,07:50PM,CFA A6,"Pittsburgh, Pennsylvania",
+Summer Two 2024,57342,Sound Recording Workshop,6.0,U,MW,06:30PM,07:50PM,CFA A6,"Pittsburgh, Pennsylvania","Sullivan, Tchetchko"
+Summer Two 2024,57857,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Young, Shields, Neely"
+Summer Two 2024,57858,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Young, Neely"
+Summer Two 2024,57859,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Neely, Young"
+Summer Two 2024,57878,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Young, Neely, Shields"
+Summer Two 2024,57879,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Young, Neely, Shields"
+Summer Two 2024,57880,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania","Neely, Young, Shields"
+Summer Two 2024,57939,Dalcroze Eurhythmics Workshop,3-36,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,80130,Introduction to Ethics,9.0,U,MTWRF,11:00AM,12:20PM,PH A19A,"Pittsburgh, Pennsylvania",Pasetes
+Summer Two 2024,80211,Logic and Mathematical Inquiry,9.0,U,MTWRF,02:00PM,03:20PM,PH A21,"Pittsburgh, Pennsylvania",Hua
+Summer Two 2024,80212,Arguments and Logical Analysis,9.0,U,MTWRF,03:30PM,04:50PM,PH 126A,"Pittsburgh, Pennsylvania",Sink
+Summer Two 2024,80495,Independent Study,"3,6,9,12",U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,Introduction to Astronomy,,U,MTWRF,02:00PM,03:20PM,HH B103,"Pittsburgh, Pennsylvania",Turnshek
+Summer Two 2024,,Physics I for Engineering Students,,U,MTWRF,12:30PM,02:50PM,WEH 4623,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,Physics II for Engineering and Physics Students,,U,MTWRF,02:00PM,04:20PM,CMU REMOTE,"Pittsburgh, Pennsylvania",Klein
+Summer Two 2024,33997,Graduate Laboratory,1-36,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Deserno
+Summer Two 2024,,Social Psychology,,U,MTWRF,02:00PM,03:20PM,BH A36,"Pittsburgh, Pennsylvania",Cox-Boyd
+Summer Two 2024,85482,Internship in Psychology,3-12,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Thiessen
+Summer Two 2024,85505,Readings In Psychology,3-12,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Oppenheimer
+Summer Two 2024,85781,Graduate Reading and Research,0-99,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,,,V,TBA,,,TBA,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,,,,W,TBA,,,TBA,"Pittsburgh, Pennsylvania",Downs
+Summer Two 2024,88505,Undergraduate Internship,1-9,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Angermeier
+Summer Two 2024,,Societal Computing Reading & Research,,U,TBA,,,DNM DNM,"Pittsburgh, Pennsylvania",Christin
+Summer Two 2024,17997,Graduate Reading and Research,1-48,U,TBA,,,TBA,"Pittsburgh, Pennsylvania",Kaestner
+Summer Two 2024,36202,Methods for Statistics & Data Science,9.0,U,MWF,11:00AM,12:20PM,BH A36,"Pittsburgh, Pennsylvania",Weinberg
+Summer Two 2024,36226,Introduction to Statistical Inference,9.0,U,MTWRF,11:00AM,12:20PM,WEH 5415,"Pittsburgh, Pennsylvania",Instructor TBA
+Summer Two 2024,36350,Statistical Computing,9.0,U,MTWRF,02:00PM,03:20PM,PH 226C,"Pittsburgh, Pennsylvania",Instructor TBA
