@@ -30,11 +30,29 @@ class PaperParserToDataframe(LTIResearchPapersParser):
             print(f"Searching for: {name}")
             author_id = self.find_author_id_by_name(name)
             if author_id:
+                if author_id:
+                    if author_id == '2256564956':
+                        author_id = '1783635'
+                    if author_id == '17038253':
+                        author_id = '144987107'
+                    if author_id == '2107366678':
+                        author_id = '1746678'
+                    if author_id == '2109454364':
+                        author_id = '153915824'
+                    if author_id == '2082457533':
+                        author_id = '3407646'
+                    if author_id == '11908065':
+                        author_id = '49933077'
+                    if author_id == '9273426':
+                        author_id = '35729970'
+                    if author_id == '2064429921':
+                        author_id = '1724972'
                 print(f"Found author ID {author_id} for {name}. Fetching papers...")
                 papers = self.fetch_papers_for_author(author_id)
+                papers = [item['paperId'] for item in papers if item['year'] == 2023]
                 paper_chunks = [papers[i:i + 300] for i in range(0, len(papers), 300)]
                 for chunk in paper_chunks:
-                    outputs = self.fetch_paper_details_with_tldr([paper['paperId'] for paper in chunk])
+                    outputs = self.fetch_paper_details_with_tldr(chunk)
 
                     if outputs == 'The paper did not have tldr':
                         continue
