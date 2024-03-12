@@ -1,3 +1,6 @@
+import sys
+path = "/Users/a119491/Library/Mobile Documents/com~apple~CloudDocs/11711/ASSGN/ASSGN2/ANLP-HW2/"
+sys.path.append(path)
 from retriever.bm25_retriever import BM25Retriever
 from retriever.base_retriever import BaseRetriever
 from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score, write_test_result
@@ -10,15 +13,22 @@ from aws_config import AWSConfig
 # Few-shot template
 FEW_TEMPLATE = \
 """
+<bos><start_of_turn>user
+You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:<end_of_turn>
+
 <start_of_turn>user
-You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:
-
 Question: When is 2024 Spring Carnival?
-Answer: April 11 to April 14.
+Context: 2024-04-11 2024-04-12 2024-04-13 : Spring Carnival; No Classes<end_of_turn>
+<start_of_turn>model
+Answer: April 11 to April 14.<end_of_turn>
 
+<start_of_turn>user
 Question: When was Carnegie Mellon University founded?
-Answer: Year 1900.
+Context: Who founded Carnegie Mellon University? Carnegie Technical Schools was founded in 1900 by Andrew Carnegie. Twelve years later it became known as the Carnegie Institute of Technology. In 1967, the school merged with Mellon Institute and became what is known today as Carnegie Mellon University.<end_of_turn>
+<start_of_turn>model
+Answer: Year 1900.<end_of_turn>
 
+<start_of_turn>user
 CONTEXT:
 {context}
 
@@ -30,7 +40,7 @@ ANSWER:<end_of_turn>
 # Zero-shot template
 ZERO_TEMPLATE = \
 """
-<start_of_turn>user
+<bos><start_of_turn>user
 You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. 
 
 CONTEXT:
@@ -93,7 +103,7 @@ class SageMakerGemma7Bit:
                             "do_sample": do_sample,
                            "return_full_text": False}
         }
-        
+
         runtime = boto3.client("runtime.sagemaker")
         payload = json.dumps(payload, indent=4).encode('utf-8')
         response = runtime.invoke_endpoint(EndpointName=AWSConfig.SAGEMAKER_ENDPOINT_NAME,
