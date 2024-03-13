@@ -1,4 +1,5 @@
 import boto3
+import botocore.errorfactory
 import sagemaker
 from sagemaker.jumpstart.model import JumpStartModel
 import json
@@ -113,6 +114,9 @@ class SageMakerLlama27B:
     def prompt_without_initialization(cls, retriever: BaseRetriever, question: str, top_n: int = 5,
                                       max_new_tokens: int = 1024,  top_p: float = 0.9, temperature: float = 0.6,
                                       print_prompt=False, few_shot=False):
+        if top_n == 0:
+            raise RuntimeError("top_n is being reduced to 0.")
+
         documents = retriever.retrieve(question, top_n=top_n)
         context = "\n".join(documents)
         prompt = _build_llama2_prompt(context, question, few_shot=few_shot)
@@ -129,14 +133,21 @@ class SageMakerLlama27B:
 
         runtime = boto3.client("runtime.sagemaker")
         payload = json.dumps(payload, indent=4).encode('utf-8')
-        response = runtime.invoke_endpoint(EndpointName=AWSConfig.SAGEMAKER_ENDPOINT_NAME,
-                                           ContentType="application/json",
-                                           Body=payload)
+        try:
+            response = runtime.invoke_endpoint(EndpointName=AWSConfig.SAGEMAKER_ENDPOINT_NAME,
+                                               ContentType="application/json",
+                                               Body=payload)
+        except botocore.errorfactory.ClientError:
+            print(f"top_n = {top_n} exceeded max token limitation, decreasing top_n by 1 ...")
+            return cls.prompt_without_initialization(retriever, question, top_n=top_n - 1, max_new_tokens=max_new_tokens,
+                                                     top_p=top_p, temperature=temperature, print_prompt=print_prompt,
+                                                     few_shot=few_shot)
+
         return json.loads(response["Body"].read())[0]["generated_text"]
 
 
 if __name__ == "__main__":
-    FEW_SHOT = True
+    FEW_SHOT = False
 
     result_file_name = "llama2_bm25_few.txt" if FEW_SHOT else "llama2_bm25_zero.txt"
     questions, answers, reference_answers = [], [], []
