@@ -3,13 +3,13 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 import os
+import re
 
 class ScheduleParserToDataframe(ScheduleParser):
 
-    def __init__(self, url, schedule_title, output_dir, category):
+    def __init__(self, url, schedule_title, output_dir):
         super().__init__(url, schedule_title)
         self.output_dir = output_dir
-        self.category = category
 
     # Override
     def parse(self) -> None:
@@ -28,6 +28,8 @@ class ScheduleParserToDataframe(ScheduleParser):
                 continue
 
             if all(cell.text.strip() != "\xa0" for cell in cells[:3]):
+                if cells[0].text.strip() == '':
+                    continue
                 entry = {
                     "schedule_title": self.schedule_title,
                     "course_number": cells[0].text.strip(),
@@ -45,7 +47,7 @@ class ScheduleParserToDataframe(ScheduleParser):
 
         schedule_df = pd.DataFrame(schedule_data)
 
-        # Save the DataFrame to a CSV file
+        # save the DataFrame to a CSV file
         csv_filename = f"{self.schedule_title.replace(' ', '_').lower()}_schedule.csv"
         schedule_df.to_csv(os.path.join(self.output_dir, csv_filename), index=False)
         print(f"Schedule saved to {csv_filename}")
@@ -61,6 +63,6 @@ if __name__ == "__main__":
     for key, url in zip(keys, urls):
         parser = ScheduleParserToDataframe(url=url,
                                            schedule_title=key,
-                                           output_dir='knowledge_source_pd',
-                                           category='course')
+                                           output_dir='knowledge_source_pd/courses'
+                                           )
         parser.parse()
