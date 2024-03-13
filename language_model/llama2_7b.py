@@ -136,8 +136,9 @@ class SageMakerLlama27B:
 
 
 if __name__ == "__main__":
-    RESULT_FILE_NAME = "llama2_bm25_zero.txt"
+    FEW_SHOT = True
 
+    result_file_name = "llama2_bm25_few.txt" if FEW_SHOT else "llama2_bm25_zero.txt"
     questions, answers, reference_answers = [], [], []
     f1_scores, recall_scores, exact_match_scores = [], [], []
 
@@ -174,6 +175,6 @@ if __name__ == "__main__":
                    f"Recall score: {recall}\n" + \
                    f"EM score: {em}"
     print(test_summary)
-    write_test_result("data/test/" + RESULT_FILE_NAME, answers, f1, recall, em)
+    write_test_result("data/test/" + result_file_name, answers, f1, recall, em)
 
     SageMakerLlama27B.shut_down()
