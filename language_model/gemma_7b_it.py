@@ -9,54 +9,21 @@ import sagemaker
 from sagemaker.jumpstart.model import JumpStartModel
 import json
 from aws_config import AWSConfig
-
-# Few-shot template
-FEW_TEMPLATE = \
-"""
-<bos><start_of_turn>user
-You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:<end_of_turn>
-
-<start_of_turn>user
-Question: When is 2024 Spring Carnival?
-Context: 2024-04-11 2024-04-12 2024-04-13 : Spring Carnival; No Classes<end_of_turn>
-<start_of_turn>model
-Answer: April 11 to April 14.<end_of_turn>
-
-<start_of_turn>user
-Question: When was Carnegie Mellon University founded?
-Context: Who founded Carnegie Mellon University? Carnegie Technical Schools was founded in 1900 by Andrew Carnegie. Twelve years later it became known as the Carnegie Institute of Technology. In 1967, the school merged with Mellon Institute and became what is known today as Carnegie Mellon University.<end_of_turn>
-<start_of_turn>model
-Answer: Year 1900.<end_of_turn>
-
-<start_of_turn>user
-CONTEXT:
-{context}
-
-QUESTION: {question}<end_of_turn>
-<start_of_turn>model
-ANSWER:<end_of_turn>
-"""
-
-# Zero-shot template
-ZERO_TEMPLATE = \
-"""
-<bos><start_of_turn>user
-You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. 
-
-CONTEXT:
-{context}
-
-QUESTION: {question}<end_of_turn>
-<start_of_turn>model
-ANSWER:<end_of_turn>
-"""
+from prompt_template.version1.gemma_prompt_v1 import ZERO_TEMPLATE_V1, FEW_TEMPLATE_V1
+from prompt_template.version2.gemma_prompt_v2 import ZERO_TEMPLATE_V2, FEW_TEMPLATE_V2
 
 # Helper function to build the prompt
-def _build_gemma_prompt(context: str, question: str, few_shot: bool = True) -> str:
-    if few_shot:
-        prompt = FEW_TEMPLATE.replace("{context}", context).replace("{question}", question)
+def _build_gemma_prompt(context: str, question: str, few_shot: bool = True, template_ver = 1) -> str:
+    if template_ver == 1:
+        if few_shot:
+            prompt = FEW_TEMPLATE_V1.replace("{context}", context).replace("{question}", question)
+        else:
+            prompt = ZERO_TEMPLATE_V1.replace("{context}", context).replace("{question}", question)
     else:
-        prompt = ZERO_TEMPLATE.replace("{context}", context).replace("{question}", question)
+        if few_shot:
+            prompt = FEW_TEMPLATE_V2.replace("{context}", context).replace("{question}", question)
+        else:
+            prompt = ZERO_TEMPLATE_V2.replace("{context}", context).replace("{question}", question)
 
     return prompt
 
@@ -82,14 +49,14 @@ class SageMakerGemma7Bit:
     def generate(cls, retriever: BaseRetriever, question: str, top_n: int = 10,
                 max_new_tokens: int = 1024,  top_k: float = 50, top_p: float = 0.9, 
                 temperature: float = 0.7, do_sample: bool = True,
-                print_prompt=False, few_shot=True):
+                print_prompt=False, few_shot=True, template_ver=1):
         
         # Retrieve the documents
         documents = retriever.retrieve(question, top_n=top_n)
         context = "\n".join(documents)
 
         # Build the prompt
-        prompt = _build_gemma_prompt(context, question, few_shot=few_shot)
+        prompt = _build_gemma_prompt(context, question, few_shot=few_shot, template_ver=template_ver)
         if print_prompt: 
             print(prompt)
 
@@ -114,7 +81,8 @@ class SageMakerGemma7Bit:
     
 
 if __name__ == "__main__":
-    RESULT_FILE_NAME = "gemma_bm25_few.txt"
+    RESULT_FILE_NAME = "prompt_v2/gemma_bm25_few.txt"
+
     retriever = BM25Retriever()
     gemma = SageMakerGemma7Bit()
     # gemma.set_up()
@@ -139,12 +107,10 @@ if __name__ == "__main__":
     outputs = []
 
     for i, question in enumerate(questions):
-        print(f"Question: {question}")
-        print(f"Ground truth: {ground_truths[i]}")
         print("==========================================")
-        print("Generating answer...")
-        answer = gemma.generate(retriever, question, print_prompt=True, few_shot=True)
         print(f"Q: {question}")
+        print("Generating answer...")
+        answer = gemma.generate(retriever, question, print_prompt=True, few_shot=True, template_ver=2)
         print(f"A: {answer}")
         print(f"Ref A: {ground_truths[i]}")
         print(f"Exact match score for the answer: {exact_match_score(answer, ground_truths[i])}")  
@@ -164,11 +130,11 @@ if __name__ == "__main__":
     avg_f1 = sum(f1_scores) / len(f1_scores)
     avg_recall = sum(recall_scores) / len(recall_scores)
 
-    print(f"Average exact match score: {avg_em}")
     print(f"Average F1 score: {avg_f1}")
     print(f"Average recall score: {avg_recall}")
+    print(f"Average exact match score: {avg_em}")
 
     # Write the outputs to a txt file
     write_test_result("data/test/" + RESULT_FILE_NAME, outputs, avg_f1, avg_recall, avg_em)
 
-    # gemma.shut_down()
+    #gemma.shut_down()

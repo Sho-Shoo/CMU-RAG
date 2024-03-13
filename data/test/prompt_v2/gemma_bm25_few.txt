@@ -1,0 +1,65 @@
+Professor Teruko Mitamura's research area is Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, and Natural Language Processing and Computational Linguistics.
+Professor Graham Neubig's office is in 5409 Gates & Hillman Centers.
+The author of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation' is David Mortensen.
+The text does not describe the instructor for Multimodal Machine Learning in Spring 2024, therefore I cannot answer this question.
+The instructor for 11711 in Fall 2023 is Frederking, Fried.
+The text does not specify the date of 2024 Spring Break, therefore I cannot answer this question.
+I don't know. The text does not contain information about the semester drop deadline for Fall 2024, therefore I cannot answer this question.
+The Master of Language Technologies program requires a total of 120 or more course units.
+The text does not provide information about the application fee for the MSAII program, therefore I cannot answer this question.
+The core courses for MCDS students include 10-601 - Machine Learning, 15-619 - Cloud Computing, 05-839 - Interactive Data Science, and 11-631 - Data Science Seminar.
+The Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival is scheduled for 3:00 PM-3:30 PM on April 11, 2024.
+The CMU commencement ceremony is scheduled for Sunday, May 12, 2024.
+The emoticon Smiley Lore :-) was created by CMU researcher Scott Fahlman in 1982.
+The first director of the CMU Robotics Institute is Jordan. The text states that "Jordan and Reddy" collaborated to create the Robotics Institute, with Reddy as its first director.
+The text does not specify who created the CMU Robotics Institute, therefore I cannot answer this question.
+The text does not provide information about the ranking of CMU's School of Computer Science, therefore I cannot answer this question.
+The text does not contain information about the number of students at CMU, therefore I cannot answer this question.
+Duolingo was invented by Luis von Ahn (CS 2003, 2005).
+The recipient of the first doctorate awarded at CMU was Mao Yisheng.
+The official mascot of Carnegie Mellon University is the Scottish terrier, known as Scotty to the Carnegie Mellon community.
+The text indicates that Carnegie Mellon University officially decided on its first mascot in 2007.
+The official mascot debuted at the Nov. 10, 2007 home football game.
+The Kiltie Band's rehearsals are held in the CUC Studio Theater.
+The text does not mention any papers by Professor Yonatan Bisk other than the ones referenced in the provided documents, therefore I cannot answer this question.
+The recent papers by Professor Graham Neubig are "SigMoreFun Submission to the SIGMORPHON", "Alignment for Honesty", and "Learning to Filter Context for Retrieval-Augmented Generation".
+The text does not contain information about Professor Graham Neubig's paper on "WebArena," therefore I cannot answer this question.
+Sure, here is the abstract of Professor Eric P. Xing's paper on "StyleRF: Zero-Shot 3D Style Transfer of Neural Radiance Fields":  StyleRF (Style Radiance Fields) is an innovative 3D style transfer technique that resolves the three-way dilemma between accurate geometry reconstruction, high-quality stylization, and generalizability to arbitrary new styles. It employs an explicit grid of high-level features to represent 3D scenes and transforms the grid features according to the reference style to achieve high-quality zero-shot style transfer. StyleRF consists of two innovative designs: sampling-invariant content transformation and deferred style transformation of 2D feature maps. Experimental results demonstrate that StyleRF achieves superior 3D stylization quality with precise geometry reconstruction and generalizability to various new styles.
+Professor Lei Li's phone number is 412-268-6355.
+Professor Alexander Rudnicky's research interests include Multimodal Computing and Interaction, Speech Processing, and Spoken Interfaces and Dialogue Processing.
+Carnegie Mellon University was founded in 1900.
+Farnam Jahanian is the president of CMU.
+According to the documents, Graham Neubig's research interests include natural language processing, artificial intelligence, and machine learning.
+The text does not describe the courses offered by Graham Neubig at CMU, therefore I cannot answer this question.
+The text does not specify the instructor for 11711 in Spring 2024, therefore I cannot answer this question.
+James Gosling (CS’83) developed Java while he was a grad student at CMU.
+The text does not provide information about 2024 Spring Carnival, therefore I cannot answer this question.
+The text does not specify the instructor for 11711 Advanced Natural Language Processing in Fall 2023, therefore I cannot answer this question.
+The instructor for 11742 in Fall 2024 is Callan.
+The Master programs in LTI are the MCDS, MLT, MIIS, MSAII, and the MLT.
+The first freshman-level computer science course in CMU was launched in 1956 and 1957.
+The Robotics Institute was started in 1979.
+The authors of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation' are David R. Mortensen, Ela Gulsen, Taiqi He, Nathaniel R. Robinson, Jonathan D. Amith, Lindia Tjuatja, and L. Levin.
+The text does not describe the instructor for Multimodal Machine Learning in Spring 2024, therefore I cannot answer the question.
+The Master of Language Technologies program requires the completion of 120 or more course units.
+The first Interfraternity Sweepstakes race was held in 1920.
+The text does not contain information about "Buggy", therefore I cannot answer this question.
+The text does not contain information about Chute, therefore I don't know.
+Chute Flagger is a term used in the context of a buggy competition to describe a team member who provides a signal to buggy drivers indicating the timing of the sharp right-hand turn from Schenley Drive onto Frew Street.
+The driver in Buggy Races is the person who travels with a buggy and controls the vehicles via steering and braking systems.
+The pushbar in Buggy Races is the structure attached to a buggy that a person pushes to propel that buggy forward.
+The pusher in Buggy Races is the person who propels a buggy via a pushbar along one of the five hills of the buggy course.
+The shell in Buggy Races is the entire outer structure or covering of a buggy that determines that buggy's aerodynamic characteristics.
+The transition in Buggy Races is the procedure whereby one pusher finishes pushing a buggy and the next pusher in sequence starts to push that same buggy.
+The text does not contain information about the location of the Buggy Showcase in 2019, therefore I cannot answer this question.
+The academic calendar for the Ph.D. program can be found in the documents at the provided context, but it does not appear to contain the requested information. Therefore, I cannot answer this question.
+The Language Technologies Institute (LTI) is located primarily on the 5th and 6th floors of the Gates Hillman Complex (GHC) on Carnegie Mellon’s Pittsburgh campus.
+The people responsible for administering the MIIS degree are Brianna Eriksen and Teruko Mitamura.
+Students can request to transfer into the MIIS program at CMU after completing their first semester and before the add/drop deadline of the spring semester.
+The materials needed for transferring to the MIIS program are an explanation of why a transfer is desired, a proposed plan of study, a proposed advisor, and CMU transcripts.
+The text does not specify the duration of the MSDS program, therefore I cannot answer this question.
+The director of the MSAII program is not explicitly stated in the provided text, therefore I cannot answer this question.
+
+F1 score: 0.4162631628148583
+Recall score: 0.5156389015283935
+EM score: 0.0
