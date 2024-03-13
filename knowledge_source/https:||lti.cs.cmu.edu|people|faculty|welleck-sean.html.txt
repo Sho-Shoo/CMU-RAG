@@ -1,1 +1,1 @@
-Name: Sean Welleck | Title: Assistant Professor, Language Technologies Institute | Office: None | Email: swelleck@andrew.cmu.edu | Phone: None | Research Area: None | Research: None | Projects: None | Bio: None | Education: None<sep>
+Sean Welleck Title: Assistant Professor, Language Technologies Institute<sep>Sean Welleck Office: None<sep>Sean Welleck Email: swelleck@andrew.cmu.edu<sep>Sean Welleck Phone: None<sep>Sean Welleck Research Area: None<sep>Sean Welleck Research: None<sep>Sean Welleck Projects: None<sep>Sean Welleck Bio: None<sep>Sean Welleck Education: None<sep>
