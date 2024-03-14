@@ -76,16 +76,20 @@ class ChromadbRetriever(llama_index.core.retrievers.BaseRetriever):
 
 class EmbeddingRetriever(BaseRetriever):
 
-    def retrieve(self, question: str, **kwargs):
+    def retrieve(self, question: str, top_n: int = 5):
         """
         top_n parameter is not being used here because it is being preset during initialization
         """
+        if top_n not in self.slave_retrievers:
+            raise RuntimeError("Sampling top_n exceeds max_top_n.")
+
         doc_nodes = []
-        for slave in self.slave_retrievers:
+        slaves = self.slave_retrievers[top_n]
+        for slave in slaves:
             doc_nodes.extend(slave.retrieve(question))
 
         doc_nodes.sort(key=lambda node: node.score, reverse=True)
-        doc_nodes = doc_nodes[:self.top_n]
+        doc_nodes = doc_nodes[:top_n]
         docs = [node.get_content(metadata_mode="all") for node in doc_nodes]
 
         if not docs:
@@ -93,7 +97,10 @@ class EmbeddingRetriever(BaseRetriever):
 
         return docs
 
-    def __init__(self, top_n: int = 5):
+    def __init__(self, max_top_n: int = 5):
+        if max_top_n > 10:
+            raise RuntimeError("top_n for embedding retriver is too large (> 10)")
+
         embed_name = "BAAI/bge-large-en-v1.5"
         huggingface_ef = embedding_functions.HuggingFaceEmbeddingFunction(
             api_key="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",  # huggingface api
@@ -107,17 +114,18 @@ class EmbeddingRetriever(BaseRetriever):
         faculty_collection = client.get_collection(name="faculty_baai", embedding_function=huggingface_ef)
         other_collection = client.get_collection(name="other_baai", embedding_function=huggingface_ef)
 
-        course_retriever = ChromadbRetriever(course_collection, embed_model,
-                                             query_mode="default", similarity_top_k=top_n)
-        paper_retriever = ChromadbRetriever(paper_collection, embed_model,
-                                            query_mode="default", similarity_top_k=top_n)
-        faculty_retriever = ChromadbRetriever(faculty_collection, embed_model,
-                                              query_mode="default", similarity_top_k=top_n)
-        other_retriever = ChromadbRetriever(other_collection, embed_model,
-                                            query_mode="default", similarity_top_k=top_n)
+        self.slave_retrievers = dict()
+        for n in range(1, max_top_n + 1):
+            course_retriever = ChromadbRetriever(course_collection, embed_model,
+                                                 query_mode="default", similarity_top_k=n)
+            paper_retriever = ChromadbRetriever(paper_collection, embed_model,
+                                                query_mode="default", similarity_top_k=n)
+            faculty_retriever = ChromadbRetriever(faculty_collection, embed_model,
+                                                  query_mode="default", similarity_top_k=n)
+            other_retriever = ChromadbRetriever(other_collection, embed_model,
+                                                query_mode="default", similarity_top_k=n)
 
-        self.slave_retrievers = [course_retriever, paper_retriever, faculty_retriever, other_retriever]
-        self.top_n = top_n
+            self.slave_retrievers[n] = [course_retriever, paper_retriever, faculty_retriever, other_retriever]
 
 
 if __name__ == "__main__":

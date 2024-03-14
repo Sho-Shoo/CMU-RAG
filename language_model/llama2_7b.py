@@ -14,12 +14,19 @@ from language_model.utils import get_in_context_example
 FEW_TEMPLATE = \
 """
 [INST]<<SYS>>
-You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:
+You are a question-answering assistant. You will be provided with a set of DOCUMENTS about Carnegie Mellon University (CMU) and the Language Technology Institute (LTI), marked by 'CONTEXT START' and 'CONTEXT END'. These DOCUMENTS are composed of multiple subdocuments, each separated by a newline character ('\n'). Your task is to provide a short and simple answer to the QUESTION based on the DOCUMENTS, considering only the most relevant subdocument. Begin your answer with a concise statement that directly addresses the question. If the DOCUMENTS do not contain the necessary information, please answer "I don't know". Keep the answer brief and to the point. Here are a few examples marked by 'EXAMPLE START' and 'EXAMPLE END':
+
+EXAMPLE START 
 
 {in-context learning}
 
-CONTEXT:
+EXAMPLE END
+
+CONTEXT START
+
 {context}
+
+CONTEXT END
 <</SYS>>[/INST]
 
 [INST]
@@ -31,11 +38,19 @@ ANSWER:
 
 ZERO_TEMPLATE = \
 """
-[INST]<<SYS>>
-You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple.
+You are a question-answering assistant. You will be provided with a set of DOCUMENTS about Carnegie Mellon University (CMU) and the Language Technology Institute (LTI), marked by 'CONTEXT START' and 'CONTEXT END'. These DOCUMENTS are composed of multiple subdocuments, each separated by a newline character ('\n'). Your task is to provide a short and simple answer to the QUESTION based on the DOCUMENTS, considering only the most relevant subdocument. Begin your answer with a concise statement that directly addresses the question. If the DOCUMENTS do not contain the necessary information, please answer "I don't know". Keep the answer brief and to the point. Here are a few examples marked by 'EXAMPLE START' and 'EXAMPLE END':
 
-CONTEXT:
+EXAMPLE START 
+
+{in-context learning}
+
+EXAMPLE END
+
+CONTEXT START
+
 {context}
+
+CONTEXT END
 <</SYS>>[/INST]
 
 [INST]
@@ -151,7 +166,7 @@ class SageMakerLlama27B:
 if __name__ == "__main__":
     USE_BM25 = False
     FEW_SHOT = False
-    TOP_N = 3
+    TOP_N = 10 if USE_BM25 else 3
 
     # (USE_BM25, FEW_SHOT) => <file name>
     file_name_map = {
