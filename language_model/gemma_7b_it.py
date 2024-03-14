@@ -3,27 +3,34 @@ path = "/Users/a119491/Library/Mobile Documents/com~apple~CloudDocs/11711/ASSGN/
 sys.path.append(path)
 from retriever.bm25_retriever import BM25Retriever
 from retriever.base_retriever import BaseRetriever
+from retriever.embedding_retriever import EmbeddingRetriever
 from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score, write_test_result
 import boto3
 import sagemaker
 from sagemaker.jumpstart.model import JumpStartModel
 import json
 from aws_config import AWSConfig
+from pprint import pp, pformat
 from prompt_template.version1.gemma_prompt_v1 import ZERO_TEMPLATE_V1, FEW_TEMPLATE_V1
 from prompt_template.version2.gemma_prompt_v2 import ZERO_TEMPLATE_V2, FEW_TEMPLATE_V2
+from language_model.utils import get_in_context_example
 
 # Helper function to build the prompt
 def _build_gemma_prompt(context: str, question: str, few_shot: bool = True, template_ver = 1) -> str:
     if template_ver == 1:
         if few_shot:
-            prompt = FEW_TEMPLATE_V1.replace("{context}", context).replace("{question}", question)
+            template = FEW_TEMPLATE_V1
+            template = template.replace("{in-context learning}", get_in_context_example())
         else:
-            prompt = ZERO_TEMPLATE_V1.replace("{context}", context).replace("{question}", question)
+            template = ZERO_TEMPLATE_V1
     else:
         if few_shot:
-            prompt = FEW_TEMPLATE_V2.replace("{context}", context).replace("{question}", question)
+            template = FEW_TEMPLATE_V2
+            template = template.replace("{in-context learning}", get_in_context_example())
         else:
-            prompt = ZERO_TEMPLATE_V2.replace("{context}", context).replace("{question}", question)
+            template = ZERO_TEMPLATE_V2
+    
+    prompt = template.replace("{context}", context).replace("{question}", question)
 
     return prompt
 
@@ -81,15 +88,28 @@ class SageMakerGemma7Bit:
     
 
 if __name__ == "__main__":
-    RESULT_FILE_NAME = "prompt_v2/gemma_bm25_few.txt"
+    USE_BM25 = False
+    FEW_SHOT = False
+    TOP_N = 10 if USE_BM25 else 3
+    TEM_VER = 2
 
-    retriever = BM25Retriever()
-    gemma = SageMakerGemma7Bit()
-    # gemma.set_up()
+    file_name_map = {
+        (False, False, 1): "prompt_v1/gemma_embed_zero.txt",
+        (False, True, 1): "prompt_v1/gemma_embed_few.txt",
+        (False, False, 2): "prompt_v2/gemma_embed_zero.txt",
+        (False, True, 2): "prompt_v2/gemma_embed_few.txt",
+        (True, False, 1): "prompt_v1/gemma_bm25_zero.txt",
+        (True, True, 1): "prompt_v1/gemma_bm25_few.txt",
+        (True, False, 2): "prompt_v2/gemma_bm25_zero.txt",
+        (True, True, 2): "prompt_v2/gemma_bm25_few.txt"
+    }
+
+    result_file_name = file_name_map[(USE_BM25, FEW_SHOT, TEM_VER)]
 
     # Read the data
     questions = []
     ground_truths = []
+    question_category = []
 
     with open("data/test/questions.txt", "r") as f:
         for q in f:
@@ -98,19 +118,34 @@ if __name__ == "__main__":
     with open("data/test/reference_answers.txt", "r") as f:
         for a in f:
             ground_truths.append([a.strip()])
+
+    with open("data/test/question_categories.txt", "r") as f:
+        for c in f:
+            question_category.append(c.strip())
     
     # Evaluate the model
     f1_scores = []
     recall_scores = []
     em_scores = []
+    cate_summary = dict()
 
     outputs = []
+
+    # Set up retriever
+    if USE_BM25:
+        retriever = BM25Retriever()
+    else:
+        retriever = EmbeddingRetriever(TOP_N)
+
+    # Set up Gemma model
+    gemma = SageMakerGemma7Bit()
+    # gemma.set_up()
 
     for i, question in enumerate(questions):
         print("==========================================")
         print(f"Q: {question}")
         print("Generating answer...")
-        answer = gemma.generate(retriever, question, print_prompt=True, few_shot=True, template_ver=2)
+        answer = gemma.generate(retriever, question, top_n=TOP_N, print_prompt=True, few_shot=FEW_SHOT, template_ver=TEM_VER)
         print(f"A: {answer}")
         print(f"Ref A: {ground_truths[i]}")
         print(f"Exact match score for the answer: {exact_match_score(answer, ground_truths[i])}")  
@@ -119,22 +154,48 @@ if __name__ == "__main__":
         
         # Store the answer
         outputs.append(answer)
+        
+        f1 = f1_score(answer, ground_truths[i])
+        recall = recall_score(answer, ground_truths[i])
+        em = exact_match_score(answer, ground_truths[i])
 
-        f1_scores.append(f1_score(answer, ground_truths[i]))
-        recall_scores.append(recall_score(answer, ground_truths[i]))
-        em_scores.append(exact_match_score(answer, ground_truths[i]))
+        f1_scores.append(f1)
+        recall_scores.append(recall)
+        em_scores.append(em)
 
+        # Store the category summary
+        category = question_category[i]
+        if category not in cate_summary:
+            cate_summary[category] = {
+                "f1": [],
+                "recall": [],
+                "em": []
+            }
+
+        cate_summary[category]["f1"].append(f1)
+        cate_summary[category]["recall"].append(recall)
+        cate_summary[category]["em"].append(em)
         print("==========================================\n")
-    
+
+
+    # Calculate the average scores
     avg_em = sum(em_scores) / len(em_scores)
     avg_f1 = sum(f1_scores) / len(f1_scores)
     avg_recall = sum(recall_scores) / len(recall_scores)
 
-    print(f"Average F1 score: {avg_f1}")
-    print(f"Average recall score: {avg_recall}")
-    print(f"Average exact match score: {avg_em}")
+    for category in cate_summary:
+        for metric in ["f1", "recall", "em"]:
+            scores = cate_summary[category][metric]
+            cate_summary[category][metric] = sum(scores) / len(scores)
+
+    test_summary = f"Average F1 score: {avg_f1}\n" + \
+                   f"Average Recall score: {avg_recall}\n" + \
+                   f"Average EM score: {avg_em}\n" + \
+                   pformat(cate_summary)
+    
+    print(test_summary)
 
     # Write the outputs to a txt file
-    write_test_result("data/test/" + RESULT_FILE_NAME, outputs, avg_f1, avg_recall, avg_em)
+    write_test_result("data/test/" + result_file_name, outputs, test_summary)
 
     #gemma.shut_down()
