@@ -8,17 +8,15 @@ from aws_config import AWSConfig
 from retriever.base_retriever import BaseRetriever
 from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score, normalize_answer, write_test_result
 from retriever.embedding_retriever import EmbeddingRetriever
+from pprint import pp, pformat
+from language_model.utils import get_in_context_example
 
 FEW_TEMPLATE = \
 """
 [INST]<<SYS>>
 You are a question-answering assistant who provides a short answer to a QUESTION based on the CONTEXT about Carnegie Mellon University (CMU) and Language Technology Institute (LTI). If the CONTEXT does not contain necessary information, please answer 'I don't know'. Please keep the answer short and simple. Here are a few examples:
 
-Question: When is 2024 Spring Carnival?
-Answer: April 11 to April 14.
-
-Question: When was Carnegie Mellon University founded?
-Answer: Year 1900.
+{in-context learning}
 
 CONTEXT:
 {context}
@@ -49,8 +47,11 @@ ANSWER:
 
 
 def _build_llama2_prompt(context: str, question: str, few_shot: bool = True) -> str:
-    if few_shot: template = FEW_TEMPLATE
-    else: template = ZERO_TEMPLATE
+    if few_shot:
+        template = FEW_TEMPLATE
+        template.replace("{in-context learning}", get_in_context_example())
+    else:
+        template = ZERO_TEMPLATE
 
     prompt = template.replace("{context}", context).replace("{question}", question)
     return prompt
@@ -150,7 +151,7 @@ class SageMakerLlama27B:
 if __name__ == "__main__":
     USE_BM25 = False
     FEW_SHOT = False
-    TOP_N = 10
+    TOP_N = 3
 
     # (USE_BM25, FEW_SHOT) => <file name>
     file_name_map = {
@@ -161,42 +162,69 @@ if __name__ == "__main__":
     }
     result_file_name = file_name_map[(USE_BM25, FEW_SHOT)]
 
-    questions, answers, reference_answers = [], [], []
-    f1_scores, recall_scores, exact_match_scores = [], [], []
+    questions, answers, reference_answers, question_cates = [], [], [], []
+    f1_scores, recall_scores, exact_match_scores, cate_summary = [], [], [], dict()
 
     with open("data/test/questions.txt", "r") as f:
         while True:
             line = f.readline()
             if not line: break
-            questions.append(line)
+            questions.append(line.strip())
 
     with open("data/test/reference_answers.txt", "r") as f:
         while True:
             line = f.readline()
             if not line: break
-            reference_answers.append(line)
+            reference_answers.append(line.strip())
+
+    with open("data/test/question_categories.txt", "r") as f:
+        while True:
+            line = f.readline()
+            if not line: break
+            question_cates.append(line.strip())
 
     retriever = BM25Retriever() if USE_BM25 else EmbeddingRetriever(TOP_N)
-    SageMakerLlama27B.set_up()
+    # SageMakerLlama27B.set_up()
 
     for i, q in enumerate(questions):
         print(f"{i} / {len(questions)}")
         print(f"Q: {q}")
         ref_a = reference_answers[i]
-        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=10, print_prompt=False, few_shot=False)
+        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=TOP_N, print_prompt=False, few_shot=False)
         answers.append(a)
         print(f"A: {a}")
         print("============================")
 
-        f1_scores.append(f1_score(a, [ref_a], normalize_fn=normalize_answer))
-        recall_scores.append(recall_score(a, [ref_a], normalize_fn=normalize_answer))
-        exact_match_scores.append(exact_match_score(a, [ref_a], normalize_fn=normalize_answer))
+        f1 = f1_score(a, [ref_a], normalize_fn=normalize_answer)
+        recall = recall_score(a, [ref_a], normalize_fn=normalize_answer)
+        em = exact_match_score(a, [ref_a], normalize_fn=normalize_answer)
+
+        f1_scores.append(f1)
+        recall_scores.append(recall)
+        exact_match_scores.append(em)
+
+        category = question_cates[i]
+        if category not in cate_summary:
+            cate_summary[category] = {
+                "f1": [],
+                "recall": [],
+                "em": []
+            }
+        cate_summary[category]["f1"].append(f1)
+        cate_summary[category]["recall"].append(recall)
+        cate_summary[category]["em"].append(em)
+
+    for category in cate_summary:
+        for metric in ["f1", "recall", "em"]:
+            scores = cate_summary[category][metric]
+            cate_summary[category][metric] = sum(scores) / len(scores)
 
     f1, recall, em = sum(f1_scores) / len(f1_scores), sum(recall_scores) / len(recall_scores), sum(exact_match_scores) / len(exact_match_scores)
     test_summary = f"F1 score: {f1}\n" + \
                    f"Recall score: {recall}\n" + \
-                   f"EM score: {em}"
+                   f"EM score: {em}\n" + \
+                   pformat(cate_summary)
     print(test_summary)
-    write_test_result("data/test/" + result_file_name, answers, f1, recall, em)
+    write_test_result("data/test/" + result_file_name, answers, test_summary)
 
     # SageMakerLlama27B.shut_down()
