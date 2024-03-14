@@ -1,65 +1,247 @@
 Professor Teruko Mitamura's research area is Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, and Natural Language Processing and Computational Linguistics.
-Professor Graham Neubig's office is in 5409 Gates & Hillman Centers.
 The author of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation' is David R. Mortensen.
-Sure, here is the answer to the question based on the documents:  In Spring 2024, Professor Louis-Philippe Morency is teaching Multimodal Machine Learning at Carnegie Mellon University (CMU).
-The instructor teaching 11711 in Fall 2023 is Frederking, Fried.
-Sure, here is the answer to the question:  The text states that the Spring Break for CMU in 2024 is on March 4-8 and 3-7.
-The semester drop deadline for Fall 2024 is not included in the provided text, therefore I cannot answer this question.
+Sure, here's the answer to the question:  In Spring 2024, Multimodal Machine Learning is being taught by Professor Liang, Fried at Carnegie Mellon University's Language Technology Institute.
+The text does not specify the semester drop deadline for Fall 2024, therefore I cannot answer this question.
 The Master of Language Technologies program requires a total of 120 or more course units.
 The text does not specify the application fee for the MSAII program, therefore I cannot answer this question.
 The core courses for MCDS students are 10-601 - Machine Learning, 15-619 - Cloud Computing, 05-839 - Interactive Data Science, and 11-631 - Data Science Seminar.
-The Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival is scheduled for 3:00 PM on April 11, 2024.
-The text does not contain information about the commencement ceremony rehearsal or the first rehearsal, therefore I cannot answer the question.
-Sure, the text states that CMU researcher Scott Fahlman created the emoticon Smiley Lore :-) in 1982.
-The first director of the CMU Robotics Institute is Jordan. The text states that "by 1982, the Computer Science Department included more than 30 faculty members and 100 graduate students." Therefore, it does not specify the director of the Robotics Institute at that time.
-The text does not describe the creator of the CMU Robotics Institute, therefore I cannot answer the question.
-The text does not describe the ranking of CMU's School of Computer Science, therefore I cannot answer this question.
-The text does not specify the total number of students at CMU, therefore I cannot answer this question.
+The emoticon Smiley Lore :-) was created by CMU researcher Scott Fahlman in 1982.
+Sure, here is the answer to the question based on the most relevant subdocument:  The first director of the CMU Robotics Institute is Jordan. In the text, it states that "Launching a Robotics Institute In 1979, an executive at Pittsburgh’s Westinghouse Electric Corp., Tom Murrin, collaborated with Jordan and Reddy to create the Robotics Institute."
+The text does not specify the creator of the CMU Robotics Institute, therefore I cannot answer this question.
+The text does not provide information about the number of students at CMU, therefore I cannot answer this question.
 Duolingo was invented by Luis von Ahn (CS 2003, 2005).
-The recipient of the first doctorate awarded at CMU was Mao Yisheng, father of Chinese bridge construction.
-The official mascot for Carnegie Mellon University is a Scottish terrier named Scotty.
-According to the documents, CMU officially decided on its first mascot in 2007.
+The recipient of the first doctorate awarded at CMU was Mao Yisheng.
+The official mascot of CMU is a Scottish terrier, known as Scotty.
+The text states that the official mascot was decided on in 2007.
 The official mascot debuted at the Nov. 10, 2007 home football game.
-The Kiltie Band's rehearsals are held in the CUC Studio Theater. The schedule for rehearsals is listed in the text, including the times, days, and location.
-According to the provided text, Professor Yonatan Bisk's recent papers are "SigMoreFun Submission to the SIGMORPHON" and "Plan, Eliminate, and Track - Language Models are Good Teachers for Embodied Agents."
-Sure, here's a summary of Professor Graham Neubig's recent papers:  Two papers authored by Professor Neubig are included in the provided text. The first paper, titled "SigMoreFun Submission to the SIGMORPHON," discusses the use of full text information in conjunction with the TD-IDF algorithm. The second paper, titled "Alignment for Honesty," explores the importance of alignment techniques for enhancing the accuracy and harmlessness of large language models.  Therefore, based on the provided text, the answer to the question is:  **Professor Graham Neubig's recent papers are "SigMoreFun Submission to the SIGMORPHON" and "Alignment for Honesty."**
-I don't know. The text does not contain information about Professor Graham Neubig's paper on "WebArena," therefore I cannot answer this question.
-The abstract of Professor Eric P. Xing's paper on "StyleRF: Zero-Shot 3D Style Transfer of Neural Radiance Fields" is as follows:  StyleRF is an innovative 3D style transfer technique that resolves the three-way dilemma between accurate geometry reconstruction, high-quality stylization, and generalizability to arbitrary new styles. It employs an explicit grid of high-level features to represent 3D scenes and transforms the grid features according to the reference style to achieve high-quality zero-shot style transfer. Experimental results demonstrate superior 3D stylization quality with precise geometry reconstruction and generalizability to various new styles.
-Sure, here is Professor Lei Li's phone number as per the provided documents:  Professor Lei Li Phone: 412-268-6355
-Sure, here is a summary of Professor Alexander Rudnicky's research interests based on the provided documents:  **Multimodal Computing and Interaction, Speech Processing, Spoken Interfaces and Dialogue Processing**
-Carnegie Mellon University was founded in 1900.
+The Kiltie Band's rehearsals are held in the CUC Studio Theater. The schedule is available on the band's website.
+Professor Yonatan Bisk has recently published two papers. One paper, titled "Plan, Eliminate, and Track - Language Models are Good Teachers for Embodied Agents," explores the use of pre-trained large language models for embodied AI. The other paper, titled "SigMoreFun Submission to the SIGMORPHON," introduces a novel dataset and compares several algorithms for paper similarity scoring.
+Based on the provided documents, Professor Graham Neubig has recently published two papers. One paper titled "SigMoreFun Submission to the SIGMORPHON" discusses the use of full text information for paper similarity scoring and recommends algorithms based on this information. The other paper titled "Alignment for Honesty" argues for the importance of alignment techniques in ensuring that large language models proactively refuse to answer questions when they lack knowledge.
+The text does not contain information about Professor Graham Neubig's paper on "WebArena", therefore I cannot answer this question.
+Sure, here is the abstract of Professor Eric P. Xing's paper on "StyleRF: Zero-Shot 3D Style Transfer of Neural Radiance Fields":  StyleRF is an innovative 3D style transfer technique that resolves the three-way dilemma by performing style transformation within the feature space of a radiance field. It achieves superior 3D stylization quality with precise geometry reconstruction and generalizes well to various new styles in a zero-shot manner.
+Professor Lei Li's phone number is 412-268-6355.
+Professor Alexander Rudnicky's research interests are Multimodal Computing and Interaction, Speech Processing, and Spoken Interfaces and Dialogue Processing.
+Carnegie Mellon University was founded in 1900 by Andrew Carnegie.
 Farnam Jahanian is the president of CMU.
-According to the documents, Graham Neubig's research interests include natural language processing, language technology, and artificial intelligence.
-The text does not describe any courses offered by Graham Neubig at CMU other than the ones listed in the provided text, therefore I can not answer this question.
+Based on the provided documents, Graham Neubig's research interests include language technology and natural language processing, specifically in the areas of program-aided language models, text-based Chain-of-thought prompting techniques, and alignment for honesty.
+The text does not specify any courses offered by Graham Neubig at CMU, therefore I cannot answer this question.
 The text does not specify the instructor for Spring 2024, therefore I cannot answer this question.
 James Gosling (CS’83) developed Java as a CMU grad student.
-The text does not contain information about 2024 Spring Carnival, therefore I cannot answer this question.
+The text does not provide information about 2024 Spring Carnival, therefore I cannot answer this question.
 Sure, here is the answer to the question:  In Fall 2023, 11711 Advanced Natural Language Processing was taught by Frederking, Fried.
-The instructor for 11742 in Fall 2024 is Callan.
-Sure, here is the answer to the question:  The Master programs offered in the Language Technologies Institute (LTI) at Carnegie Mellon University include the Master of Science in Intelligent Information Systems (MIIS), the Master of Computational Data Science (MCDS), and the Master of Science in Artificial Intelligence and Innovation (MSAII).
+Sure, here is the answer to the question:  Callan will teach 11742 in Fall 2024.
+The Master programs in LTI at Carnegie Mellon University include the Master of Science in Intelligent Information Systems (MIIS), Master of Computational Data Science (MCDS), and Master of Science in Artificial Intelligence and Innovation (MSAII).
 The first freshman-level computer science course was launched in CMU in 1956 and 1957.
 The Robotics Institute was started in 1979.
-Sure, here is the answer to the question:  The authors of the paper "Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation" are David R. Mortensen, Ela Gulsen, Taiqi He, Nathaniel R. Robinson, Jonathan D. Amith, Lindia Tjuatja, and L. Levin.
-Sure, here is the answer to the question:  The text indicates that Professor Louis-Philippe Morency is teaching Multimodal Machine Learning in Spring 2024.
-The Master of Language Technologies program requires a total of 120 or more course units.
+Sure, here is the answer to the question:  The authors of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation' are David R. Mortensen, Ela Gulsen, Taiqi He, Nathaniel R. Robinson, Jonathan D. Amith, Lindia Tjuatja, and L. Levin.
+Sure, here's the answer to the question:  In Spring 2024, Multimodal Machine Learning is being taught by Professor Liang, Fried.
+The Master of Language Technologies program requires the completion of 120 or more course units, with a minimum of 72 units of "LTI" courses and 24 units of "SCS" courses.
 The first Interfraternity Sweepstakes race was held in 1920.
-The text does not contain information about "Buggy," therefore I cannot answer this question.
-The text does not contain information about Chute, therefore I don't know the answer to this question.
-The text does not describe the founding of Carnegie Mellon University or the definition of Chute Flagger, therefore I cannot answer the question.
+The text does not contain any information about the term 'Buggy', therefore I cannot answer this question.
+The text does not contain information about Chute, therefore I don't know.
 The driver in Buggy Races is the person who travels with a buggy and controls the vehicles via steering and braking systems.
-The pushbar is a structure attached to a buggy that a person pushes to propel that buggy forward.
+Sure, here is the answer to the question:  The pushbar in Buggy Races is a structure attached to a buggy that a person pushes to propel that buggy forward.
 The pusher in Buggy Races is the person who propels a buggy via a pushbar along one of the five hills of the buggy course.
 The shell in Buggy Races is the entire outer structure or covering of a buggy that determines that buggy's aerodynamic characteristics.
 The transition in Buggy Races is the procedure whereby one pusher finishes pushing a buggy and the next pusher in sequence starts to push that same buggy.
-The text does not describe the Buggy Showcase of 2019, therefore I cannot answer this question.
-The text does not describe the academic calendar for the Ph.D. program, therefore I cannot answer this question.
+The text does not describe the Buggy Showcase of 2019, therefore I don't know.
+The text does not contain information about the academic calendar for the PHD program, therefore I don't know.
 The Language Technologies Institute (LTI) is located primarily on the 5th and 6th floors of the Gates Hillman Complex (GHC) on Carnegie Mellon’s Pittsburgh campus.
-Sure, here is the answer to the question based on the provided text:  Brianna Eriksen and Teruko Mitamura are responsible for administering the MIIS degree.
+The people responsible for administering the MIIS degree are Brianna Eriksen and Teruko Mitamura.
 Students can request to transfer into the MIIS program at CMU after completing their first semester and before the add/drop deadline of the spring semester.
-The required materials for transferring to the MIIS program are an explanation of why a transfer is desired, a proposed plan of study, a proposed advisor, and CMU transcripts.
-The text does not specify the duration of the MSDS program, therefore I cannot answer this question.
+The materials needed for transferring to the MIIS program are an explanation of why a transfer is desired, a proposed plan of study, a proposed advisor, and CMU transcripts.
+The MCDS program is completed within five (5) years from the time that the student matriculates into the program. Students will complete all requirements for the master’s degree within a maximum of seven years from original matriculation.
 The director of the MSAII program is the Interim Director, Carolyn Rosé.
+The text does not contain any information about course number or instructor name for "Advanced ETB: Animation Studio" offered in Fall 2023, therefore I cannot answer the question.
+The course number for "Introduction to Biomedical Engineering" offered in Fall 2023 is 42656.
+The instructor for the course "Advanced Developmental Biology and Human Health" in Fall 2023 is Ettensohn, Mccartney.
+The course "Computational Molecular Biology and Genomics" for Fall 2023 has units of 9.0 and 12.0, depending on the section.
+The schedule for the course "Professional Skills for Biotechnology, Quantitative & Computational Biology" in Fall 2023 is provided in the document. There are two sections offered, A and B, with different times and rooms. The course meets on Wednesday and Friday. It is taught by Professor Brasier, and the location is GHC 4211 or POS 152.
+I don't know, the text does not provide information about the title of the course with course number 42616 in Fall 2023, therefore I cannot answer this question.
+The text does not mention the course number for "Modern Data Management" in Fall 2023, therefore I cannot answer this question.
+The text does not specify the course number for the "Machine Learning Capstone Project" offered in Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the course number or instructor for "Innovation & Entrepreneurial Mindset" offered in Fall 2023, therefore I cannot answer this question.
+Sure, the course number for "Introduction to Ecological Design Thinking" offered in Fall 2023 is 48743.
+The text does not describe the course number for "Modern Data Management" in Fall 2023, therefore I cannot answer this question.
+The text does not contain information about the course number for the "Machine Learning Capstone Project" offered in Fall 2023 at Carnegie Mellon University, therefore I cannot answer this question.
+Sure, the course number for "Introduction to Ecological Design Thinking" offered in Fall 2023 is 48743.
+Sure, here is the course number for "Special Topics: Atmospheric Nanoparticles and Climate" offered in Fall 2023: 06614.
+The course number for "Computational Modeling, Statistical Analysis and Machine Learning in Science" offered in Fall 2023 is 09615.
+The instructor for the course 09615 Computational Modeling, Statistical Analysis and Machine Learning in Science in Fall 2023 at CMU is Isayev.
+The text does not specify the course number for "Introduction to Research" offered in Fall 2023 therefore I cannot answer this question.
+The course "Bioorganic Chemistry: Nucleic Acids and Carbohydrates" (09718) in Fall 2023 is scheduled for 12.0 units.
+The text does not provide information about the days and timings for the course "Chemistry and Light" (09733) in Fall 2023, therefore I cannot answer this question.
+The text does not contain information about the instructor or course number for "Fluid Mechanics" in Fall 2023, therefore I cannot answer this question.
+The text does not contain information about the course number or faculty member teaching "String Algorithms" in Fall 2023, therefore I cannot answer this question.
+Sure, here is the answer to the question based on the provided documents:  The instructors for 15213 Introduction to Computer Systems in Fall 2023 are Harras, Railing, and Gibbons.
+The text does not contain information about course numbers for "Introduction to Cryptography" offered in Fall 2023 at CMU, therefore I cannot answer this question.
+The text does not provide information about the course number or faculty teaching "Directing III: INTRODUCTION TO TV & FILM DIRECTING" in Fall 2023, therefore I cannot answer this question.
+The text does not mention "Directing IV: Next Steps" or its course number in Fall 2023, therefore I cannot answer this question.
+Sure, here is the answer to the question:  The course number for "The Basics of Self-Producing for Theater Artists" offered in Fall 2023 is 54433.
+The text does not contain information about the course number or instructor for "Media Creation Studio" in Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the course number for the "Lighting Forum" course offered in Fall 2023, therefore I cannot answer this question.
+The course number for "Introduction to Electrical and Computer Engineering" offered in Fall 2023 is 18100.
+The text does not describe the units for "Economics and Data Science" for Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the schedule for the course "Intermediate Microeconomics" in Fall 2023, therefore I cannot answer this question.
+Sure, here is the answer to the question:  The instructor for the course "Game Theory Applications for Economics and Business" in Fall 2023 is Kushnir.
+The text does not provide information about the course number for "Introduction to Machine Learning for Engineers" in Fall 2023 at CMU, therefore I cannot answer this question.
+The course number for the "Introduction to Deep Learning and Pattern Recognition for Computer Vision" course offered in Fall 2023 is 18794.
+The text does not contain information about "Introduction to Gender Studies" course number in Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the course number for "Introduction to Critical Writing" offered in Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the instructor for the course "Coding for Humanists" in Fall 2023, therefore I cannot answer this question.
+The text does not mention "Professional Seminar" or any course information for Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the schedule for the course "Data Stories" in Fall 2023, therefore I cannot answer this question.
+The text does not contain information about the title of the course with course number 76388 in Fall 2023, therefore I cannot answer this question.
+The course number for Introduction to Decision Analytics and Systems offered in Fall 2023 is 94716 and 94216.
+Sure, the course number for "Smart Cities: Growth and Intelligent Transportation Systems" offered in Fall 2023 is 94845 and 12645.
+Sure, here is the answer to the question:  The course number for "Data Analytics for Organizational Impacts" offered in Fall 2023 at CMU is 94865.
+The course number for "Design of Artificial Intelligence Products" offered in Fall 2023 is 05317.
+The text does not specify the instructors for the "Prototyping Algorithmic Experiences" course in Fall 2023, therefore I cannot answer this question.
+The course "ICT in Africa Seminar" is worth 6.0 units in Fall 2023.
+The text does not contain information about the course number for the "Digital Accessibility Fundamentals" course offered in Fall 2023, therefore I cannot answer this question.
+The text does not provide information about the instructor of the course "Blockchain Applications" offered in Fall 2023, therefore I cannot answer this question.
+The text does not specify the instructors for the course "Machine Learning in Production" offered in Spring 2024, therefore I cannot answer this question.
+The instructor for the course "Research Methods in Second Language Acquisition" offered in Spring 2024 is Koda.
+The text does not provide information about the instructor for unit 76239 in Spring 2024, therefore I cannot answer this question.
+The text does not provide information about the instructor for unit 15150 offered in Summer One 2024, therefore I cannot answer this question.
+The text does not provide information about the instructor for unit 90429 offered in Spring 2024, therefore I cannot answer this question.
+The course "Applied Econometrics I" is worth 9.0 units in Spring 2024.
+The schedule for the course 24888 Introduction to Deep Learning in the Spring 2024 is provided in the text, which includes the title, units, day, time, room, instructor, and other relevant information.
+The text does not contain information about the scheduled days and times for the course "Professional Essentials for the Percussionist" offered in Spring 2024, therefore I cannot answer this question.
+The paper titled "Don't Take This Out of Context!: On the Need for Contextual Models and Evaluations for Stylistic Rewriting" presented at the Conference on Empirical Methods in Natural Language Processing in 2023 has co-authors Akhila Yerukola, Xuhui Zhou, and Maarten Sap. Sap is listed as an author from the Language Technologies Institute at Carnegie Mellon University.
+The authors of the paper "AV-SUPERB: A Multi-Task Evaluation Benchmark for Audio-Visual Representation Models" are Yuan Tseng, Layne Berry, Yi-Ting Chen, I-Hsiang Chiu, Hsuan-Hao Lin, Max Liu, Puyuan Peng, Yi-Jen Shih, Hung-Yu Wang, Haibin Wu, Po-Yao Huang, Chun-Mao Lai, Shang-Wen Li, David F. Harwath, Yu Tsao, Shinji Watanabe, Abdel-rahman Mohamed, and Chi-Luen Feng.  The main proposal of this research paper is to propose the AV-SUPERB benchmark that enables general-purpose evaluation of unimodal audio/visual and bimodal fusion representations on 7 datasets covering 5 audio-visual tasks in speech and audio processing.
+The authors of the paper titled "FacTool: Factuality Detection in Generative AI - A Tool Augmented Framework for Multi-Task and Multi-Domain Scenarios" are Ethan Chern, Steffi Chern, Shiqi Chen, Weizhe Yuan, Kehua Feng, Chunting Zhou, Junxian He, Graham Neubig, and Pengfei Liu.  The main objective of their research is to propose FacTool, a task and domain agnostic framework for detecting factual errors of texts generated by large language models (e.g., ChatGPT).
+The Batch Embedding Covariance Regularization (BECR) proposed by Bhiksha Raj and his team in their paper "Approach to Learning Generalized Audio Representation Through Batch Embedding Covariance Regularization and Constant-Q Transforms" is a term that is used to uncover a more holistic simulation of the frequency information received by the human auditory system. It involves experiments with different front-end audio preprocessing methods, including Constant-Q Transform (CQT) and Short-time Fourier transform (STFT), and proposes a new Batch Embedding Covariance Regularization (BECR) term to address this issue.
+The key findings of the research paper "Can We Edit Factual Knowledge by In-Context Learning?" authored by Lei Li and his team are as follows:  - In-context knowledge editing (IKE) achieves a competitive success rate compared to gradient-based methods on GPT-J (6B) but with much fewer side effects, including less over-editing on similar but unrelated facts and less knowledge forgetting on previously stored knowledge. - IKE is scalable to larger LMs with tens or hundreds of parameters. - IKE is more efficient than traditional knowledge editing methods that refine LLMs via fine-tuning on texts containing specific knowledge.
+The novel approach proposed by Rita Singh and Wayne Zhao in their 2023 paper titled "Deriving Vocal Fold Oscillation Information from Recorded Voice Signals Using Models of Phonation" is an analysis-by-synthesis approach that allows them to infer the vocal fold oscillations (VFOs) directly from recorded speech signals on an individualized, speaker-by-speaker basis.
+Young Min Kim, Kalvin Chang, Chenxuan Cui, and David R. Mortensen are the authors of the paper "Transformed Protoform Reconstruction."
+Sure, here is the answer to the question:  The co-authors of the paper titled "Experimental and numerical research on the static behavior of locally corroded OSBD" published in the Journal of constructional steel research in 2023, along with Yiming Yang, are J. Peng, Yi Liu, Yadong Zhou, and Longzhen Xie.
+The research paper "Computational Language Acquisition with Theory of Mind" found that training speakers with a highly weighted ToM listener component leads to performance gains in the authors' image referential game setting. This suggests the potential utility of further incorporating ToM, as well as other insights from child language acquisition, into computational models of language acquisition.
+Sure, here is the answer to the question:  The paper "End-to-End Evaluation for Low-Latency Simultaneous Speech Translation" was co-authored by Christian Huber, Tu Anh Dinh, Carlos Mullov, Ngoc-Quan Pham, T. Nguyen, Fabian Retkowski, Stefan Constantin, Enes Yavuz Ugan, Danni Liu, Zhaolin Li, Sai Koneru, J. Niehues, and A. Waibel.
+The co-authors of the paper "Enhancing End-to-End Conversational Speech Translation Through Target Language Context Utilization" published in 2023 are A. Hussein, Brian Yan, Antonios Anastasopoulos, Shinji Watanabe, and S. Khudanpur.
+The paper "Speaker-Independent Acoustic-to-Articulatory Speech Inversion" proposes an acoustic-to-articulatory inversion (AAI) model that leverages autoregression, adversarial training, and self supervision to generalize to unseen speakers. The key contribution of this paper is the development of this AAI model, which improves the state-of-the-art by 12.5% on an electromagnetic articulography (EMA) dataset.
+The paper "Energy and Carbon Considerations of Fine-Tuning BERT" primarily focuses on quantifying the energy and carbon emissions associated with fine-tuning large language models, with particular emphasis on the popular `pre-train then fine-tune` paradigm.
+The paper "Llemma: An Open Language Model For Mathematics" is not included in the provided text, therefore I cannot answer this question.  I don't know
+The authors of the paper "MultiIoT: Towards Large-scale Multisensory Learning for the Internet of Things" are Shentong Mo, P. Liang, Russ Salakhutdinov, and Louis-Philippe Morency.
+The StorySeeker toolkit introduced in the paper "Where Do People Tell Stories Online? Story Detection Across Online Communities" contributes a richly annotated dataset of 502 Reddit posts and comments, a detailed codebook adapted to the social media context, and models to predict storytelling at the document and span level. This dataset and toolkit are designed to identify the distinctive textual features of online storytelling and facilitate research in the fields of narratology and online communities.
+The paper titled "Distributed cooperative dual closed loop velocity-attitude consensus controller for rendezvous of the underactuated AUV swarm in 3-dimensional space" has received 2 citations.
+The title of the research paper authored by Shinji Watanabe and his co-authors, which discusses a community cluster of influenza A(H3N2) in Nara, Japan, caused by viruses with an E199G substitution in PA, and its reduced susceptibility to baloxavir is "A community cluster of influenza A(H3N2) virus infection with reduced susceptibility to baloxavir due to a PA E199G substitution in Japan, February to March 2023."
+The text does not describe the number of citations for the research paper "StarCoder: may the source be with you!”, therefore I cannot answer this question.
+The co-authors of the paper titled "SPRING: Studying Papers and Reasoning to play Games" presented at the Neural Information Processing Systems in 2023 are Yue Wu, So Yeon Min, Shrimai Prabhumoye, Yonatan Bisk, Russ Salakhutdinov, A. Azaria, Tom M. Mitchell, and Yuanzhi Li.
+Sure, here is the answer to the question:  The co-authors of the paper "WebArena: A Realistic Web Environment for Building Autonomous Agents" published in 2023 are Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Yonatan Bisk, Daniel Fried, Uri Alon, and Graham Neubig.
+The paper "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models" finds that a language's resource level is the most important feature in determining ChatGPT's relative ability to translate it. The paper also finds that speakers of a large number of the supported languages are overcharged while obtaining poorer results.
+Sure, here is the answer to the question:  The co-authors of the paper titled "Imprecise Label Learning: A Unified Framework for Learning with Various Imprecise Label Configurations" are Hao Chen, Ankit Shah, Jindong Wang, R. Tao, Yidong Wang, Xingxu Xie, Masashi Sugiyama, Rita Singh, and B. Raj.
+Leena Mathur, Maja J Matari'c, and Louis-Philippe Morency are the authors of the paper titled "Expanding the Role of Affective Phenomena in Multimodal Interaction Research".
+The publication venue of the paper "BASS: Block-wise Adaptation for Speech Summarization" is Interspeech.
+The paper "Syncretic Space Learning Network for NIR-VIS Face Recognition" was published in the ACM Transactions on Multimedia Computing, Communications, and Applications.
+The text states that Waibel was the founding director of the Language Technology Group at FB, therefore I answer: Waibel.
+The provided text does not specify Professor Yiming Yang's research interests, therefore I cannot answer this question.
+Professor Alexander Rudnicky's key research interests are Multimodal Computing and Interaction, Speech Processing, and Spoken Interfaces and Dialogue Processing.
+The text does not specify David Mortensen's research interests, therefore I cannot answer this question.
+The text does not provide information about Professor Waibel's research interests. Therefore I cannot answer the question.
+The text does not describe the current director of the Language Technologies Institute at Carnegie Mellon University or their area of research focus, therefore I cannot answer this question.
+The text does not describe Professor Nyberg's research interests, therefore I cannot answer this question.
+The text does not describe Louis-Philippe Morency's research interests, therefore I cannot answer this question.
+Sure, here is the answer to the question:  Fernando Diaz's research interests are in Information Retrieval, Text Mining and Analytics, Natural Language Processing and Computational Linguistics.
+Professor Maarten Sap is the Assistant Professor at the Language Technologies Institute specializing in Computational Social Science, Conversational AI, Discourse and Pragmatics, and Fairness and Ethics in Language Technology.
+Sure, here is the answer to the question:  The Associate Dean for PhD Programs and Chair for MLT Program at the LTI is Professor Robert Frederking.
+Sure, here is the answer to the question:  Professor Sean Welleck's title is Assistant Professor.
+The text does not specify which professor in the LTI is on leave, therefore I cannot answer this question.
+Professor Mortensen's office is located in 5707 Gates & Hillman Centers.
+Sure, here is Professor Brown's email: ralf@andrew.cmu.edu.
+Professor Shinji Watanabe's email address is swatanab@andrew.cmu.edu.
+Sure, here is Professor Yiming Yang's phone number as per the provided documents:  **Professor Yiming Yang Phone:** 412-268-1364
+Sure, here is the answer to the question: Professor Graham Neubig holds a Master of Science in Intelligent Information Systems.
+Professor Waibel receives his BS, MS and PhD degrees at Massachusetts Institute of Technology and CMU, respectively.
+Sure, here's the answer: Professor Justine Cassell's office building is Gates & Hillman Centers, and her office number is 5107.
+The commencement ceremony on CMU’s campus will begin at 10 a.m.
+All guests must be seated in the CMU Commencement Ceremony by the time the procession begins.
+The Buggy Races and Donut Tent events will start at 8:00 AM on Friday and Saturday in the 2024 Spring Carnival.
+The Carnival Headquarters Tent is open from 8:00 AM to 7:00 PM on April 13, 2024, during the 2024 Spring Carnival.
+The Buggy Showcase is open to the entire CMU community in Spring Carnival.
+The text does not provide information about guests attending the Impact CMU 2024 event, therefore I cannot answer this question.
+The text does not provide information about the show that the Scotch'n'Soda Theatre is performing for the 2024 Spring Carnival, therefore I cannot answer this question.
+The text does not provide information about ticket prices for "Scotch'n'Soda Theatre Carnival Show: The Little Mermaid", therefore I cannot answer this question.
+The Statistics & Data Science Alumni & Department Lunch is open to alumni, graduate students and faculty/staff of the Statistics & Data Science community.
+The text does not specify whether registration is required to attend the Alumni & Department Lunch in 2024 Spring Carnival, therefore I cannot answer the question.
+The Civil and Environmental Engineering Buggy Breakfast will take place in the Civil and Environmental Engineering tent, which is not described in the text, therefore I cannot answer this question.
+The event "Here to Stay: Celebrating 40 Years at the Architecture Archives" is scheduled for April 14-15, 2024.
+Sure, here's the answer to the question:  The text states that the semester and Mini-1 classes begin on 2023-08-28 in Fall 2023.
+The text does not specify the date of the last day of Mini-1 classes in Fall 2023, therefore I cannot provide an answer to this question.
+Sure, here is the answer to the question:  The date of Democracy Day in Fall 2023 is not included in the text provided, therefore I cannot answer this question.
+The Make-Up Final Examinations in Spring 2024 are scheduled for 2024-05-07 and 2024-04-29.
+The text does not specify the Spring 2024 semester information, therefore I cannot answer this question.
+The deadline for Mini-3 course drop in spring 2024 is 2024-02-19.
+The text does not provide information about Spring Carnival or whether there will be classes on that day, therefore I cannot answer this question.
+The text does not specify the date of the Fall 2024 Semester & Mini-1 classes, therefore I cannot answer this question.
+Sure, here is the answer to the question:  The date for Labor Day is 2023-09-04 and 2024-09-02. There will not be any classes on those days.
+Sure, here is the answer to the question:  The Fall Break in Fall 2024 is scheduled for October 14-18, 2024 and October 16-20, 2023.
+The text does not contain information about Spring Carnival in 2025, therefore I cannot answer this question.
+The provided text does not specify the Reading Days for Spring 2025, therefore I can not answer this question.
+Final grades are due in Spring 2025 on May 8th.
+Sure, the course drop deadline for the Summer One & Mini-5 session in summer 2025 is 2025-06-17.
+Sure, here's the answer to the question:  In 2025, the faculty course evaluation period for Summer One & Mini-5 opens on 2025-06-13.
+The minimum grade requirement for LTI Ph.D. is B-. As stated in the "LTI’s Minimum Course Grade Policy," a grade of B- or higher is required for Ph.D. courses.
+The LTI's Office Manager (see Section 1.2, Department Personnel, for contact information) is responsible for assigning offices to LTI phd students.
+Mailboxes and office supplies for LTI Ph.D. students are located in GHC 5404.
+The LTI Orientation takes place at the beginning of each Fall semester.
+The text does not specify the duration of the LTI Orientation, therefore I cannot answer this question.
+Full-time students in the LTI’s MLT program have access to the shared office space.
+The MLT program duration is typically two years, but it can be up to five years for a Ph.D. Students should consult the MLT handbook for more information about the program duration.
+For MLT students, pass/fail grades are not allowed for satisfying a degree requirement.
+Sure, here is the answer to the question based on the documents:  Independent study can be counted as an Elective course for MIIS students, but it cannot be counted as a Qualifying course.
+The text does not specify the director of the MCDS program, therefore I cannot answer this question.
+The MSAII stand for the Master of Science in Artificial Intelligence and Innovation program is the M.S. in Artificial Intelligence and Innovation.
+The MSAII handbook states that the mailboxes, printers, copiers, and other departmental resources are located in GHC 5404.
+The women's heats were run for the first time in the Buggy race in 1979.
+The two-wheeled buggy was eliminated in 1989.
+Sure, here is the answer to the question:  The first all-women's team in buggy history was Kappa Kappa Gamma, which entered the competition in 2004.
+As of 2014, 12 CMU alumni or faculty have won Turing Awards.
+The text states that 12 CMU alumni or faculty have won Turing Awards, sometimes considered the Nobel Prize of computing. Therefore, the answer is 12.
+Kevlar Fiber was invented by alumna Stephanie Kwolek (MM 1946).
+The text does not contain any information about Andrew Carnegie's death date, therefore I cannot answer this question.
+The official Carnegie Mellon tartan can be found on various items in the University Store.
+Sure, here is the answer to the question:  Nearly 78% of 2,370 students surveyed in February 2007 voted for the Scottish terrier as the CMU mascot.
+The text does not mention the mascot's graphic design, therefore I don't know the answer to this question.
+The official Scotty costume was unveiled at the 2008 Spring Carnival.
+No, you do not need to audition to join the Kiltie Band. Membership is open to all members of the campus/community without audition.
+The Kiltie Band's first official performance was on November 25th, 1922, on what would have been Andrew Carnegie's 87th birthday.
+The text does not mention the rehearsal or commencement ceremony schedule, therefore I cannot answer the question.
+The text does not specify the ranking of CMU's School of Computer Science, therefore I cannot answer this question.
+The minimum QPA requirement for MIIS students is 3.0. Students must maintain a cumulative QPA of 3.0 to remain in good standing with the program. Should a student’s overall QPA drop below 3.0 during any given semester, he/she will be placed on academic probation for the following semester.
+The Kiltie Band began in 1908 and performed its first official performance on November 25th, 1922.
+The Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival is scheduled for 3:00 PM-3:30 PM ET on April 11, 2024.
+Chute Flagger is a team member who provides a signal for buggy drivers to know when to start the right-hand turn from Schenley Drive onto Frew Street.
+The paper "Generating Images with Multimodal Language Models" proposes a method to fuse frozen text-only large language models (LLMs) with pre-trained image encoder and decoder models, by mapping between their embedding spaces. This method enables the model to process image-and-text inputs, generate images, and retrieve images from a prespecified dataset.
 
-F1 score: 0.38881397616213126
-Recall score: 0.5083209686064916
-EM score: 0.0
+Average F1 score: 0.47930828507552636
+Average Recall score: 0.6137759790535549
+Average EM score: 0.018604651162790697
+{'athletics': {'em': 0.0,
+               'f1': 0.33801771672922765,
+               'recall': 0.6394988849534303},
+ 'buggy': {'em': 0.0, 'f1': 0.553586871441355, 'recall': 0.6584778184778185},
+ 'calendar': {'em': 0.0,
+              'f1': 0.36931537052425795,
+              'recall': 0.48094266844266836},
+ 'commencement': {'em': 0.0,
+                  'f1': 0.5618688630914523,
+                  'recall': 0.6638176638176638},
+ 'course': {'em': 0.016129032258064516,
+            'f1': 0.49507518818760743,
+            'recall': 0.6434303755954275},
+ 'history': {'em': 0.0,
+             'f1': 0.35153231235125587,
+             'recall': 0.5687156593406595},
+ 'paper': {'em': 0.030303030303030304,
+           'f1': 0.6522381693965568,
+           'recall': 0.7257509447371733},
+ 'people': {'em': 0.041666666666666664,
+            'f1': 0.450050929832773,
+            'recall': 0.5890691885747473},
+ 'program': {'em': 0.04,
+             'f1': 0.4466493175224852,
+             'recall': 0.5504685353084868},
+ 'spring carnival': {'em': 0.0,
+                     'f1': 0.3942759209524815,
+                     'recall': 0.486609292839943}}
