@@ -1,19 +1,13 @@
 What is Professor Teruko Mitamura's research area?
-Where is Professor Graham Neubig's office?
 Who is the author of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation'?
 Who is teaching Multimodal Machine Learning in Spring 2024?
-Who is teaching 11711 in Fall 2023?
-When is CMU Spring Break in 2024?
 When is the semester drop deadline for Fall 2024?
 How many course units are required for the Master of Language Technologies program?
 What is the application fee for the MSAII program?
 What are the core courses for MCDS students?
-When is the Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival?
-When is the CMU commencement ceremony?
 Who created the emoticon Smiley Lore :-)?
 Who is the first director of CMU Robotics Institute?
 Who created the CMU Robotics Institute?
-What is the ranking of CMU's School of Computer Science?
 How many students does CMU have?
 Who invented Duolingo?
 Who was the recipient of the first doctorate awarded at CMU?
@@ -43,9 +37,8 @@ Who are the authors of the paper 'Generalized Glossing Guidelines: An Explicit, 
 Who is teaching Multimodal Machine Learning in Spring 2024?
 How many course units are required for the Master of Language Technologies program?
 When was the first Interfraternity Sweepstakes race held?
-What is Buggy?
+What does the term 'Buggy' refer to?
 What is Chute?
-What is Chute Flagger?
 What is the driver in Buggy Races?
 What is the pushbar in Buggy Races?
 What is the pusher in Buggy Races?
@@ -57,5 +50,159 @@ Where is the Language Technologies Institute?
 Who is responsible for administering the MIIS degree?
 When can students request to transfer into the MIIS program at CMU?
 What materials are needed for transferring to the MIIS program?
-What is the duration of the MSDS program?
+What is the duration of the MCDS program?
 Who is the director of the MSAII program?
+What is the course number for "Advanced ETB: Animation Studio" offered in Fall 2023 and who is the instructor for this course?
+What is the course number for "Introduction to Biomedical Engineering" offered in Fall 2023?
+Who is the instructor for the course "Advanced Developmental Biology and Human Health" in Fall 2023?
+How many units is the course "Computational Molecular Biology and Genomics" for Fall 2023?
+What is the schedule for the course "Professional Skills for Biotechnology, Quantitative & Computational Biology" in Fall 2023?
+What is the title of the course with the course number 42616 in Fall 2023?
+What is the course number for the "Modern Data Management" course offered in Fall 2023?
+What is the course number for the "Machine Learning Capstone Project" offered in Fall 2023?
+What is the course number for "Innovation & Entrepreneurial Mindset" offered in Fall 2023 and who is the instructor for this course?
+What is the course number for the course "Introduction to Ecological Design Thinking" offered in Fall 2023?
+What is the course number for the "Modern Data Management" course offered in Fall 2023?
+What is the course number for the "Machine Learning Capstone Project" offered in Fall 2023 at Carnegie Mellon University?
+What is the course number for the course "Introduction to Ecological Design Thinking" offered in Fall 2023?
+What is the course number for "Special Topics: Atmospheric Nanoparticles and Climate" offered in Fall 2023?
+What is the course number for "Computational Modeling, Statistical Analysis and Machine Learning in Science" offered in Fall 2023?
+Who is the instructor for the course 09615 Computational Modeling, Statistical Analysis and Machine Learning in Science in Fall 2023 at CMU?
+What is the course number for "Introduction to Research" offered in Fall 2023?
+How many units is the course "Bioorganic Chemistry: Nucleic Acids and Carbohydrates" (09718) in Fall 2023?
+What are the days and timings for the course "Chemistry and Light" (09733) in Fall 2023?
+Who is the instructor for the course "Fluid Mechanics" in Fall 2023 and what is its course number?
+What is the course number for the "String Algorithms" course offered in Fall 2023 and who is the faculty member teaching it?
+Who are the instructors for 15213 Introduction to Computer Systems in Fall 2023?
+What is the course number for "Introduction to Cryptography" offered in Fall 2023 at CMU?
+What is the course number for "Directing III: INTRODUCTION TO TV & FILM DIRECTING" offered in Fall 2023 and who is the faculty teaching it?
+What is the course number for "Directing IV: Next Steps" offered in Fall 2023?
+What is the course number for "The Basics of Self-Producing for Theater Artists" offered in Fall 2023?
+What is the course number for the "Media Creation Studio" course offered in Fall 2023 and who is the instructor for this course?
+What is the course number for the "Lighting Forum" course offered in Fall 2023?
+What is the course number for "Introduction to Electrical and Computer Engineering" offered in Fall 2023?
+How many units is the course "Economics and Data Science" for Fall 2023?
+What is the schedule for the course "Intermediate Microeconomics" in Fall 2023?
+Who is the instructor for the course "Game Theory Applications for Economics and Business" in Fall 2023?
+What is the course number for the "Introduction to Machine Learning for Engineers" course offered in Fall 2023 at CMU?
+What is the course number for the "Introduction to Deep Learning and Pattern Recognition for Computer Vision" course offered in Fall 2023?
+What is the course number for "Introduction to Gender Studies" offered in Fall 2023?
+What is the course number for "Introduction to Critical Writing" offered in Fall 2023?
+Who is the instructor for the course "Coding for Humanists" in Fall 2023?
+How many units is the course "Professional Seminar" for Fall 2023?
+What is the schedule for the course "Data Stories" in Fall 2023?
+What is the title of the course with the course number 76388 in Fall 2023?
+What is the course number for Introduction to Decision Analytics and Systems offered in Fall 2023?
+What is the course number for "Smart Cities: Growth and Intelligent Transportation Systems" offered in Fall 2023?
+What is the course number for "Data Analytics for Organizational Impacts" offered in Fall 2023 at CMU?
+What is the course number for "Design of Artificial Intelligence Products" offered in Fall 2023?
+Who are the instructors for the "Prototyping Algorithmic Experiences" course in Fall 2023?
+How many units is the course ICT in Africa Seminar worth in Fall 2023?
+What is the course number for the "Digital Accessibility Fundamentals" course offered in Fall 2023?
+Who is the instructor of the course "Blockchain Applications"  offered in Fall 2023?
+Who are the instructors for the course "Machine Learning in Production" offered in Spring 2024?
+Who is the instructor for the course "Research Methods in Second Language Acquisition" offered in Spring 2024?
+Who is the instructor for the unit 76239 in the Spring 2024?
+Who is the instructor for the unit 15150 offered in Summer One 2024?
+Who is the instructor for the unit 90429 offered in Spring 2024?
+How many units is the course "Applied Econometrics I" worth in Spring 2024?
+What is the schedule for the course 24888 Introduction to Deep Learning in the Spring 2024?
+What are the scheduled days and times for the course "Professional Essentials for the Percussionist" offered in Spring 2024?
+Who are the co-authors of the paper titled "Don't Take This Out of Context!: On the Need for Contextual Models and Evaluations for Stylistic Rewriting" presented at the Conference on Empirical Methods in Natural Language Processing in 2023, and who from the Language Technologies Institute at Carnegie Mellon University is listed as an author?
+Who are the authors of the paper "AV-SUPERB: A Multi-Task Evaluation Benchmark for Audio-Visual Representation Models" and what is the main proposal of this research paper?
+Who are the authors of the paper titled "FacTool: Factuality Detection in Generative AI - A Tool Augmented Framework for Multi-Task and Multi-Domain Scenarios" and what is the main objective of their research?
+What is the Batch Embedding Covariance Regularization (BECR) proposed by Bhiksha Raj and his team in their paper "Approach to Learning Generalized Audio Representation Through Batch Embedding Covariance Regularization and Constant-Q Transforms"?
+What were the key findings of the research paper "Can We Edit Factual Knowledge by In-Context Learning?" authored by Lei Li and his team?
+What is the novel approach proposed by Rita Singh and Wayne Zhao in their 2023 paper titled "Deriving Vocal Fold Oscillation Information from Recorded Voice Signals Using Models of Phonation"?
+Who are the authors of the paper "Transformed Protoform Reconstruction"?
+Who are the co-authors along with Yiming Yang on the paper titled "Experimental and numerical research on the static behavior of locally corroded OSBD" published in the Journal of constructional steel research in 2023?
+What were the findings of the research paper "Computational Language Acquisition with Theory of Mind"?
+Who are the co-authors of the paper "End-to-End Evaluation for Low-Latency Simultaneous Speech Translation"?
+Who are the co-authors of the paper "Enhancing End-to-End Conversational Speech Translation Through Target Language Context Utilization" published in 2023?
+What is the key contribution of the paper "Speaker-Independent Acoustic-to-Articulatory Speech Inversion”?
+What is the main focus of the paper "Energy and Carbon Considerations of Fine-Tuning BERT”?
+Who are the authors of the paper "Llemma: An Open Language Model For Mathematics" and what is the main contribution of this research paper according to the TLDR summary?
+Who are the authors of the paper "MultiIoT: Towards Large-scale Multisensory Learning for the Internet of Things" ?
+What is the main contribution of the StorySeeker toolkit proposed in the paper "Where Do People Tell Stories Online? Story Detection Across Online Communities"?
+How many citations has the paper titled "Distributed cooperative dual closed loop velocity-attitude consensus controller for rendezvous of the underactuated AUV swarm in 3-dimensional space" received?
+What is the title of the research paper authored by Shinji Watanabe and his co-authors, which discusses a community cluster of influenza A(H3N2) in Nara, Japan, caused by viruses with an E199G substitution in PA, and its reduced susceptibility to baloxavir?
+How many citations have the research paper "StarCoder: may the source be with you!” received?
+Who are the co-authors of the paper titled "SPRING: Studying Papers and Reasoning to play Games" presented at the Neural Information Processing Systems in 2023?
+Who are the co-authors of the paper "WebArena: A Realistic Web Environment for Building Autonomous Agents" published in 2023?
+What is the main finding of the paper "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models”?
+Who are the co-authors of the paper titled "Imprecise Label Learning: A Unified Framework for Learning with Various Imprecise Label Configurations"?
+Who are the authors of the paper titled "Expanding the Role of Affective Phenomena in Multimodal Interaction Research"?
+What is the publication venue of the paper "BASS: Block-wise Adaptation for Speech Summarization”?
+What is the publication venue of the paper "Syncretic Space Learning Network for NIR-VIS Face Recognition”?
+Who is the founding director of the Language Technology Group at FB?
+What are the research interests of Professor Yiming Yang?
+What are the key research interests for Professor Alexander Rudnicky?
+What are the research interests of David Mortensen?
+What are the research interests of Professor Alexander Waibel?
+Who is the current director of the Language Technologies Institute at Carnegie Mellon University and what is their area of research focus?
+What are the research interests of Professor Eric Nyberg?
+What are the research interests of Louis-Philippe Morency?
+What are the research interests of Fernando Diaz?
+Who is the Assistant Professor at the Language Technologies Institute specializing in Computational Social Science, Conversational AI, Discourse and Pragmatics, and Fairness and Ethics in Language Technology?
+Who is the Associate Dean for PhD Programs and Chair for MLT Program at the LTI?
+What is the title of Sean Welleck?
+Which professor in the LTI is on leave?
+Where is the office for David Mortensen?
+What is Ralf Brown's email?
+What is the Professor Shinji Watanabe's email address?
+What is Professor Yiming Yang's phone number?
+What degree does Professor Graham Neubig hold?
+What degree does Alexander Waibel receive?
+What is Justine Cassell's office building and number?
+At what time will the commencement ceremony on CMU's campus begin?
+By what time must all guests be seated in the CMU Commencement Ceremony?
+When will the Buggy Races and Donut Tent events start on Friday and Saturday in the 2024 Spring Carnival?
+What are the opening hours of the Carnival Headquarters Tent during the 2024 Spring Carnival?
+Who is the Buggy Showcase open to in Spring Carnival?
+Can guests walk in at any time to the Impact CMU 2024 event, or do they need to register in advance?
+What show is the Scotch'n'Soda Theatre performing for the 2024 Spring Carnival?
+How much are tickets for attending "Scotch'n'Soda Theatre Carnival Show: The Little Mermaid"?
+Who is invited to the Statistics & Data Science Alumni & Department Lunch?
+Is registration required to attend the Alumni & Department Lunch in 2024 Spring Carnival?
+Where will the Civil and Environmental Engineering Buggy Breakfast take place during the Spring Carnival?
+In 2024 Spring Carnival, when is the event "Here to Stay: Celebrating 40 Years at the Architecture Archives"?
+When does the semester and Mini-1 classes begin in Fall 2023?
+When is the last day of Mini-1 classes in Fall 2023?
+What is the date of Democracy Day in Fall 2023, and will classes be held?
+When are the Make-Up Final Examinations in Spring 2024?
+When is the first day of classes for the Spring 2024 semester?
+In spring 2024, what is the deadline for Mini-3 course drop?
+Will there be classes on Spring Carnival?
+When do the Semester & Mini-1 classes for Fall 2024 begin?
+What is the date for Labor Day, and will there be classes on that day?
+When is the Fall Break in Fall 2024?
+When is the Spring Carnival in 2025?
+What are the Reading Days for the Spring 2025?
+When are final grades due in Spring 2025?
+When is the course drop deadline for the Summer One & Mini-5 session in summer 2025?
+In 2025, when does the faculty course evaluation period open for Summer One & Mini-5?
+What is the minimum grade requirement for  LTI Ph.D. ?
+Who is responsible for assigning offices to LTI phd students?
+Where are mailboxes and office supplies for LTI phd students located?
+When does the LTI Orientation take place?
+According to the LTI Ph.D handbook, how long does the LTI Orientation last?
+According to the MLT handbook, who has access to the shared office space?
+What is the duration of the MLT program?
+For MLT students, is pass/fail grades are allowed for satisfying a degree requirement?
+Can independent study be counted as an Elective course for MIIS students?
+Who is the director of the MCDS program?
+What is the MSAII stand for?
+According to the MSAII handbook, where are the mailboxes, printers, copiers, and other departmental resources located?
+In which year were the women's heats run for the first time in the Buggy race?
+When was the two-wheeled buggy eliminated in the Buggy race?
+What was the first all-women's team in buggy history?
+How many members affiliated with CMU have won Turing Awards?
+How many Academy Awards have been won by alumni and current or former faculty of CMU?
+Who invented the Kevlar Fiber?
+When did Andrew Carnegie pass away?
+Where can I find the official Carnegie Mellon tartan?
+What percentage of students voted for the Scottish terrier as the CMU mascot in a 2007 survey?
+Who design the mascot's graphic?
+When was the official Scotty costume unveile?
+Do I need to audition to join the Kiltie Band?
+When was the Kiltie Band's first official performance?

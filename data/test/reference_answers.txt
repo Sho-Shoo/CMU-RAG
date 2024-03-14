@@ -1,19 +1,13 @@
-Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, Natural Language Processing and Computational Linguistic.
-Room 5409 of the Gates & Hillman Centers.
-David R. Mortensen, Ela Gulsen, Taiqi He, Nathaniel R. Robinson, Jonathan D. Amith, Lindia Tjuatja, and L. Levin.
+Professor Teruko Mitamura's research area focuses on Information Extraction, Summarization and Question Answering, Information Retrieval, Text Mining and Analytics, Language Technologies for Education, Natural Language Processing and Computational Linguistic.
+The authors of the paper are David R. Mortensen, Ela Gulsen, Taiqi He, Nathaniel R. Robinson, Jonathan D. Amith, Lindia Tjuatja, and L. Levin.
 Professor Yonatan Bisk.
-Professor Robert Frederking and Daniel Fried.
-From March 4th to March 9th.
 Drop deadline of Fall 2024 is October 7th
 The Master of Language Technologies program requires students to take 120 or more course units, of which at least 72 must be LTI (Language Technologies Institute) courses.
 The application fee for the MSAII program is $100 for one program, or $80 if the application is submitted before the early deadline, which is November 29, 2023, at 3 PM EST.
 The core courses for MCDS students include Machine Learning (10-601), Cloud Computing (15-619), Interactive Data Science (05-839), and Data Science Seminar (11-631).
-The Spring Carnival Midway Opening Ceremony for CMU's 2024 Spring Carnival is scheduled for April 10, 2024, from 3:00 PM to 3:30 PM ET.
-CMU commencement ceremony of 2024 is Sunday, May 12.
 A CMU researcher Scott Fahlman.
 The first director of CMU Robotics institute is Raj Reddy.
 The CMU Robotics Institute was created by Tom Murrin from Westinghouse Electric Corp., along with Jordan and Reddy.
-The CMU School of Computer Science is ranked 1st according to the U.S. News & World Report, 2022.
 CMU has 16779 students as of year 2024
 Professor Luis von Ahn.
 The first awarded doctorate is Mao Yisheng.
@@ -41,11 +35,10 @@ The first freshman-level computer science course launched at CMU was the Logic T
 The Robotics Institute started in 1979.
 The authors of the paper 'Generalized Glossing Guidelines: An Explicit, Human- and Machine-Readable, Item-and-Process Convention for Morphological Annotation' are David R. Mortensen, Ela Gulsen, Taiqi He, Nathaniel R. Robinson, Jonathan D. Amith, Lindia Tjuatja, L. Levin.
 Bisk is teaching Multimodal Machine Learning in Spring 2024.
-MLT students are required to take 120 or more course units (about 10 courses), at least 72 of which are LTI courses, and 24 of which are School of Computer Science (SCS) courses. 
+MLT students are required to take 120 or more course units (about 10 courses), at least 72 of which are LTI courses, and 24 of which are School of Computer Science (SCS) courses.
 The first  Interfraternity Sweepstakes race was held in 1920.
-Buggy is the vehicle being raced and also a nickname for the Sweepstakes.
+Buggy refers to the vehicle being raced and is also a nickname for the Sweepstakes.
 Chute is a section of the freeroll portion of the buggy course (near the southwestern end of Frew Street at its intersection with Schenley Drive) where buggies make the sharp righthand turn from Schenley Drive onto Frew Street.
-Chute Flagger is team member who provides a signal for buggy drivers to know when to start the right-hand turn from Schenley Drive onto Frew Street.
 The driver in buggy races is person who travels with a buggy and controls the vehicles via steering and braking systems.
 The pushbar in buggy races is the structure attached to a buggy that a person pushes to propel that buggy forward.
 The pusher in buggy races is the person who propels a buggy via a pushbar along one of the five hills of the buggy course.
@@ -57,5 +50,159 @@ The Language Technologies Institute is located on the 5th and 6th floors of the 
 The individuals responsible for administering the MIIS degree are Brianna Eriksen, Teruko Mitamura, Kate Schaich, Robert Frederking, and Mona Diab.
 Students may request to transfer after completing their first semester and before the add/drop deadline of the spring semester.
 A written request to the MIIS Program Director, as well as an explanation for the transfer, a proposed plan of study, a proposed advisor, and CMU transcripts based on the requirement of the MIIS Program Director. Current LTI students are not required to resubmit GRE and TOEFL/IELTS/Duolingo scores or new transcripts from other universities.
-The duration of the MSDS program is 16 months, including a summer internship
+The duration of the MCDS program is 16 months, including a summer internship
 The director of the MSAII program is Michael I. Shamos.
+The course number for "Advanced ETB: Animation Studio" offered in Fall 2023 is 60415 and the instructor for this course is Duesing.
+The course number for "Introduction to Biomedical Engineering" offered in Fall 2023 is 42101.
+The instructors for the course "Advanced Developmental Biology and Human Health" in Fall 2023 are Ettensohn and Mccartney.
+The course "Computational Molecular Biology and Genomics" for Fall 2023 is for 9.0 units and 12.0 units.
+The course "Professional Skills for Biotechnology, Quantitative & Computational Biology" is scheduled for Fall 2023 on Wednesdays from 11:00AM to 11:50AM.
+The title of the course with the course number 42616 in Fall 2023 is "Bio-nanotechnology: Principles and Applications".
+The course number for "Modern Data Management" offered in Fall 2023 is 45881.
+The course number for the "Machine Learning Capstone Project" offered in Fall 2023 is 46983.
+The course number for "Innovation & Entrepreneurial Mindset" offered in Fall 2023 is 70246 and the instructor for this course is Jen.
+The course number for "Introduction to Ecological Design Thinking" offered in Fall 2023 is 48743 and 62709.
+The course number for "Modern Data Management" offered in Fall 2023 is 45881.
+The course number for the "Machine Learning Capstone Project" offered in Fall 2023 at Carnegie Mellon University is 46983.
+The course number for "Introduction to Ecological Design Thinking" offered in Fall 2023 is 48743 and 62709.
+The course number for "Special Topics: Atmospheric Nanoparticles and Climate" offered in Fall 2023 is 06614.
+The course number for "Computational Modeling, Statistical Analysis and Machine Learning in Science is 09615 and 38615.
+The instructor for the course 09615 Computational Modeling, Statistical Analysis and Machine Learning in Science in Fall 2023 at CMU is Isayev.
+The course number for "Introduction to Research" offered in Fall 2023 is 09700 and 33775.
+The course "Bioorganic Chemistry: Nucleic Acids and Carbohydrates" (09718) in Fall 2023 is 12.0 units.
+The course "Chemistry and Light" (09733) in Fall 2023 is scheduled on Mondays and Wednesdays from 06:00PM to 07:20PM.
+The instructor for the course "Fluid Mechanics" in Fall 2023 is Gregory and its course number is 12355.
+The course number for "String Algorithms" offered in Fall 2023 is 02414 and 02614. The faculty member teaching it is Kingsford.
+The instructors for Introduction to Computer Systems offered in Fall 2023 are Railing and Gibbons.
+The course number for "Foundations of Blockchains" offered in Fall 2023 is 15735 and 15856.
+The course number for "Directing III: INTRODUCTION TO TV & FILM DIRECTING" offered in Fall 2023 is 54322 and it is taught by Wolk.
+The course number for "Directing IV: Next Steps" is 54422.
+The course number for "The Basics of Self-Producing for Theater Artists" offered in Fall 2023 is 54433.
+The course number for the "Media Creation Studio" course offered in Fall 2023 is 54476 and 54976, and the instructor for this course is Ross.
+The course number for the "Lighting Forum" course offered in Fall 2023 is 54384 and 54684.
+The course number is 18100.
+The course "Economics and Data Science" for Fall 2023 is for 9.0 units.
+The course "Intermediate Microeconomics" is scheduled for Fall 2023 as follows: - Section Lec 1: MW, 12:30PM - 01:50PM, at TEP 2700, Pittsburgh, Pennsylvania, taught by Erol. - Section Lec 2: MW, 02:00PM - 03:20PM, at TEP 2611, Pittsburgh, Pennsylvania, taught by Erol. - Section A: F, 01:00PM - 01:50PM, at TEP 2612, Pittsburgh, Pennsylvania, taught by Erol. - Section B: F, 02:00PM - 02:50PM, at TEP 2700, Pittsburgh, Pennsylvania, taught by Erol. - Section C: F, 01:00PM - 01:50PM, at TEP 2611, Pittsburgh, Pennsylvania, taught by Erol. - Section D: F, 02:00PM - 02:50PM, at TEP 2610, Pittsburgh, Pennsylvania, taught by Erol. - Section W: UT, 10:00AM - 11:15AM, at CMB 3204, Doha, Qatar, taught by Safak.
+The instructor for the course "Game Theory Applications for Economics and Business" in Fall 2023 is Kushnir.
+The course number for "Introduction to Machine Learning for Engineers" offered in Fall 2023 at CMU is 18661 and 18461.
+The course number for "Introduction to Deep Learning and Pattern Recognition for Computer Vision" offered in Fall 2023 is 18790 and 18794.
+The course number for "Introduction to Gender Studies" offered in Fall 2023 is 76241.
+The course number for "Introduction to Critical Writing" offered in Fall 2023 is 76275.
+The instructor for the course "Coding for Humanists" in Fall 2023 is Ishizaki.
+3.0 units
+The course "Data Stories" is scheduled for Tuesdays and Thursdays from 09:30AM to 10:50AM at BH 255B in Pittsburgh, Pennsylvania.
+The title of the course with the course number 76388 in Fall 2023 is "Coding for Humanists".
+The course number is 94216 and 94716.
+The course number is 12645 and 94845.
+The course number for "Data Analytics for Organizational Impacts" offered in Fall 2023 at CMU is 94865.
+The course number is 05317 and 05617.
+The instructor for the "Prototyping Algorithmic Experiences" course in Fall 2023 is Holstein.
+The course is worth 6.0 units
+The course number is 67203.
+The instructor is AAZAM.
+The instructors for the course "Machine Learning in Production" offered in Spring 2024 are Le Goues and Kaestner.
+The instructor for the course "Research Methods in Second Language Acquisition" offered in Spring 2024 is Koda
+The instructor is Hinkelman.
+The instructor for the unit 15150 in Summer One 2024 is Grodin.
+The instructor for the unit 90429 offered in Spring 2024 is Wiberg.
+The course is worth 6.0 units.
+The schedule for this course is on Tuesdays and Thursdays from 08:00PM to 08:50PM.
+The course is scheduled for Wednesdays from 07:00PM to 08:20PM.
+The co-authors of the paper titled "Don't Take This Out of Context!: On the Need for Contextual Models and Evaluations for Stylistic Rewriting" are Akhila Yerukola, Xuhui Zhou, Elizabeth Clark, and Maarten Sap. Maarten Sap from the Language Technologies Institute at Carnegie Mellon University is listed as an author.
+The authors of the paper "AV-SUPERB: A Multi-Task Evaluation Benchmark for Audio-Visual Representation Models" are Shinji Watanabe, Yuan Tseng, Layne Berry, Yi-Ting Chen, I-Hsiang Chiu, Hsuan-Hao Lin, Max Liu, Puyuan Peng, Yi-Jen Shih, Hung-Yu Wang, Haibin Wu, Po-Yao Huang, Chun-Mao Lai, Shang-Wen Li, David F. Harwath, Yu Tsao, Shinji Watanabe, Abdel-rahman Mohamed, Chi-Luen Feng, and Hung-yi Lee. The main proposal of this research paper is the AV-SUPERB benchmark, which nables general-purpose evaluation of unimodal audio/visual and bimodal fusion representations on 7 datasets covering 5 audio-visual tasks.
+The authors of the paper titled "FacTool: Factuality Detection in Generative AI - A Tool Augmented Framework for Multi-Task and Multi-Domain Scenarios" are Graham Neubig, Ethan Chern, Steffi Chern, Shiqi Chen, Weizhe Yuan, Kehua Feng, Chunting Zhou, Junxian He, Graham Neubig, and Pengfei Liu. The main objective of their research is to propose FacTool, a task and domain agnostic framework for detecting factual errors in texts generated by large language models like ChatGPT.
+The Batch Embedding Covariance Regularization (BECR) proposed by Bhiksha Raj and his team is a term used in their model to enhance the understanding of audio representations.
+The key findings of the research paper "Can We Edit Factual Knowledge by In-Context Learning?" were that in-context knowledge editing (IKE), without any gradient and parameter updating, achieves a competitive success rate compared to gradient-based methods on GPT-J (6B) but with much fewer side effects, including less over-editing on similar but unrelated facts and less knowledge forgetting on previously stored knowledge.
+Rita Singh and Wayne Zhao proposed a novel analysis-by-synthesis approach that allows us to infer the VFOs directly from recorded speech signals on an individualized, speaker- by-speaker basis is proposed and it is shown how the V FOs can be quantified from a dynamical systems perspective for classification purposes.
+The authors of the paper "Transformed Protoform Reconstruction" are David Mortensen, Young Min Kim, Kalvin Chang, and Chenxuan Cui.
+The co-authors along with Yiming Yang on the paper titled "Experimental and numerical research on the static behavior of locally corroded OSBD" are J. Peng, Yi Liu, Yadong Zhou, and Longzhen Xie.
+The research paper "Computational Language Acquisition with Theory of Mind" found that training speakers with a highly weighted ToM listener component leads to performance gains in the authors' image referential game setting, and suggests the potential utility of further incorporating ToM, as well as other insights from child language acquisition, into computational models of language acquisition.
+The co-authors of the paper "End-to-End Evaluation for Low-Latency Simultaneous Speech Translation" are Christian Huber, Tu Anh Dinh, Carlos Mullov, Ngoc-Quan Pham, T. Nguyen, Fabian Retkowski, Stefan Constantin, Enes Yavuz Ugan, Danni Liu, Zhaolin Li, Sai Koneru, J. Niehues, and A. Waibel.
+The co-authors of the paper "Enhancing End-to-End Conversational Speech Translation Through Target Language Context Utilization" published in 2023 on arXiv.org are A. Hussein, Brian Yan, Antonios Anastasopoulos, Shinji Watanabe, and S. Khudanpur.
+The key contribution of this paper is the development of an AAI model that leverages autoregression, adversarial training, and self supervision to generalize to unseen speakers, and proposes a resynthesis-based AAI evaluation metric that does not rely on articulatory labels.
+The main focus of the paper "Energy and Carbon Considerations of Fine-Tuning BERT” is to perform a careful empirical study of the computational costs of fine-tuning across tasks, datasets, hardware infrastructure and measurement modalities is performed to place fine- Tuning energy and carbon costs into perspective with respect to pre-training and inference.
+Llemma is a large language model for mathematics that outperforms all known open base models, as well as the unreleased Minerva model suite on an equi-parameter basis, and is capable of tool use and formal theorem proving without any further finetuning
+The authors of the paper "MultiIoT: Towards Large-scale Multisensory Learning for the Internet of Things" are Louis-Philippe Morency, Shentong Mo, P. Liang, Russ Salakhutdinov, and Louis-Philippe Morency.
+The StorySeeker toolkit includes a richly annoated dataset of 502 Reddit posts and comments, a detailed codebook adapted to the social media context, and models to predict storytelling at the document and span level, to identify the distinctive textual features of online storytelling.
+The paper "Distributed cooperative dual closed loop velocity-attitude consensus controller for rendezvous of the underactuated AUV swarm in 3-dimensional space" has received 2 citations.
+The title of the research paper is "A community cluster of influenza A(H3N2) virus infection with reduced susceptibility to baloxavir due to a PA E199G substitution in Japan, February to March 2023".
+The paper "StarCoder: may the source be with you!" has received 231 citations.
+The co-authors of the paper titled "SPRING: Studying Papers and Reasoning to play Games" presented at the Neural Information Processing Systems in 2023 are Yue Wu, So Yeon Min, Shrimai Prabhumoye, Yonatan Bisk, Russ Salakhutdinov, A. Azaria, Tom M. Mitchell, and Yuanzhi Li.
+The co-authors of the paper "WebArena: A Realistic Web Environment for Building Autonomous Agents" published in 2023 are Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Yonatan Bisk, Daniel Fried, Uri Alon, and Graham Neubig.
+The main finding of the paper  "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models” is a large number of the supported languages are overcharged while obtaining poorer results.
+The co-authors of the paper titled "Imprecise Label Learning: A Unified Framework for Learning with Various Imprecise Label Configurations" are Hao Chen, Ankit Shah, Jindong Wang, R. Tao, Yidong Wang, Xingxu Xie, Masashi Sugiyama, Rita Singh, and B. Raj.
+The authors of the paper titled "Expanding the Role of Affective Phenomena in Multimodal Interaction Research" are Louis-Philippe Morency, Leena Mathur, Maja J Matari'c, and Louis-Philippe Morency.
+The publication venue of the paper "BASS: Block-wise Adaptation for Speech Summarization” is Interspeech.
+The publication venue of the paper "Syncretic Space Learning Network for NIR-VIS Face Recognition” is ACM Trans. Multim. Comput. Commun. Appl.
+The founding director of the Language Technology Group at FB is Alexander Waibel.
+Professor Yiming Yang's research interests center on statistical learning methods/algorithms and application to very-large-scale text categorization, web-mining for concept graph discovery, semi-supervised clustering, multitask learning, novelty-based information retrieval, large-scale optimization for online advertising, social network analysis for personalized email prioritization, etc.
+Alexander Rudnicky's key research interests include Multimodal Computing and Interaction, Speech Processing, Spoken Interfaces and Dialogue Processing.
+David Mortensen's research interests include Corpus Annotation and Resources, and Natural Language Processing and Computational Linguistics.
+Professor Alexander Waibel's research interests include Machine Learning, Machine Translation, Multimodal Computing and Interaction, Neural Networks, Speech Processing, Spoken Interfaces and Dialogue Processing, Spoken Language Translation.
+The current director of the Language Technologies Institute at Carnegie Mellon University is Mona Diab. Her area of research focus is Fairness and Ethics in Language Technology.
+Professor Eric Nyberg's research interests include information Extraction, Summarization, and Question Answering, Information Retrieval, Text Mining and Analytics, and Language Technologies for Education.
+Louis-Philippe Morency’s research interest lies at the intersection of machine learning, computer vision, computational linguistics and signal processing ‚ building the computational foundations to enable computers with the abilities to analyze, recognize and predict subtle human communicative behaviors during social interactions.
+The research interests of Fernando Diaz are Information Retrieval, Text Mining and Analytics, Natural Language Processing and Computational Linguistics.
+Professor Maarten Sap.
+The Associate Dean for PhD Programs and Chair for MLT Program at the LTI is Robert Frederking.
+Assistant Professor.
+Justine Cassell, Louis-Philippe Morency, Alexander Waibel and Eric P. Xing are on leave.
+The offcie for David Mortensen is located in 5707 Gates & Hillman Centers.
+Ralf Brown' email is ralf@andrew.cmu.edu.
+ Professor Shinji Watanabe's email address is swatanab@andrew.cmu.edu.
+412-268-1364
+Professor Graham Neubig holds a Master of Science in Intelligent Information Systems
+Alexander Waibel received his BS, MS and PhD degrees at Massachusetts Institute of Technology and CMU, respectively.
+Justine Cassell's office building is Gates & Hillman Centers and the number is 5107.
+The commencement ceremony will begin at 10 a.m.
+All guests must be seated by 9:15 a.m. in the CMU Commencement Ceremony.
+The Buggy Races and Donut Tent events start at 8 a.m. and go until noon on both Friday and Saturday.
+The Carnival Headquarters Tent is open from 8 a.m. to 7 p.m. on Thursday, Friday, and Saturday.
+The Buggy Showcase is open to the entire CMU community.
+ Guests can walk in anytime and no registration is required.
+Disney's The Little Mermaid.
+Tickets cost $5 for CMU students, faculty, and staff, $10 for alumni and guests.
+Alumni, graduate students, and faculty/staff of the Statistics & Data Science community are invited.
+Yes, registration is required to attend the lunch.
+The Civil and Environmental Engineering Buggy Breakfast will take place at the Tung Au Lab (Room 107), Porter Hall.
+The event "Here to Stay: Celebrating 40 Years at the Architecture Archives" is open from 8:00 AM to 6:00 PM ET on April 10, 2024.
+The semester and Mini-1 classes begin on August 28 in Fall 2023.
+The last day of Mini-1 classes is October 13 in Fall 2023.
+Democracy Day is on November 7, 2023, and there will be no classes, except evening classes after 5 pm will still meet.
+The Make-Up Final Examinations is on May 7, 2024.
+The first day of classes for the Spring 2024 semester is January 16, 2024.
+The Mini-3 course drop deadline is February 7, 2024.
+There will be no classes during Spring Carnival.
+Semester & Mini-1 classes begin on August 26, 2024.
+Labor Day is on September 2, 2024, and there will be no classes, with the University being closed.
+Fall Break in Fall 2024 is from October 14 to October 18.
+The 2025 Spring Carnival is from April 3 to April 5.
+The Reading Days are on April 30, May 3, and May 4, 2025.
+Final grades are due by 4 pm on May 13, 2025.
+The course drop deadline for Summer One & Mini-5 is May 27, 2025.
+The faculty course evaluations for Summer One & Mini-5 open on June 13, 2025.
+A grade of B (3.0) or higher.
+LTI's Office Manager.
+Mailboxes and office supplies are located in GHC 5404.
+The LTI Orientation takes place at the beginning of each Fall semester.
+The LTI Orientation lasts for 2-3 weeks.
+Full-time students in the LTI's MLT program.
+MLT students are expected to complete the degree in two calendar years (24 months). This includes two summers of full-time directed research.
+No, pass/fail grades are not permitted for courses used to satisfy a degree requirement for MLT students.
+Yes, it can, but it cannot be counted as a Qualifying course.
+Carolyn Penstein Rosé.
+MSAII stands for the M.S. in Artificial Intelligence and Innovation.
+Mailboxes, printers, copiers, and other departmental resources are located in GHC 5404.
+Year 1979.
+Year 1989.
+Kappa Kappa Gamma.
+13 members affiliated with CMU have won Turing Awards.
+13 Academy Awards.
+Stephanie Kwolek
+Year 1919.
+In the University Store.
+Nearly 78%
+The Task Force and a company called SME Branding.
+At the 2008 Spring Carnival.
+No, it's open to anyone of the campus community with music experience.
+The Kiltie Band's first official performance was on November 25th, 1922.
