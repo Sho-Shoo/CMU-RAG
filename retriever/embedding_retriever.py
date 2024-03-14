@@ -84,7 +84,7 @@ class EmbeddingRetriever(BaseRetriever):
             raise RuntimeError("Sampling top_n exceeds max_top_n.")
 
         doc_nodes = []
-        slaves = self.slave_retrievers[top_n]
+        slaves = self.slave_retrievers
         for slave in slaves:
             doc_nodes.extend(slave.retrieve(question))
 
@@ -114,18 +114,16 @@ class EmbeddingRetriever(BaseRetriever):
         faculty_collection = client.get_collection(name="faculty_baai", embedding_function=huggingface_ef)
         other_collection = client.get_collection(name="other_baai", embedding_function=huggingface_ef)
 
-        self.slave_retrievers = dict()
-        for n in range(1, max_top_n + 1):
-            course_retriever = ChromadbRetriever(course_collection, embed_model,
-                                                 query_mode="default", similarity_top_k=n)
-            paper_retriever = ChromadbRetriever(paper_collection, embed_model,
-                                                query_mode="default", similarity_top_k=n)
-            faculty_retriever = ChromadbRetriever(faculty_collection, embed_model,
-                                                  query_mode="default", similarity_top_k=n)
-            other_retriever = ChromadbRetriever(other_collection, embed_model,
-                                                query_mode="default", similarity_top_k=n)
+        course_retriever = ChromadbRetriever(course_collection, embed_model,
+                                              query_mode="default", similarity_top_k=max_top_n)
+        paper_retriever = ChromadbRetriever(paper_collection, embed_model,
+                                            query_mode="default", similarity_top_k=max_top_n)
+        faculty_retriever = ChromadbRetriever(faculty_collection, embed_model,
+                                              query_mode="default", similarity_top_k=max_top_n)
+        other_retriever = ChromadbRetriever(other_collection, embed_model,
+                                                query_mode="default", similarity_top_k=max_top_n)
 
-            self.slave_retrievers[n] = [course_retriever, paper_retriever, faculty_retriever, other_retriever]
+        self.slave_retrievers = [course_retriever, paper_retriever, faculty_retriever, other_retriever]
 
 
 if __name__ == "__main__":
