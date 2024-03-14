@@ -206,3 +206,10 @@ Who design the mascot's graphic?
 When was the official Scotty costume unveile?
 Do I need to audition to join the Kiltie Band?
 When was the Kiltie Band's first official performance?
+When is the CMU commencement ceremony?
+What is the ranking of CMU's School of Computer Science?
+What is the minimum QPA requirement for MIIS students?
+When did the Kiltie Band begin?
+When is the Spring Carnival Midway Opening Ceremony for CMU 2024 Spring Carnival?
+What is Chute Flagger?
+What is the main proposal of the paper "Generating Images with Multimodal Language Models"?

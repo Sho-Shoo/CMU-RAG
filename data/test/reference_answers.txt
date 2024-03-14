@@ -206,3 +206,10 @@ The Task Force and a company called SME Branding.
 At the 2008 Spring Carnival.
 No, it's open to anyone of the campus community with music experience.
 The Kiltie Band's first official performance was on November 25th, 1922.
+CMU commencement ceremony of 2024 is Sunday, May 12.
+The CMU School of Computer Science is ranked 1st according to the U.S. News & World Report, 2022.
+An average QPA of at least 3.0 in courses and projects.
+Year 1908.
+The Spring Carnival Midway Opening Ceremony for CMU's 2024 Spring Carnival is scheduled for April 10, 2024, from 3:00 PM to 3:30 PM ET.
+Chute Flagger is team member who provides a signal for buggy drivers to know when to start the right-hand turn from Schenley Drive onto Frew Street.
+The main proposal of this paper is a method to fuse frozen text-only large language models (LLMs) with pre-trained image encoder and decoder models, by mapping between their embedding spaces, and exhibits a wider range of capabilities compared to prior multimodal language models.
