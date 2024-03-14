@@ -7,6 +7,7 @@ from retriever.bm25_retriever import BM25Retriever
 from aws_config import AWSConfig
 from retriever.base_retriever import BaseRetriever
 from evaluation_metric.evaluation import f1_score, recall_score, exact_match_score, normalize_answer, write_test_result
+from retriever.embedding_retriever import EmbeddingRetriever
 
 FEW_TEMPLATE = \
 """
@@ -147,9 +148,19 @@ class SageMakerLlama27B:
 
 
 if __name__ == "__main__":
+    USE_BM25 = False
     FEW_SHOT = False
+    TOP_N = 10
 
-    result_file_name = "llama2_bm25_few.txt" if FEW_SHOT else "llama2_bm25_zero.txt"
+    # (USE_BM25, FEW_SHOT) => <file name>
+    file_name_map = {
+        (False, False): "llama2_embed_zero.txt",
+        (False, True): "llama2_embed_few.txt",
+        (True, False): "llama2_bm25_zero.txt",
+        (True, True): "llama2_bm25_few.txt"
+    }
+    result_file_name = file_name_map[(USE_BM25, FEW_SHOT)]
+
     questions, answers, reference_answers = [], [], []
     f1_scores, recall_scores, exact_match_scores = [], [], []
 
@@ -165,8 +176,8 @@ if __name__ == "__main__":
             if not line: break
             reference_answers.append(line)
 
-    retriever = BM25Retriever()
-    # SageMakerLlama27B.set_up()
+    retriever = BM25Retriever() if USE_BM25 else EmbeddingRetriever(TOP_N)
+    SageMakerLlama27B.set_up()
 
     for i, q in enumerate(questions):
         print(f"{i} / {len(questions)}")
@@ -188,4 +199,4 @@ if __name__ == "__main__":
     print(test_summary)
     write_test_result("data/test/" + result_file_name, answers, f1, recall, em)
 
-    SageMakerLlama27B.shut_down()
+    # SageMakerLlama27B.shut_down()
