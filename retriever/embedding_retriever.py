@@ -104,16 +104,22 @@ class EmbeddingRetriever(BaseRetriever):
 
         course_collection = client.get_collection(name="course_baai", embedding_function=huggingface_ef)
         paper_collection = client.get_collection(name="paper_baai", embedding_function=huggingface_ef)
+        faculty_collection = client.get_collection(name="faculty_baai", embedding_function=huggingface_ef)
+        other_collection = client.get_collection(name="other_baai", embedding_function=huggingface_ef)
 
         course_retriever = ChromadbRetriever(course_collection, embed_model,
                                              query_mode="default", similarity_top_k=top_n)
         paper_retriever = ChromadbRetriever(paper_collection, embed_model,
                                             query_mode="default", similarity_top_k=top_n)
+        faculty_retriever = ChromadbRetriever(faculty_collection, embed_model,
+                                              query_mode="default", similarity_top_k=top_n)
+        other_retriever = ChromadbRetriever(other_collection, embed_model,
+                                            query_mode="default", similarity_top_k=top_n)
 
-        self.slave_retrievers = [course_retriever, paper_retriever]
+        self.slave_retrievers = [course_retriever, paper_retriever, faculty_retriever, other_retriever]
         self.top_n = top_n
 
 
 if __name__ == "__main__":
     retriever = EmbeddingRetriever(5)
-    pprint.pprint(retriever.retrieve("What are some publication by Graham Neubig?"))
+    pprint.pprint(retriever.retrieve("Whats a chute in buggy race?"))
