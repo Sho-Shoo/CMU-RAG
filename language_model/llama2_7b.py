@@ -64,7 +64,7 @@ ANSWER:
 def _build_llama2_prompt(context: str, question: str, few_shot: bool = True) -> str:
     if few_shot:
         template = FEW_TEMPLATE
-        template.replace("{in-context learning}", get_in_context_example())
+        template = template.replace("{in-context learning}", get_in_context_example())
     else:
         template = ZERO_TEMPLATE
 
@@ -164,7 +164,7 @@ class SageMakerLlama27B:
 
 
 if __name__ == "__main__":
-    USE_BM25 = False
+    USE_BM25 = True
     FEW_SHOT = False
     TOP_N = 10 if USE_BM25 else 3
 
@@ -205,7 +205,7 @@ if __name__ == "__main__":
         print(f"{i} / {len(questions)}")
         print(f"Q: {q}")
         ref_a = reference_answers[i]
-        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=TOP_N, print_prompt=False, few_shot=False)
+        a = SageMakerLlama27B.prompt_without_initialization(retriever, q, top_n=TOP_N, print_prompt=False, few_shot=FEW_SHOT)
         answers.append(a)
         print(f"A: {a}")
         print("============================")
@@ -242,4 +242,4 @@ if __name__ == "__main__":
     print(test_summary)
     write_test_result("data/test/" + result_file_name, answers, test_summary)
 
-    # SageMakerLlama27B.shut_down()
+    SageMakerLlama27B.shut_down()
