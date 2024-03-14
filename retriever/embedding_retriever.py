@@ -86,7 +86,7 @@ class EmbeddingRetriever(BaseRetriever):
 
         doc_nodes.sort(key=lambda node: node.score, reverse=True)
         doc_nodes = doc_nodes[:self.top_n]
-        docs = [node.text for node in doc_nodes]
+        docs = [node.get_content(metadata_mode="all") for node in doc_nodes]
 
         if not docs:
             raise RuntimeError(f"Question '{question}' failed to retrieve any document using embedding retriever.")
