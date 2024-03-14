@@ -80,8 +80,8 @@ class EmbeddingRetriever(BaseRetriever):
         """
         top_n parameter is not being used here because it is being preset during initialization
         """
-        if top_n not in self.slave_retrievers:
-            raise RuntimeError("Sampling top_n exceeds max_top_n.")
+        # if top_n not in self.slave_retrievers:
+        #     raise RuntimeError("Sampling top_n exceeds max_top_n.")
 
         doc_nodes = []
         slaves = self.slave_retrievers
