@@ -168,3 +168,6 @@ raw_data/
 
 # config classes
 language_model/aws_config.py
+
+# ChromaDB
+retriever/chroma_meta
