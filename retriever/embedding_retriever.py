@@ -88,6 +88,9 @@ class EmbeddingRetriever(BaseRetriever):
         doc_nodes = doc_nodes[:self.top_n]
         docs = [node.text for node in doc_nodes]
 
+        if not docs:
+            raise RuntimeError(f"Question '{question}' failed to retrieve any document using embedding retriever.")
+
         return docs
 
     def __init__(self, top_n: int = 5):
