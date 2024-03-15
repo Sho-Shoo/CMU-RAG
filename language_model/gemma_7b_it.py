@@ -14,6 +14,7 @@ from pprint import pp, pformat
 from prompt_template.version1.gemma_prompt_v1 import ZERO_TEMPLATE_V1, FEW_TEMPLATE_V1
 from prompt_template.version2.gemma_prompt_v2 import ZERO_TEMPLATE_V2, FEW_TEMPLATE_V2
 from language_model.utils import get_in_context_example
+import numpy as np
 
 # Helper function to build the prompt
 def _build_gemma_prompt(context: str, question: str, few_shot: bool = True, template_ver = 1) -> str:
@@ -56,10 +57,14 @@ class SageMakerGemma7Bit:
     def generate(cls, retriever: BaseRetriever, question: str, top_n: int = 10,
                 max_new_tokens: int = 1024,  top_k: float = 50, top_p: float = 0.9, 
                 temperature: float = 0.7, do_sample: bool = True,
-                print_prompt=False, few_shot=True, template_ver=1):
+                print_prompt=False, few_shot=True, template_ver=1, is_other = False):
         
         # Retrieve the documents
-        documents = retriever.retrieve(question, top_n=top_n)
+        if is_other:
+            doc_nodes = retriever.retrieve(question)
+            documents = [node.get_content(metadata_mode="all") for node in doc_nodes][:3]
+        else:
+            documents = retriever.retrieve(question, top_n=top_n)
         context = "\n".join(documents)
 
         # Build the prompt
@@ -91,17 +96,18 @@ if __name__ == "__main__":
     USE_BM25 = False
     FEW_SHOT = False
     TOP_N = 10 if USE_BM25 else 3
+    
     TEM_VER = 2
 
     file_name_map = {
-        (False, False, 1): "prompt_v1/gemma_embed_zero.txt",
-        (False, True, 1): "prompt_v1/gemma_embed_few.txt",
-        (False, False, 2): "prompt_v2/gemma_embed_zero.txt",
-        (False, True, 2): "prompt_v2/gemma_embed_few.txt",
-        (True, False, 1): "prompt_v1/gemma_bm25_zero.txt",
-        (True, True, 1): "prompt_v1/gemma_bm25_few.txt",
-        (True, False, 2): "prompt_v2/gemma_bm25_zero.txt",
-        (True, True, 2): "prompt_v2/gemma_bm25_few.txt"
+        (False, False, 1): "prompt_v1/gemma_embed_zero_new.txt",
+        (False, True, 1): "prompt_v1/gemma_embed_few_new.txt",
+        (False, False, 2): "prompt_v2/gemma_embed_zero_v4.txt",
+        (False, True, 2): "prompt_v2/gemma_embed_few_new.txt",
+        (True, False, 1): "prompt_v1/gemma_bm25_zero_new.txt",
+        (True, True, 1): "prompt_v1/gemma_bm25_few_new.txt",
+        (True, False, 2): "prompt_v2/gemma_bm25_zero_new.txt",
+        (True, True, 2): "prompt_v2/gemma_bm25_few_new.txt"
     }
 
     result_file_name = file_name_map[(USE_BM25, FEW_SHOT, TEM_VER)]
@@ -111,7 +117,7 @@ if __name__ == "__main__":
     ground_truths = []
     question_category = []
 
-    with open("data/test/questions.txt", "r") as f:
+    with open("data/questions.txt", "r") as f:
         for q in f:
             questions.append(q.strip())
 
@@ -135,17 +141,24 @@ if __name__ == "__main__":
     if USE_BM25:
         retriever = BM25Retriever()
     else:
-        retriever = EmbeddingRetriever(TOP_N)
+        retriever = EmbeddingRetriever(3)
 
     # Set up Gemma model
     gemma = SageMakerGemma7Bit()
-    # gemma.set_up()
+    gemma.set_up()
 
     for i, question in enumerate(questions):
         print("==========================================")
         print(f"Q: {question}")
         print("Generating answer...")
-        answer = gemma.generate(retriever, question, top_n=TOP_N, print_prompt=True, few_shot=FEW_SHOT, template_ver=TEM_VER)
+
+        answer = gemma.generate(retriever, question, top_n=TOP_N, print_prompt=False, few_shot=FEW_SHOT, template_ver=TEM_VER)
+
+        if "text does not" in answer:
+            print("Retrying with other retriever...")
+            other_retriver = retriever.slave_retrievers[-1]
+            answer = gemma.generate(other_retriver, question, top_n=TOP_N, print_prompt=False, few_shot=FEW_SHOT, template_ver=TEM_VER, is_other=True)
+
         print(f"A: {answer}")
         print(f"Ref A: {ground_truths[i]}")
         print(f"Exact match score for the answer: {exact_match_score(answer, ground_truths[i])}")  
@@ -154,6 +167,12 @@ if __name__ == "__main__":
         
         # Store the answer
         outputs.append(answer)
+
+    with open(result_file_name, "w") as f:
+        for ans in outputs:
+            ans = ans.replace("\n", " ")
+            f.write(ans.strip() + "\n")
+
         
         f1 = f1_score(answer, ground_truths[i])
         recall = recall_score(answer, ground_truths[i])
@@ -183,6 +202,11 @@ if __name__ == "__main__":
     avg_f1 = sum(f1_scores) / len(f1_scores)
     avg_recall = sum(recall_scores) / len(recall_scores)
 
+    # Calculate the standard deviation
+    std_em = np.std(em_scores)
+    std_f1 = np.std(f1_scores)
+    std_recall = np.std(recall_scores)
+
     for category in cate_summary:
         for metric in ["f1", "recall", "em"]:
             scores = cate_summary[category][metric]
@@ -191,6 +215,9 @@ if __name__ == "__main__":
     test_summary = f"Average F1 score: {avg_f1}\n" + \
                    f"Average Recall score: {avg_recall}\n" + \
                    f"Average EM score: {avg_em}\n" + \
+                   f"Std F1 score: {std_f1}\n" + \
+                   f"Std Recall score: {std_recall}\n" + \
+                   f"Std EM score: {std_em}\n" + \
                    pformat(cate_summary)
     
     print(test_summary)
@@ -198,4 +225,4 @@ if __name__ == "__main__":
     # Write the outputs to a txt file
     write_test_result("data/test/" + result_file_name, outputs, test_summary)
 
-    #gemma.shut_down()
+    gemma.shut_down()

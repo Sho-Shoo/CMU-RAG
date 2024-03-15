@@ -88,16 +88,15 @@ class FacultyInfoParser(BaseParser):
 
         # Write to file
         info = {
-            "Name": name,
-            "Title": title,
-            "Office": office,
-            "Email": email,
-            "Phone": phone,
-            "Research Area": research_area,
-            "Research": research,
-            "Projects": projects,
-            "Bio": bio,
-            "Education": education
+            f"Professor {name} Title": title,
+            f"Professor {name} Office": office,
+            f"Professor {name} Email": email,
+            f"Professor {name} Phone": phone,
+            f"Professor {name} Research Area": research_area,
+            f"Professor {name} Research": research,
+            f"Professor {name} Projects": projects,
+            f"Professor {name} Bio": bio,
+            f"Professor {name} Education": education
         }
 
         kv_texts = []
@@ -105,7 +104,7 @@ class FacultyInfoParser(BaseParser):
         for key, value in info.items():
             kv_text = f"{key}: {value}"
             kv_texts.append(kv_text)
-        entry_text = " | ".join(kv_texts)
+        entry_text = "<sep>".join(kv_texts)
         
         self._write_doc(entry_text)
 
@@ -151,11 +150,13 @@ if __name__ == "__main__":
                         "https://lti.cs.cmu.edu/people/faculty/xiong-chenyan.html",
                         "https://lti.cs.cmu.edu/people/faculty/yiming-yang.html"]
 
+    save_csv = False
     info_dfs = []
     for url in faculty_info_url:
         parser = FacultyInfoParser(url, doc_max_len=500)
         info_df = parser.parse()
         info_dfs.append(info_df)
-
-    all_info_df = pd.concat(info_dfs, ignore_index=True)
-    all_info_df.to_csv("knowledge_source_pd/faculty_info.csv", index=False)
+    
+    if save_csv:
+        all_info_df = pd.concat(info_dfs, ignore_index=True)
+        all_info_df.to_csv("knowledge_source_pd/faculty_info.csv", index=False)
