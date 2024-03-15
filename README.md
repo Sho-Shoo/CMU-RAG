@@ -53,7 +53,8 @@
 │   ├── base_retriever.py
 │   ├── bm25_retriever.py
 │   ├── chroma_meta                              # ChromaDB storage
-│   └── embedding_retriever.py
+│   ├── embedding_retriever.py
+│   └── Embedding_Retriever.ipynb
 ├── setup.sh
 └── system_outputs                               # system output of final submission
     ├── system_output_1.txt
