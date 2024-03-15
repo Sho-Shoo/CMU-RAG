@@ -3,8 +3,8 @@ Knowledge compilation:
 - Initial PDF compilation: Jing Zhang
 - Initial EXCEL compilation: Jing Zhang
 - Initial Research papers compilation (Semantic Scholar API): Justin Li
-- CSV data compilation (Faculty Data): Jing Zhang
-- Other CSV data compilation: Justin Li
+- Faculty Data CSV data compilation: Jing Zhang
+- Paper, Course CSV data compilation: Justin Li
 
 ----
 Data annotation:
