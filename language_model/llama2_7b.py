@@ -163,7 +163,7 @@ class SageMakerLlama27B:
         return json.loads(response["Body"].read())[0]["generated_text"]
 
 
-if __name__ == "__main__":
+def run_test():
     USE_BM25 = True
     FEW_SHOT = False
     TOP_N = 10 if USE_BM25 else 3
@@ -243,3 +243,43 @@ if __name__ == "__main__":
     write_test_result("data/test/" + result_file_name, answers, test_summary)
 
     SageMakerLlama27B.shut_down()
+
+
+def run_submission():
+
+    # SageMakerLlama27B.set_up()
+
+    # TOP_N = 3
+    # FEW_SHOT = False
+    # RETRIEVER = EmbeddingRetriever(TOP_N)
+    # OUTPUT_FILE = "data/submission/system_output_2.txt"
+
+    TOP_N = 10
+    FEW_SHOT = False
+    RETRIEVER = BM25Retriever()
+    OUTPUT_FILE = "data/submission/system_output_3.txt"
+
+    questions = []
+    with open("data/submission/questions.txt", "r") as f:
+        while True:
+            line = f.readline()
+            if not line: break
+            questions.append(line.strip())
+
+    answers = []
+    for i, q in enumerate(questions):
+        print(f"{i} / {len(questions)}")
+        print(f"Q: {q}")
+        a = SageMakerLlama27B.prompt_without_initialization(RETRIEVER, q, top_n=TOP_N, print_prompt=False,
+                                                            few_shot=FEW_SHOT)
+        answers.append(a.strip().replace("\n", " ") + "\n")
+        print(f"A: {a}")
+
+    with open(OUTPUT_FILE, "w") as f:
+        f.writelines(answers)
+
+    # SageMakerLlama27B.shut_down()
+
+
+if __name__ == "__main__":
+    run_submission()
