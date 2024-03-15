@@ -39,14 +39,14 @@ class ChromadbRetriever(llama_index.core.retrievers.BaseRetriever):
             (vector_store=self._vector_store, embed_model=embed_model)
         super().__init__()
 
-    def _retrieve(self, query_str: QueryBundle) -> List[NodeWithScore]:
+    def _retrieve(self, query_str: str) -> List[NodeWithScore]:
         query_embedding = self._embed_model.get_query_embedding(
             query_str
         )
-        query_str = query_str.query_str.lower()
+        query_str = query_str.lower()
         filters = None
-        if 'course' in query_str:
-            pattern = r'(course|unit)\s*(\d{5})'
+        if 'course' in query_str or 'unit' in query_str:
+            pattern = r'(course|unit|cmu)\s*(\d{5})'
             _match = re.findall(pattern, query_str)
             if _match:
                 filters = MetadataFilters(
@@ -86,7 +86,7 @@ class EmbeddingRetriever(BaseRetriever):
         doc_nodes = []
         slaves = self.slave_retrievers
         for slave in slaves:
-            doc_nodes.extend(slave.retrieve(question))
+            doc_nodes.extend(slave._retrieve(question))
 
         doc_nodes.sort(key=lambda node: node.score, reverse=True)
         doc_nodes = doc_nodes[:top_n]
