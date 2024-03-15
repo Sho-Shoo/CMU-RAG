@@ -102,9 +102,9 @@ What is the course number for the "Digital Accessibility Fundamentals" course of
 Who is the instructor of the course "Blockchain Applications"  offered in Fall 2023?
 Who are the instructors for the course "Machine Learning in Production" offered in Spring 2024?
 Who is the instructor for the course "Research Methods in Second Language Acquisition" offered in Spring 2024?
-Who is the instructor for the unit 76239 in the Spring 2024?
-Who is the instructor for the unit 15150 offered in Summer One 2024?
-Who is the instructor for the unit 90429 offered in Spring 2024?
+Who is the instructor for the course 76239 in the Spring 2024?
+Who is the instructor for the course 15150 offered in Summer One 2024?
+Who is the instructor for the course 90429 offered in Spring 2024?
 How many units is the course "Applied Econometrics I" worth in Spring 2024?
 What is the schedule for the course 24888 Introduction to Deep Learning in the Spring 2024?
 What are the scheduled days and times for the course "Professional Essentials for the Percussionist" offered in Spring 2024?
